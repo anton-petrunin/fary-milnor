@@ -1,0 +1,61 @@
+\section{Tame knots}
+
+Before diving into to the proofs, we need to remind the definition of \emph{knot} and \emph{nontrival knot}.
+Despite that intuitively knot as a knotted rope,
+the simplest formal definition use polygonal lines.
+It turns out that this definition is also suits best for our purposes.
+
+A \emph{knot} (more precicely \emph{tame knot}) is a simple closed polygonal line in the Euclidean space~$\mathbb{R}^3$ (simple means no self-intersections).
+
+The notation $\triangle abc$ is used for the triangle $abc$; that is, a polygonal line with three edges and vertexes $a$, $b$ and $c$.
+Let us denote by $\solidtriangle abc$ the convex hull of the points $a$, $b$ and $c$; $\solidtriangle abc$ is the solid triangle with the vertexes $a$, $b$ and $c$.
+The points $a$, $b$ and $c$ are assumed to be distinct, but they might lie on one line;
+that is, for us a degenerate triangle counts as a legitimate triangle.
+
+We define a \emph{triangular isotopy of a knot} to be the generation of a new knot from the original one by means of the
+following two operations:
+
+Assume $[pq]$ is an edge of the knot and $x$
+is a point such that the solid triangle $\solidtriangle pqx$  has no common points with the knot except for the edge $[pq]$.
+Then we can replace the edge $[pq]$ in the knot by the two adjacent edges $[px]$ and $[xq]$.
+
+We can also perform the inverse operation.
+That is, if for two adjacent edges $[px]$ and $[xq]$ of a knot the triangle
+$\solidtriangle pqx$ has no common points with the knot except for the points on the edges $[px]$ and $[xq]$,
+then we can replace the two adjacent edges $[px]$ and $[xq]$ by the edge $[pq]$.
+
+Polygons that arise from one another by a finite sequence of
+triangular isotopies are called \emph{isotopic}.
+
+\begin{wrapfigure}{r}{22 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-18}
+\vskip0mm
+\end{wrapfigure}
+
+A knot that is not isotopic to a triangle is called nontrivial.
+
+The trefoil knot shown on the diagram gives a simple example of nontrivial knot.
+A proof that the trefoil knot is nontrivial can be found in any textbook on knot theory.
+The most elementary and visual proof is based on the so called \emph{tricolorability} of knot diagrams.   
+
+\begin{thm}{Exercise}\label{ex:triangle-isotopy}
+Let $x$ and $y$ be two points on the adjacent edges $[p_1p_2]$ and $[p_2p_3]$ of a knot $\beta=p_1p_2p_3\dots p_n$.
+Assume that the solid triangle $\solidtriangle xp_2y$ intersects $\beta$ only along $[xp_2]\cup [p_2y]$.
+Show that the knot $\beta'\z=p_1xyp_3\dots p_n$ is isotopic to $\beta$.
+\end{thm}
+
+The total curvature of polygonal line is defined as the sum of its external angles.
+It is well known that total curvature of a curve cannot be smaller than total curvature of an insribed polygonal line.
+In fact the total curvature of closed curve can be defined as the least upper bound on the total curvature of inscrived polygonal lines.
+This definition agrees for the smooth curves and it makes sense for any simple curve.
+
+Therefore the theorem has the following reformulation which is stronger than the original theorem.
+This is the theorem we will discuss further.
+
+\begin{thm}{Reformulation}\label{thm:fary-milnor}
+The total curvature of any nontrival knot is bigger than $4\cdot\pi$. 
+\end{thm}
+
+

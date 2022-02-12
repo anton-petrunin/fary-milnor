@@ -1,0 +1,65 @@
+\section{Milnor's proof}
+
+In the proof we will use the following fact. 
+
+\begin{thm}{Proposition}\label{prop:one-max-one-min}
+Assume that a height function $(x,y,z)\to z$ 
+has only one local minimum and one local maximum on a closed simple polygonal line and all the vertexes of the polygonal line are at different height.
+Then the line is a trivial knot.
+\end{thm}
+
+The proof is a simple application of the definition of isotopy, given in the previous section. 
+
+\begin{wrapfigure}{r}{20 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-19}
+\vskip0mm
+\end{wrapfigure}
+
+\parit{Proof.}
+Let $\beta=p_1\dots p_n$ be the closed simple polygonal line
+such that the height function $(x,y,z)\to z$ has one local minimum one local maximum.
+Note that on each of the two arcs of $\beta$ from the min-vertex to the max-vertex the height function increases monotonically.
+
+Consider the three vertexes with the largest height;
+they have to include the max-vertex and two more.
+Note that these three vertexes are consequent in the polygonal line; 
+without loss of generality we can assume that they are $p_{n-1},p_n,p_1$.
+
+Note that the solid triangle $\solidtriangle p_{n-1}p_np_1$ does not intersect any edge $\beta$ except the two adjacent edges $[p_{n-1}p_n]\cup[p_np_1]$.
+Indeed, if $\solidtriangle p_{n-1}p_np_1$ intersects $[p_1p_2]$,
+then, 
+since $p_2$ lies below $\solidtriangle p_{n-1}p_np_1$,
+$[p_1p_2]$ must intersect $[p_{n-1}p_n]$
+which is impossible since $\beta$ is simple.
+The same way one can show that $\solidtriangle p_{n-1}p_np_1$ can not intersect $[p_{n-2}p_{n-1}]$.
+The remaining edges lie below $\solidtriangle p_{n-1}p_np_1$, hence they can not intersect this triangle.
+
+Applying a triangular isotopy, to $\solidtriangle p_{n-1}p_np_1$ we get a closed simple polygonal line $\beta'\z=p_1\dots p_{n-1}$ which is isotopic to $\beta$.
+
+Since all the vertexes $p_i$ have different height,
+the assumption of the proposition holds for $\beta'$.
+
+Repeating this procedure $n-3$ times we get a triangle.
+Hence $\beta$ is a trivial knot.
+\qeds
+
+\parit{Milnor's proof of \ref{thm:fary-milnor}.}
+Let $\alpha$ be a simple closed polygonal line.
+Assume its total curvature is less that $4\cdot\pi$.
+Then by Proposition~\ref{prop:tc-crofton}, 
+\[\tc\alpha_u<4\cdot\pi\]
+for some unit vector $u$.
+Moreover, we can assume that $u$ points in a generic direction;
+that is, $u$ is not perpendicular to any edge or diagonal of $\alpha$.
+
+The total curvature of $\alpha_u$ is $\pi$ times the number of turns of $\alpha_u$
+which has to be an even number.
+It follows that the number of turns of $\alpha_u$ is at most $2$;
+it cannot be less than 2 for a generic direction, therefore it is exactly $2$.
+
+That is, if we rotate the space so that $u$ points upward,
+then the height function has exactly one minimum and one maximum;
+by Proposition~\ref{prop:one-max-one-min}, $\alpha$ is a trivial knot --- hence the result.
+\qeds

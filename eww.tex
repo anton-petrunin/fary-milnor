@@ -1,0 +1,140 @@
+\section{Fary-Milnor after Ekholm-White-Wienholtz}
+
+In this section we want to provide a proof of the Fary-Milnor theorem using minimal surfaces.
+The original proof was a breakthrough in minimal surface theory and is due to Ekholm-White-Wienholtz \cite{EWW_embed}. 
+Their technique was used in \cite{CG_embed, St_structure} to prove the Fary-Milnor theorem in
+non-Euclidean geometries. Our presentation uses arguments from \cite{EWW_embed} and \cite{CG_embed}.
+\medskip
+
+Throughout this section, $G(r)=\frac{\log(r)}{2\pi}$ will denote the Green's function on $\R^2$ and  $\rho(x)=\|x-p\|$ will refer to
+the distance function to some point $p\in\R^3$.
+
+\blem\label{lem_laplace} 
+Let $\Si\subset \R^3$ be an immersed surface. Then except at $p$,
+\[\Delta_\Si G(\rho)=\frac{1}{\pi\rho^2}(1-|\nabla_\Si \rho|^2)+\frac{d\rho(H)}{2\pi\rho},\]
+where $H$ denotes the mean curvature vector of $\Si$. 
+\elem
+
+\proof
+We have
+\[\Delta_\Si G(\rho)=\tr_\Si\Hess G(\rho)+d G(\rho)(H).\]
+Let $\{e_1,e_2\}$ be an orthonormal basis to $\Si$ such that $d\rho(e_1)=|\nabla_\Si \rho|$ and $d\rho(e_2)=0$. 
+The claim follows since 
+\[\Hess G(\rho)=\frac{1}{2\pi\rho}(\Hess\rho-\frac{1}{\rho}d\rho\otimes d\rho)\] 
+and
+\[\Hess\rho=\frac{1}{\rho}(\<\cdot,\cdot\>-\<\cdot,\nabla\rho\>^2).\]
+\qed
+
+\bdfn
+An immersed surface $\Si\subset\R^3$ is called {\em minimal}, provided its mean curvature vanishes everywhere.
+\edfn
+For a curve $\ga\subset\R^3$ and a point $p\in\R^3\setminus\ga$ we will denote by $C_p(\ga)$ the cone at $p$
+over $\ga$:
+\[C_p(\ga):=\{p+t(x-p)|\ x\in\ga, 0\leq t\leq 1\}.\]
+\medskip
+
+\bcor\label{cor_subhar}
+Let $\Si\subset\R^3$ be a minimal surface, and denote by $C=C_p(\D\Si)$ the cone at $p$ over the boundary $\D\Si$.
+The $G(\rho)$ is subharmonic on $\Si$ and harmonic on $C\setminus\{p\}$.
+\ecor
+
+\proof
+Clearly, $|\nabla_\Si\rho|\leq 1$ and $|\nabla_C\rho|\equiv 1$.
+Moreover, the mean curvature vector of $\Si$ vanishes while the mean curvature vector of $C$
+is orthogonal to $\nabla\rho$. By Lemma~\ref{lem_laplace}, we obtain $\Delta_\Si G(\rho)\geq 0$ and $\Delta_C G(\rho)= 0$
+on the complement of $p$. Since $\Si$ is immersed at $p$, $\frac{1}{\rho}\cdot(\Si\cap B_\rho(p))$
+converges smoothly to a finite union of unit discs. Hence, $\lim\limits_{\rho\to 0}\frac{|\nabla\rho|-|\nabla_\Si\rho|}{\rho}=0$, and
+$G(\rho)$ is subharmonic on all of $\Si$.
+\qed
+
+
+\bdfn
+For an immersed surface $\Si\subset\R^3$, we define the {\em density} of $\Si$ at $p$ by
+\[\Theta(\Si,p)=\lim\limits_{r\to 0}\frac{\a(\Si\cap B_r(p))}{\pi r^2}.\]
+\edfn
+
+The density of an immersed surface $\Si$ counts the number of sheets through a given point.
+By the Monotonicity Theorem, the {\em density ratio} $\Theta(\Si,p,r):=\frac{\a(\Si\cap B_r(p))}{\pi r^2}$ of a minimal surface $\Si$
+is a non-decreasing function of $r$ as long as $r<d(p,\D\Si)$. The same holds true for surfaces which are conical with respect to $p$.
+
+\bprop[Density comparison]\label{prop_dens_comp}
+Let $\Ga\subset\R^3$ be a smooth Jordan curve. Suppose that $\Si\subset\R^3$
+is a minimal surface with $\D\Si=\Ga$. Let $p$ be a point in $\Si\setminus\Ga$ and denote by $C$ the
+cone from $p$ over $\Ga$. Then
+\[\Theta(\Si,p)\leq \Theta(C,p)\]
+with equality if and only if $\Si$ lies in a plane. 
+\eprop
+
+\proof
+For simplicity, we will assume that $C$ is immersed.
+Choose a small $\eps>0$ and remove the $\eps$-ball around $p$ from $\Si$ and $C$,
+\[\Si_\eps:=\Si\setminus B_\eps(p) \quad\quad C_\eps:=C\setminus B_\eps(p).\]
+Denote by $\nu_\Si$ and $\nu_C$ the outward unit normal vectors at the boundaries, tangent to the respective surface.
+Then, by Corollary~\ref{cor_subhar} and Cauchy-Schwarz,
+\begin{align*}
+0\leq&\int_{\Si_\eps}\Delta_\Si G(\rho)\ dA=\int_{\D\Si_\eps}\<\nabla G(\rho),\nu_\Si\>\ ds\\
+\leq&\int_{\Si\cap\D B_\eps(p)}\frac{\<\nabla\rho,\nu_\Si\>}{2\pi\eps}\ ds +\int_{\Ga}\frac{1}{2\pi\rho}\ ds.
+\end{align*} 
+Since $\Si$ is immersed, we have $\<\nabla\rho,\nu_\Si\>\to-1$ uniformly, and therefore
+\[\lim\limits_{\eps\to 0}\int_{\Si\cap\D B_\eps(p)}\frac{\<\nabla\rho,\nu_\Si\>}{2\pi\eps}\ ds=
+\lim\limits_{\eps\to 0}\frac{\length(\Si\cap\D B_\eps(p))}{2\pi\eps}=\Theta(\Si,p).
+\]
+Thus,
+\[\Theta(\Si,p)\leq \int_{\Ga}\frac{1}{2\pi\rho}\ ds.\]
+Applying Corollary~\ref{cor_subhar} again, a similar computation for $C$ shows
+\[\Theta(C,p)= \int_{\Ga}\frac{1}{2\pi\rho}\ ds.\]
+We leave the equality discussion for the interested reader.
+\qed
+\medskip
+
+For a point $p\in\R^3$ we will denote by $\pi_p:\R^3\setminus\{p\}\to\D B_1(p)$
+the radial projection $\pi_p(x)=p+\frac{x-p}{\|x-p\|}$.
+
+\bprop\label{prop_dens_est}
+Let $\Ga\subset\R^3$ be a smooth Jordan curve and let $p$
+be a point in $\R^3\setminus\Ga$. Then
+\[\length(\pi_p(\Ga))\leq\ka(\Ga).\]
+Equivalently,
+\[\Theta(C_p(\Ga))\leq\frac{\ka(\Ga)}{2\pi}.\]
+\eprop
+
+\proof
+After translation and dilatation, we may assume that $p=0$ and that $\Ga$ lies outside the unit ball $B_1(0)$.
+Let $S:=C_0(\Ga)\setminus B_1(0)$ be the region of $C_0(\Ga)$ between $\D B_1(0)$ and $\Ga$. By the Gauss-Bonnet theorem,
+\[\int_S K\ dA+\int_{\D S}\<k,\nu_S\> ds=2\pi\chi(S), \]
+where $k$ is the curvature vector of the curve $\D S$ in $\R^3$, $\nu_S$ is the outward unit normal
+of $S$, $K$ is the scalar curvature of $S$, and $\chi(S)$ is the Euler characteristic of $S$.
+Since $S$ is a ruled surface homeomorphic to an annulus, we have $K\equiv 0$ and $\chi(S)=0$. Hence
+\[0=\int_{\D S}\<k,\nu_S\> ds=\int_{\pi_p(\Ga)}\underbrace{\<k,\nu_S\>}_{\equiv 1} ds+\int_{\Ga}\<k,\nu_S\> ds.\]
+The claim follows because the second integral is bounded in absolute value by the total curvature of $\Ga$.
+\qed
+
+
+\begin{thm}{Theorem}\label{thmembed}
+Let $\Ga\subset\R^3$ be a smooth Jordan curve.
+Suppose that $\Si\subset\R^3$ is a minimal surface with boundary $\D\Si=\Ga$.
+If the total curvature of $\Ga$ satisfies
+\[\ka(\Ga)\leq 4\pi,\]
+then $\Si$ is embedded. 
+\end{thm}
+
+\proof
+To show that $\Si$ is embedded it is enough to show $\Theta(\Si,p)<2$ for all $p\in\Si\setminus\Ga$.
+Let $p$ be such a point.
+If $\Si$ is totally geodesic, then it is embedded.
+Otherwise, by Propositions~\ref{prop_dens_comp} and \ref{prop_dens_est}
+\[\Theta(\Si,p)<\Theta(C_p(\Ga))\leq\frac{\ka(\Ga)}{2\pi}\leq 2\]
+and the proof is complete.
+\qed
+
+\bcor[Fary-Milnor]
+Let $\Ga\subset\R^3$ be a smooth Jordan curve of total curvature at most $4\pi$, then $\Ga$ is unknotted.
+\ecor
+
+\proof
+By the Doublas-Rado theorem there exists a least-area disc $\Si$ filling $\Ga$.
+By Theorem~\ref{thmembed}, $\Si$ is a
+smooth embedded disc. If $u:D\to\Si$ denotes a smooth, conformal parametrization of $\Si$ by the
+unit disc $D\subset\R^2$, then $h(x,t)=u(tx)$ provides an isotopy $h:\D D\times(0,1]\to\R^3$ between $\Ga$
+and the circles $\Ga_t:=u(t\D D)$. Since $u$ has nondegenerated differential at $0$, $\Ga_t$ is unknotted for small enough $t$.
+\qed
