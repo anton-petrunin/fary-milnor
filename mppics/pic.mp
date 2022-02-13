@@ -88,23 +88,21 @@ z.q2=z.p2+z.sh;
 z.q3=(z.p3+z.sh) reflectedabout (z.oo,z.q2);
 
 draw z.o--z.p1--z.p2--z.p3--z.o--z.p2;
-draw z.oo--z.q1--z.q2--z.q3--z.oo--z.q2;
+%draw z.oo--z.q1--z.q2--z.q3--z.oo--z.q2;
 
 fill_angle(z.p3, z.p2, (2[z.p1,z.p2]), 10);
-fill_angle(z.q3, z.q2, (2[z.q1,z.q2]), 10);
+%fill_angle(z.q3, z.q2, (2[z.q1,z.q2]), 10);
 
-dOt z.o,z.oo,z.p1,z.p2,z.p3,z.q1,z.q2,z.q3;
+dOt z.o,z.p1,z.p2,z.p3;
 
 label.bot(btex $o$ etex, z.o);
-label.bot(btex $o$ etex, z.oo);
+
 
 label.rt(btex $p_{i-1}$ etex, z.p1+(2,0));
 label.top(btex $p_i$ etex, (z.p2+(-2,0)));
 label.top(btex $p_{i+1}$ etex, z.p3);
 
-whitelabel.rt(btex $p_{i-1}$ etex, z.q1+(2,0));
-label.top(btex $p_i$ etex, (z.q2+(-2,0)));
-label.top(btex $p_{i+1}$ etex, z.q3);
+
 
 endfig;
 

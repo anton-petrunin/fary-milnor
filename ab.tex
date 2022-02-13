@@ -1,0 +1,78 @@
+\section{Proof of Alexander and Bishop}
+
+Here we sketch the proof given by of Stephanie Alexander and Richard Bishop in \cite{alexander-bishop}.
+
+The proof is elementary, but not simple 
+(elementary does not mean simple, it means only that it does not use much theory).
+In the proof they construct a total-curvature-decreasing deformation a given into a doubly covered
+bigon.
+The statement follows since the latter has total curvature $4\cdot\pi$.
+
+\parit{Proof.}
+Let $\beta=p_1\dots p_n$ be a closed polygonal line that is not a trivial knot;
+that is, one can not get a triangle from $\beta$ by applying a sequence of triangular isotopies defined in the previous section.
+
+We proceed by induction on the number $n \ge 3$.
+In the base case $n=3$ the polygonal line $\beta$ is a triangle.
+Therefore, by definition, $\beta$ is a trivial knot --- nothing to show.
+
+Consider the smallest $n$ for which the statement fails;
+that is, there is a closed simple polygonal line $\beta\z=p_1\dots p_n$ that is not a trivial knot and such that
+\[\tc\beta<4\cdot\pi.
+\eqlbl{eq:<4pi}\]
+We use the indexes modulo $n$; that is, $p_0=p_n$, $p_1=p_{n+1}$ and so on.
+Without loss of generality, we may assume that $\beta$ is in general position; 
+that is, no four vertexes of $\beta$ lie on one plane. 
+
+Set $\beta_0=\beta$.
+If the solid triangle $\solidtriangle p_{0}p_1p_{2}$ intersects $\beta_0$ only in the two adjacent edges,
+then applying the corresponding triangular isotopy, we get a knot $\beta'_0$ with $n-1$ edges that is inscribed in $\beta_0$. Therefore
+\[\tc\beta_0\ge \tc\beta_0'.\]
+On the other hand, by the induction hypothesis 
+\[\tc{\beta_0'}\ge 4\cdot\pi,\]
+which contradicts \ref{eq:<4pi}.
+
+Choose the first point $w'_1$ on the edge $[p_1p_2]$ so that the line segment $[p_0w'_1]$ 
+intersects $\beta_0$.
+Denote a point of intersection by $y_1$.
+
+\begin{wrapfigure}{r}{25 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-17}
+\vskip0mm
+\end{wrapfigure}
+
+Choose a point $w_1$ on $[p_1p_2]$ a bit before $w'_1$
+(we will explain how close).
+Denote by $x_1$ the point on $[p_0w_1]$ that minimizes the distance to $y_1$.
+This way we get a closed polygonal line 
+$\beta_1\z=w_1p_2\dots p_n$ with two marked points $x_1$ and $y_1$.
+Denote by $m_1$ the number of edges in the arc $x_1w_1\dots y_1$ of $\beta_1$.
+
+Note that $\beta_1$ is isotopic to $\beta_0$;
+in particular $\beta_1$ is a nontrivial knot.
+
+Now let us repeat the procedure for the adjacent edges $[w_1p_2]$ and $[p_2p_3]$ of $\beta_1$.
+If the solid triangle $\solidtriangle w_1p_2p_3$ intersects $\beta_1$ only at these two adjacent edges, then we get a contradiction with the induction hypothesis the same way as before.
+Otherwise we get a new knot $\beta_2=w_1w_2p_3\dots p_n$ with two marked points $x_2$ and $y_2$.
+Denote by $m_2$ the number of edges in the broken line $x_2w_2\dots y_2$.
+
+Note that the points $x_1,x_2,y_1,y_2$ can not appear on $\beta_2$ in the same cyclic order;
+otherwise the broken line $x_1x_2y_1y_2$ can be made to be arbitrary close to a doubly covered bigon which again contradicts~\ref{eq:<4pi}.
+(More precisely, the choice of $w_1$ has to be made so that the distance $|x_1-y_1|$ would be much less that all the distances between $y_1$ and any point $z\in\beta\cap \solidtriangle p_1p_2p_3$, so we have
+\[\measuredangle y_1zx_1<\tfrac\varepsilon{10},\]
+where $\varepsilon=4\cdot\pi-\tc\beta$.
+In this case, since $y_2\in \beta\cap \solidtriangle p_1p_2p_3$ and $x_2$ can be taken arbitrary close to $y_2$, we have
+\[\tc{x_1x_2y_1y_2 }> 4\cdot\pi -\varepsilon= \tc\beta\]
+which can not happen since $x_1x_2y_1y_2$ is inscribed in $\beta$.)
+
+Therefore we can assume that the arc $x_2w_2\dots y_2$ lies inside the arc $x_1w_1\dots y_1$ in $\beta_2$
+and therefore $m_1>m_2$.
+
+Continuing this procedure we get a sequence of polygonal lines $\beta_i\z=w_1\dots w_i p_{i+1}p_n$ with marked points $x_i$ and $y_i$ such that the number of edges $m_i$ from $x_i$ to $y_i$ decreases as $i$ increases.
+Clearly $m_i>1$ for any $i$ and $m_1<n$.
+Therefore it requires less than $n$ steps to get a contradiction with the induction hypothesis.
+\qeds
+
+

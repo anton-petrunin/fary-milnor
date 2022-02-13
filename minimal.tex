@@ -1,0 +1,101 @@
+ \section{Minimal-surface proof}
+
+In this section we sketch a proof of the theorem via minimal surfaces.
+We start with a polygonal line with total curvature less than $4\cdot\pi$, show that area-minimizing disc spanned by this line has no self-intersections and therefore it has to be a trivial knot.
+So in a way the equation for area minimizing surface solves our problem, we only need to understand this equation.
+
+The main hiero in this proof is the so-called \emph{monotonicity theorem}.
+We will also apply the Doublas--Rado theorem on the existence of area-minimizing disc and reuse the inequality between total curvature and angular length from the F\'ary's proof.
+
+A map from domain in the plane to $\mathbb{R}^3$ will be called a \emph{surface};
+it might have self-intersections and singularities, but we assume it is reasonable, say locally Lipschitz; so we could talk about its area.
+A point on the surface might refer to a point in $\mathbb{R}^3$, or the corresponding point in the domain of parameters;
+it should be easy to guess from the context.
+
+We denote by $\mathbb{D}$ the closed disc in the plane.
+A surface defined by a map $f\:\mathbb{D}\to\mathbb{R}^3$ will be called a \emph{disc}.
+The restriction $f|_{\partial \mathbb{D}}$ will be called boundary line of the disc.
+
+A disc $\Sigma$ is called area-minimizing if it has smallest area among the maps with the given boundary line.
+The following statement about area-minimizing discs easy to believe, but not easy to prove. %???REFS
+
+\begin{thm}{Doublas--Rado theorem}\label{thm:min-exists}
+Given a simple closed polygonal line $\alpha$ in $\mathbb{R}^3$, there is a area minimizing disc $\Sigma$ with boundary line $\alpha$; it is a smooth surface, possibly with self-intersections and isolated singularities.
+
+Moreover, if $\Sigma$ has no self-intersections, then it is an embedded smooth surface with no singularities (in this case $\alpha$ is a trivial knot).
+\end{thm}
+
+Choose a disc $\Sigma$ in $\mathbb{R}^3$ with boundary line $\partial\Sigma$.
+Given a point $p\notin \partial\Sigma$, let us consider a new surface $\hat\Sigma_p$ --- the \emph{collared} $\Sigma$ with respect to $p$;
+the surface $\hat\Sigma_p$ includes $\Sigma$ and the \emph{collar} formed by all rays that start points of $\partial\Sigma$ and go in the direction opposite to $p$.
+Note that $\hat\Sigma_p$ admits a natural parametrization by the whole plane.
+
+\begin{thm}{Monotonicity theorem}
+Let $\Sigma$ be an area-minimizing disc with boundary line $\partial \Sigma$.
+Given a point $p\notin \partial\Sigma$, consider the function 
+\[\Theta_p(r)=\area (\hat\Sigma_p\cap \bar B_r(p)),\]
+where $\bar B_r(p)$ denotes the ball of radius $r$ centered at $p$.
+Then the function $r\mapsto \frac{\Theta_p(r)}{r^2}$
+is nondecreasing.
+
+Moreover, if $p\in \Sigma$, then $\lim_{r\to0}\frac{\Theta_p(r)}{r^2}\ge \pi$.
+\end{thm}
+
+The argument presented below was found by the second author \cite{St_structure};
+it is not as general as the classical monotonicity formula, but more elementary and therefore more suitable for generalizations.
+
+\parit{Proof.}
+Denote by $\lambda_p(r)$ the curve of intersection of the sphere $\partial B_r(p)$ with $\hat\Sigma_p$;
+set $\ell(r)\z=\length[\lambda_p(r)]$.
+Observe that 
+\[\Theta_p'(r)\ge \ell(r)\]
+for any $r$ where the left-hand side is defined.
+This inequality follows from the so-called \emph{coarea formula}, but it should be obvious anyway.
+
+Let $\Delta_r$ be the connected component of $p$ in $\hat\Sigma_p\cap \bar B_r(p)$;
+it is a surface bounded by $\lambda_p(r)$.
+Let $\Delta_r'$ be a copy of $\Delta_r$ rescaled with center at $p$ and factor $1-\eps$.
+Let us reconnect every point $x\in \partial \Delta_r$ to the corresponding point $x'=(1-\eps)\cdot x\in \partial\Delta_r'$ by a line segment $[x,x']$.
+The line segments form an annulus $A_r$, together with $\Delta_r'$, it forms a surface that shares its boundary with $\Delta_r$.
+Note that $A_r$ and $\Delta_r'$ include all points of $\Delta_r$ that lies on the collar of $\Sigma$.
+So these two surfaces $\Delta_r'\cup A_r$ and $\Delta_r$ differ only in $\Sigma$.
+Since $\Sigma$ is area-minimizing, we get that 
+\[\area \Delta_r'+\area A_r\ge \area \Delta_r\eqlbl{area=<area}\]
+for any $r>0$.
+Observe that 
+\[
+\area \Delta_r=\Theta_p(r),
+\qquad
+\area \Delta_r'=(1-\eps)^2\cdot\Theta_p(r),
+\qquad
+\area A_r=\eps\cdot(1-\tfrac\eps2)\cdot r\cdot \ell(r).
+\]
+Applying \ref{area=<area} for $\eps\to0+$, we get
+\[r\cdot \ell(r)\ge 2\cdot\Theta_p(r).\]
+Therefore 
+\[r\cdot \Theta_p'(r)\ge 2\cdot\Theta_p(r)\]
+if the left-hand side is defined.
+If $\Theta_p$ is smooth, then it implies the statement.
+In general $\Theta_p$ is only nondecreasing, so its derivative is defined almost everywhere;
+it turns to be sufficient after a bit of  acrobatic in analysis.
+
+The last statement is evident for smooth points of $\Sigma$.
+Since smooth points are dense everywhere in $\Sigma$, and $p\mapsto \Theta_p(r)$ is a continuous function,
+the main part of theorem implies that $\Theta_p(r)\ge\pi\cdot r^2$ for \emph{any} point $p\in\Sigma$.
+Hence the second statement follows.
+\qeds
+
+\parit{Minimal-surface proof.}
+Consider the area-minimizing surface $\Sigma$ with the boundary line $\alpha$; it exists by \ref{thm:min-exists}.
+Suppose $\Sigma$ has a self-intersection at a point $p$.
+In this case the intersection $B_r(p)\cap \Sigma$ is covered by two or more small area minimizing subdiscs of $\Sigma$.
+By the second statement in the monotonicity theorem, we get $\Theta_p(r)\ge 4\cdot\pi$ for all small $r$.
+
+Applying the main statement in the monotonicity theorem we get $\Theta_p(r)\ge 4\cdot\pi$ for any $r>0$.
+Note that $\Theta_p(r)\to\tfrac12\cdot\Psi_p(\alpha)$ as $r\to \infty$,
+where $\Psi_p(\alpha)$ denotes the angular length of $\alpha$ with respect to $p$.
+By Proposition~\ref{prop:angular-length} in F\'ary's proof, we get
+\[\tc{\alpha}\ge \Psi_p(\alpha)\ge 2\cdot \Theta_p(r)\ge 4\cdot\pi.\]
+\qedsf
+
+

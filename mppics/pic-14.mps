@@ -2,7 +2,7 @@
 %%BoundingBox: -43 -1 43 46 
 %%HiResBoundingBox: -42.7697 -0.25 42.7697 45.9236 
 %%Creator: MetaPost 2.00
-%%CreationDate: 2022.02.08:2044
+%%CreationDate: 2022.02.12:1740
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font KNJFED-CMMI10

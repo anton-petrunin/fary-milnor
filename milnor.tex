@@ -1,6 +1,31 @@
-\section{Milnor's proof}
+\section{Proofs with Crofton-type formula}
 
-In the proof we will use the following fact. 
+The proofs of F\'ary and Milnor are very similar;
+both are based on similar formulas for total curvature.
+
+Given a curve $\alpha$ in $\mathbb{R}^3$ and a unit vector $u$, denote by $\alpha_{u^\perp}$ 
+and $\alpha_u$ the projection of $\alpha$ to the plane perpendicular to $u$ and the line parallel to $u$ respectively.
+Given a function $f\:\mathbb{S}^2\to\mathbb{R}$, let us denote its average value by $\overline{f(u)}$.
+
+\begin{thm}{Crofton-type formula}\label{prop:tc-crofton}
+Let $\alpha$ be a polygonal line in $\mathbb{R}^3$.
+Then
+\begin{align*}
+\tc\alpha
+&=\overline{\tc{\alpha_{u^\perp}}}
+=\overline{\tc{\alpha_u}}.
+\end{align*}
+\end{thm}
+
+
+\parit{Proof.}
+Observe that it is sufficient to check the identities for polygonal line made of two edges
+and in this case it boils to very straightforward calculations.
+\qeds
+
+\subsection*{Milnor's proof}
+
+Milnor's proof is based the identity $\tc\alpha=\overline{\tc{\alpha_u}}$ and the following fact. 
 
 \begin{thm}{Proposition}\label{prop:one-max-one-min}
 Assume that a height function $(x,y,z)\to z$ 
@@ -8,7 +33,7 @@ has only one local minimum and one local maximum on a closed simple polygonal li
 Then the line is a trivial knot.
 \end{thm}
 
-The proof is a simple application of the definition of isotopy, given in the previous section. 
+The following proof is a straightforward construction of a triangular isotopy. 
 
 \begin{wrapfigure}{r}{20 mm}
 \vskip-0mm
@@ -18,48 +43,146 @@ The proof is a simple application of the definition of isotopy, given in the pre
 \end{wrapfigure}
 
 \parit{Proof.}
-Let $\beta=p_1\dots p_n$ be the closed simple polygonal line
+Let $\alpha=p_1\dots p_n$ be the closed simple polygonal line
 such that the height function $(x,y,z)\to z$ has one local minimum one local maximum.
-Note that on each of the two arcs of $\beta$ from the min-vertex to the max-vertex the height function increases monotonically.
+Note that on each of the two arcs of $\alpha$ from the min-vertex to the max-vertex the height function increases monotonically.
 
 Consider the three vertexes with the largest height;
 they have to include the max-vertex and two more.
 Note that these three vertexes are consequent in the polygonal line; 
 without loss of generality we can assume that they are $p_{n-1},p_n,p_1$.
 
-Note that the solid triangle $\solidtriangle p_{n-1}p_np_1$ does not intersect any edge $\beta$ except the two adjacent edges $[p_{n-1}p_n]\cup[p_np_1]$.
+Note that the solid triangle $\solidtriangle p_{n-1}p_np_1$ does not intersect any edge $\alpha$ except the two adjacent edges $[p_{n-1}p_n]\cup[p_np_1]$.
 Indeed, if $\solidtriangle p_{n-1}p_np_1$ intersects $[p_1p_2]$,
 then, 
 since $p_2$ lies below $\solidtriangle p_{n-1}p_np_1$,
-$[p_1p_2]$ must intersect $[p_{n-1}p_n]$
-which is impossible since $\beta$ is simple.
+the edge $[p_1p_2]$ must intersect $[p_{n-1}p_n]$;
+the latter is impossible since $\alpha$ is simple.
+
 The same way one can show that $\solidtriangle p_{n-1}p_np_1$ can not intersect $[p_{n-2}p_{n-1}]$.
 The remaining edges lie below $\solidtriangle p_{n-1}p_np_1$, hence they can not intersect this triangle.
 
-Applying a triangular isotopy, to $\solidtriangle p_{n-1}p_np_1$ we get a closed simple polygonal line $\beta'\z=p_1\dots p_{n-1}$ which is isotopic to $\beta$.
+Applying a triangular isotopy, to $\solidtriangle p_{n-1}p_np_1$ we get a closed simple polygonal line $\alpha'\z=p_1\dots p_{n-1}$ which is isotopic to $\alpha$.
 
 Since all the vertexes $p_i$ have different height,
-the assumption of the proposition holds for $\beta'$.
+the assumption of the proposition holds for $\alpha'$.
 
 Repeating this procedure $n-3$ times we get a triangle.
-Hence $\beta$ is a trivial knot.
+Hence $\alpha$ is a trivial knot.
 \qeds
 
-\parit{Milnor's proof of \ref{thm:fary-milnor}.}
+\parit{Milnor's proof.}
 Let $\alpha$ be a simple closed polygonal line.
-Assume its total curvature is less that $4\cdot\pi$.
-Then by Proposition~\ref{prop:tc-crofton}, 
-\[\tc\alpha_u<4\cdot\pi\]
+Assume $\tc{\alpha}<4\cdot\pi$.
+Then by the Crofton-type formula (\ref{prop:tc-crofton}), we get that
+\[\tc{\alpha_u}<4\cdot\pi
+\eqlbl{eq:<4pi}\]
 for some unit vector $u$.
 Moreover, we can assume that $u$ points in a generic direction;
 that is, $u$ is not perpendicular to any edge or diagonal of $\alpha$.
 
-The total curvature of $\alpha_u$ is $\pi$ times the number of turns of $\alpha_u$
-which has to be an even number.
-It follows that the number of turns of $\alpha_u$ is at most $2$;
-it cannot be less than 2 for a generic direction, therefore it is exactly $2$.
+Since the curve $\alpha_u$ runs back and forth along one line, 
+every turn contributes $\pi$ to  $\tc{\alpha_u}$.
+Therefore $\tc{\alpha_u}=n\cdot\pi$, where $n$ is the number of changes of direction.
+Since $\alpha_u$ is closed, $n$ has to be even, so $\tc{\alpha_u}$ may take values $2\cdot\pi$, $4\cdot\pi$, $6\cdot\pi$ and so on.
 
-That is, if we rotate the space so that $u$ points upward,
+By \ref{eq:<4pi}, we have $\tc{\alpha_u}= 2\cdot\pi$;
+that is, $\alpha_u$ has exactly $2$ turns.
+If we rotate the space so that $u$ points upward,
 then the height function has exactly one minimum and one maximum;
 by Proposition~\ref{prop:one-max-one-min}, $\alpha$ is a trivial knot --- hence the result.
 \qeds
+
+
+\subsection*{F\'ary's proof}
+
+F\'ary's proof is based the identity $\tc\alpha=\overline{\tc{\alpha_{u^\perp}}}$ and the following fact.
+
+Let $\alpha=p_1\dots p_n$ be a simple closed polygonal line in $\mathbb{R}^3$ and $o\notin\alpha$.
+Let us define the \emph{angular length} of $\alpha$ with respect to $o$ as the sum
+\[\Psi_o(\alpha)=\measuredangle p_{1} o p_{2}+\dots+\measuredangle p_{n-1} o p_{n}+\measuredangle p_{n} o p_{1}.\]
+
+
+\begin{thm}{Proposition}\label{prop:angular-length}
+For any close simple polygonal line and any $o\notin\alpha$, we have 
+\[\Psi_o(\alpha)\le \tc{\alpha}.\]
+\end{thm}
+
+\parit{Proof.}
+Let $\alpha=p_1\dots p_n$; for each $i$, set 
+\begin{align*}
+\phi_i&=\pi-\measuredangle p_{i-1}p_ip_{i+1},
+&
+\psi_i&=\measuredangle p_{i-1} o p_{i},
+&
+\theta_i&=\measuredangle o p_i p_{i+1}.
+\end{align*}
+Here we assume that indexes are taken modulo $n$; in particular, $p_{n}=p_0$.
+
+
+Note that $\phi_i$ is the external angle at $p_i$;
+therefore 
+\[\tc\alpha= \phi_1+\dots+\phi_n\]
+
+\begin{wrapfigure}{r}{20 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-15}
+\vskip0mm
+\end{wrapfigure}
+
+The directions of $p_i-p_{i-1}$, $o-p_i$, and $p_{i+1}-p_i$ form $p_i$ make angles 
+$\psi_i+\theta_{i-1}$, $\theta_i$, and $\phi_i$ to each other.
+Applying the triangle inequality for these angles, we get
+\[\phi_i\ge \psi_i+\theta_{i-1}-\theta_i.\]
+Summing up these inequalities for all $i$, we get
+\[\phi_1+\dots+\phi_n\ge \psi_1+\dots+\psi_n,\]
+and the result follows.
+\qeds
+
+
+\begin{wrapfigure}{r}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-13}
+\vskip0mm
+\end{wrapfigure}
+
+\parit{Skettch of F\'ary's proof.}
+Consider a projection of the knot to a plane in general position.
+That is, we assume that the self-intersections of the projection are at most double and the projection of each edge is not degenerate.
+The obtained closed polygonal line $\alpha_{u^\perp}=p_1p_2\dots p_n$ divides the plane into domains, one of which is unbounded, denote it by $U$, and the others are bounded.
+
+First note that all domains can be colored in a chessboard order;
+that is, they can be colored in black and white in such a way that domains with common borderline get different colors.
+If the unbounded domain is colored in white and every other domain is colored in black then one can untie the knot by flipping these domains one by one.
+(It is instructive to give a formal proof of the last statement; that is, show that if the only undbounded domain is white then $\alpha$ is isotopic to a triangle.) 
+
+
+\begin{wrapfigure}{r}{30 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-14}
+\vskip0mm
+\end{wrapfigure}
+
+Therefore among the bounded domains there is a white domain, denote it by $D$.
+The domain $D$ cannot adjoin %the word adjoin is used for countries, and I guess it can be used in the plane.
+$U$, since they have the same color.
+Fix a point $o$ in this domain.
+
+Since any ray from $o$ crosses $\alpha_{u^\perp}$ twice, we get $\Psi_o(\alpha_{u^\perp})\ge 4\cdot\pi$;
+that is, the angular length of $\alpha_{u^\perp}$ with respect to $o$ is at least $4\cdot\pi$. 
+By \ref{prop:angular-length}, we have 
+\[\tc{\alpha_{u^\perp}}\ge4\cdot\pi.\]
+This is true for any $u$ in general position.
+The remaining directions contribute nothing to the average value.
+It remains to apply the Crofton-type formula $\tc{\alpha}=\overline{\tc{\alpha_{u^\perp}}}$.
+\qeds
+
+
+
+\begin{thm}{Exercise}
+Construct a closed smooth simple curve with total curvature arbitrarily close to $2\cdot\pi$ such that its projection to any plane has at least $10$ self-intersections.   
+\end{thm}
+
