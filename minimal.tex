@@ -1,30 +1,30 @@
  \section{Ekholm, White, and Wienholtz}
 
-In this section we discuss a solution of the problem based a theorem of Tobias Ekholm, Brian White, and Daniel Wienholtz \cite{EWW_embed}.
+In this section, we discuss a solution of the problem based on a theorem of Tobias Ekholm, Brian White, and Daniel Wienholtz \cite{EWW_embed}.
 This theorem was a breakthrough in minimal surface theory at the time.
-At the same time it was based on an elementary idea that we are going to explain.
+At the same time, it was based on an elementary idea that we are going to explain.
 
 We start with a polygonal curve $\alpha$ with total curvature less than $4\cdot\pi$;
 show that area-minimizing disc spanned by $\alpha$ has no self-intersections, and therefore $\alpha$ has to be a trivial knot.
 So in a way the equation for area-minimizing surface solves our problem, we only need to understand it.
 
-The main hiero in this proof is the so-called \emph{extended monotonicity theorem}.
-We will also apply the \emph{Doublas--Rado theorem} on the existence of area-minimizing disc and reuse the inequality between total curvature and angular length from the F\'ary's proof.
+The main hero in this proof is the so-called \emph{extended monotonicity theorem}.
+We will also apply the \emph{Doublas--Rado theorem} on the existence of area-minimizing disc and reuse the inequality between total curvature and angular length from F\'ary's proof.
 
-A map from domain of $\mathbb{R}^2$ to $\mathbb{R}^3$ will be called a \emph{surface};
+A map from a domain of $\mathbb{R}^2$ to $\mathbb{R}^3$ will be called a \emph{surface};
 it might have self-intersections and singularities, but we assume it is reasonable, say locally Lipschitz; so we could talk about its area.
 A point on the surface might refer to a point in $\mathbb{R}^3$, or the corresponding point in the domain of parameters in $\mathbb{R}^2$;
 it should be easy to guess from the context.
 
 We denote by $\mathbb{D}$ the closed disc in the plane.
 A surface defined by a map $f\:\mathbb{D}\to\mathbb{R}^3$ will be called a \emph{disc}.
-The restriction $f|_{\partial \mathbb{D}}$ will be called boundary line of the disc.
+The restriction $f|_{\partial \mathbb{D}}$ will be called the \emph{boundary line} of the disc.
 
-A disc $\Sigma$ is called area-minimizing if it has smallest area among the maps with the given boundary line.
+A disc $\Sigma$ is called area-minimizing if it has the smallest area among the maps with the given boundary line.
 The following statement about area-minimizing discs is easy to believe, but not easy to prove. %???REFS
 
 \begin{thm}{Doublas--Rado theorem}\label{thm:min-exists}
-Given a simple closed polygonal curve $\alpha$ in $\mathbb{R}^3$, there is a area-minimizing disc $\Sigma$ with boundary line $\alpha$; it is a smooth surface, possibly with self-intersections and isolated singularities.
+Given a simple closed polygonal curve $\alpha$ in $\mathbb{R}^3$, there is an area-minimizing disc $\Sigma$ with boundary line $\alpha$; it is a smooth surface, possibly with self-intersections and isolated singularities.
 
 Moreover, if $\Sigma$ has no self-intersections, then it is an embedded smooth surface with no singularities (in this case $\alpha$ is a trivial knot).
 \end{thm}
@@ -51,7 +51,7 @@ Then the function $r\mapsto \frac{W_o(r)}{r^2}$
 is nondecreasing. Moreover, 
 
 \begin{subthm}{thm:monotonicity:a}
-$\lim_{r\to\infty}\frac{W_o(r)}{r^2}=\tfrac12\cdot \Psi_o(\alpha)$, where $\Psi_o(\alpha)$ denotes angular length of $\alpha$ with respect to $o$; see Section~\ref{sec:fary}.
+$\lim_{r\to\infty}\frac{W_o(r)}{r^2}=\tfrac12\cdot \Psi_o(\alpha)$, where $\Psi_o(\alpha)$ denotes the angular length of $\alpha$ with respect to $o$; see Section~\ref{sec:fary}.
 \end{subthm}
 
 \begin{subthm}{thm:monotonicity:b}
@@ -60,10 +60,10 @@ If $o\in \Sigma$, then $\lim_{r\to0}\frac{W_o(r)}{r^2}\ge \pi$.
 
 \end{thm}
 
-The classical monotonicity theorem states that the same holds for balls that do not touch the boundary of surface.
+The classical monotonicity theorem states that the same holds for balls that do not touch the boundary of the surface.
 The stated version is due to Brian White \cite{white}.
 The same statement holds for minimal surfaces \cite{EWW_embed}; its proof requires dipper diving into differential geometry.
-At the same time, the original formulation admits generalization to wider class of ambient spaces \cite{St_structure}.
+At the same time, the original formulation admits generalization to a wider class of ambient spaces \cite{St_structure}.
 
 
 \parit{Proof.}
@@ -93,11 +93,11 @@ Therefore, we get
 \[r\cdot W_o'(r)\ge 2\cdot W_o(r)\]
 for almost all $r$.
 If $W_o$ is smooth, then this inequality implies the main statement.
-In general, the arguments shows that the absolute continuous part of $W_o(r)/r^2$ is nondecreasing which suffices.
+In general, the argument shows that the absolutely continuous part of $W_o(r)/r^2$ is nondecreasing which suffices.
 
 \parit{\ref{SHORT.thm:monotonicity:a}.}
 Observe that up to a fixed error we have that $W_o(r)$ is the area of the ball of radius $r$ in the cone over $\alpha$ with the tip at $o$.
-It follows that $W_o(r)/r^2$ approaches the area of unit ball in this cone as $r\to\infty$ --- hence the result.
+It follows that $W_o(r)/r^2$ approaches the area of the unit ball in this cone as $r\to\infty$ --- hence the result.
 
 \parit{\ref{SHORT.thm:monotonicity:b}.}
 The statement is evident for smooth points of $\Sigma$.

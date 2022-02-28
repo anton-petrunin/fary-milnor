@@ -27,12 +27,12 @@ Any nontrivial knot $\alpha$ in general position admits an \emph{alternated quad
 \end{thm}
 
 The precise meaning of general position will be clear from the proof;
-what is imprtant is that any knot is arbitrary close to a knot in general position.
+what is important is that any knot is arbitrary close to a knot in general position.
 
 \parit{Proof of \ref{thm:fary-milnor} modulo \ref{prop:quadrisecant}.}
 Let $\alpha=p_1\dots p_n$ be a knot in general position.
 Suppose $a$, $b$, $c$ and $d$ be the points as in the definition of alternated quadrisecant.
-Then $acbd$ is an inscribed quadrileteral with all external angles equal to $\pi$.
+Then $acbd$ is an inscribed quadrangle with all external angles equal to $\pi$.
 Therefore $\tc{abcd}=4\cdot\pi$.
 
 Since the total curvature of an inscribed polygonal curve cannot be larger than the total curvature of the original curve, we get that $\tc{\alpha}\z\ge 4\cdot\pi$.
@@ -42,15 +42,15 @@ in particular, for any $\eps>0$ we can assume that $\tc{\beta}>\tc\alpha-\eps$.
 It follows that $\tc{\beta}>4\cdot\pi-\eps$ for any positive $\eps$ --- hence the result.
 \qeds
 
-In the proof of proposition, we will use the following characterization of trivial knot.
+In the proof of the proposition, we will use the following characterization of the trivial knot.
 
 \begin{thm}{Lemma}
 A knot $\alpha$ is trivial if there exists a piecewise linear map $F$ from the disc $\DD$ to $\RR^3$ such that the  restriction of $F$ to the boundary $\partial\DD=\mathbb{S}^1$ is a degree-one map to $\alpha$ and $F$ does not map interior points of $\DD$ to $\alpha$.
 \end{thm}
 
 This statement can be deduced from the so-called \textit{Dehn's lemma} --- a heavy weapon of 3-dimensional topology proved by Christos Papakyriakopoulos.
-For those who familiar with Dehn's lemma, it would be an exercise; otherwise, we suggest to take it as granted.
-In the following proof we follow closely presentation of Carsten Schmitz \cite{schmitz} and the original argument of Erika Pannwitz.
+For those who are familiar with Dehn's lemma, it would be an exercise; otherwise, we suggest taking it for granted.
+In the following proof, we follow closely the presentation of Carsten Schmitz \cite{schmitz} and the original argument of Erika Pannwitz.
 
 \parit{Proof of the proposition.}
 We may assume that $\alpha$ comes with 1-periodic piecewise linear parametrization by $\RR$;
@@ -97,12 +97,12 @@ and if $y>1-\eps$, then $(x,y)\notin \bar C_3^-$.
 Arguing by contradiction, assume $\bar C_3^+\cap \bar C_3^-=\emptyset$.
 Note that in this case there is large $n$ such that any $\tfrac1n\times\tfrac1n$-square in $\mathbb{S}^1\times (0,1)$ does not intersect both $\bar C_3^+$ and $\bar C_3^-$.
 Let us cut $\mathbb{S}^1\times (0,1)$ into $n^2$ such squares; each square defines a closed subset of $\mathbb{S}^1\times (0,1)$.
-Color the set formed by union of the squares that intersect $\bar C_3^+$ or lie in the lowest row of squares for $y\le \tfrac1n$.
-Note that we did not color squares in the upper row and the boundary of colored set contains a simple curve $t\mapsto(x(t),y(t))$ that cuts  the cylinder $\mathbb{S}^1\times (0,1)$ into two cylinders.
+Color the union of squares that intersect $\bar C_3^+$ or lie in the lowest row of squares for $y\le \tfrac1n$.
+Note that we did not color squares in the upper row and the boundary of the colored set contains a simple curve $t\mapsto(x(t),y(t))$ that cuts  the cylinder $\mathbb{S}^1\times (0,1)$ into two cylinders.
 
 Note that $(x(t),y(t))\notin \bar C_3$ for any $t\in \mathbb{S}^1$ and the curve $t\mapsto(x(t),y(t))$ runs along coordinate lines.
 Consider the one-parameter family of line segments in $r(x(t),y(t))$ that start at $\alpha(x(t))$ and end on the surface of a large cube that contains $\alpha$ in its interior.
-This way we obtain a piecewise linear annulus that connects the curve $t\mapsto \alpha(x(t))$ to a curve on the surface of cube.
+This way we obtain a piecewise linear annulus that connects the curve $t\mapsto \alpha(x(t))$ to a curve on the surface of the cube.
 The latter curve can be contracted by a piecewise linear disc in the surface of cube.
 
 Observe that $t\mapsto \alpha(x(t))$ defines a degree-one map $\mathbb{S}^1\to\alpha$.

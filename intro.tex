@@ -2,25 +2,29 @@
 
 The following problem was posted by Karol Borsuk \cite{borsuk}.
 
-\textit{Show that the total curvature of any nontrival knot is at least $4\cdot\pi$.}
+\smallskip
 
-It is known for many many proofs based on different ideas.
+\textit{Show that the total curvature of any nontrivial knot is at least $4\cdot\pi$.}
+
+\smallskip
+
+It is known for many proofs based on different ideas.
 We sketch its solutions, one solution per section;
 each can be reed independently.
 
-This problem also have a number of refinements and generalization;
-in particular a strict inequality holds --- this is the famous \emph{F\'ary--Milnor theorem}.
+This problem also has a number of refinements and generalizations;
+in particular, a strict inequality holds --- this is the famous \emph{F\'ary--Milnor theorem}.
 However, for the sake of simplify we stick to the original problem.
 
-In order to continue, we need to stick to a definition of knot and say what \emph{nontrival knot} is.
+In order to continue, we need to stick to a definition of knot and say what a \emph{nontrivial knot} is.
 Despite that intuitively knot is a \emph{cyclic rope},
-the simplest formal definition use polygonal curves.
-It turns out that this definition is also suits best for our purposes.
+the simplest formal definition uses polygonal curves.
+It turns out that this definition suits best our purposes.
 
-A \emph{knot} (more precicely \emph{tame knot}) is a simple closed polygonal curve in the Euclidean space~$\mathbb{R}^3$ (\emph{simple} means no self-intersections).
+A \emph{knot} (more precisely \emph{tame knot}) is a simple closed polygonal curve in the Euclidean space~$\mathbb{R}^3$ (\emph{simple} means no self-intersections).
 
 The solid triangle with vertices $a$, $b$, and $c$ will be denoted by $\solidtriangle abc$.
-It is defined as the convex hull of the points $a$, $b$ and $c$;
+It is defined as the convex hull of the points $a$, $b$, and $c$;
 the points $a$, $b$ and $c$ are assumed to be distinct, but they might lie on one line.
 
 We define a \emph{triangular isotopy} of a knot to be the generation of a new knot from the original one by means of the
@@ -28,7 +32,7 @@ following two operations:
 
 Assume $[p,q]$ is an edge of the knot and $x$
 is a point such that the solid triangle $\solidtriangle pqx$  has no common points with the knot except for the edge $[p,q]$.
-Then we can replace the edge $[p,q]$ by the two adjacent edges $[p,x]$ and $[x,q]$.
+Then we can replace the edge $[p,q]$ with the two adjacent edges $[p,x]$ and $[x,q]$.
 
 We can also perform the inverse operation.
 That is, if for two adjacent edges $[p,x]$ and $[x,q]$ of a knot the triangle
@@ -46,21 +50,21 @@ A knot that is not isotopic to a triangle (that is, a simple polygonal curve wit
 \vskip0mm
 \end{wrapfigure}
 
-The trefoil knot shown on the diagram gives a simple example of nontrivial knot.
+The trefoil knot shown on the diagram gives a simple example of a nontrivial knot.
 A proof that it is nontrivial can be found in any textbook on knot theory.
-The most elementary and visual proof is based on the so called \emph{tricolorability} of knot diagrams \cite[Section 1.5]{adams}.
+The most elementary and visual proof is based on the so-called \emph{tricolorability} of knot diagrams \cite[Section 1.5]{adams}.
 
-The total curvature of a smooth curve usually defined as the integral of its curvature.
-For a polygons, it is defined as the sum of its external angles.
-It is well known that total curvature of a curve cannot be smaller than total curvature of an insribed polygonal curve (see, for example, \cite{petrunin-zamora}).
-In fact the total curvature of a curve can be defined as the least upper bound on the total curvature of inscrived polygonal curves \cite{aleksandrov-reshetnyak, sullivan-curves}.
+The total curvature of a smooth curve is usually defined as the integral of its curvature.
+For polygons, it is defined as the sum of its external angles.
+It is well known that total curvature of a curve cannot be smaller than the total curvature of an inscribed polygonal curve (see, for example, \cite{petrunin-zamora}).
+In fact the total curvature of a curve can be defined as the least upper bound on the total curvature of inscribed polygonal curves \cite{aleksandrov-reshetnyak, sullivan-curves}.
 This definition agrees with the definition given for smooth curves, and it makes sense for any simple curve.
 The total curvature of a curve $\alpha$ will be denoted by $\Phi(\alpha)$.
 
 Therefore the problem allows the following reformulation which we are going to prove.
 
 \begin{thm}{Reformulation}\label{thm:fary-milnor}
-Show that $\Phi(\alpha)\ge 4\cdot\pi$ for any nontrival knot $\alpha$. 
+Show that $\Phi(\alpha)\ge 4\cdot\pi$ for any nontrivial knot $\alpha$. 
 \end{thm} 
 
 

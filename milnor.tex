@@ -1,12 +1,12 @@
 \section{Milnor}
 
 One of the first solutions to the problem was found by John Milnor \cite{milnor}.
-In this section we present an amusing interpretation of his proof found by Stephen Fenner \cite{ferner}.
-As well as the original version, it is based on the following sufficient condition for triviality of a knot.
+In this section, we present an amusing interpretation of his proof found by Stephen Fenner \cite{ferner}.
+As well as the original version, it is based on the following sufficient condition for the triviality of a knot.
 
 \begin{thm}{Proposition}\label{prop:one-max-one-min}
 Assume that a height function $(x,y,z)\to z$ 
-has only one local maximum on a closed simple polygonal curve $\alpha$ and all the vertexes of the polygonal curve are at different height.
+has only one local maximum on a closed simple polygonal curve $\alpha$ and all the vertexes of the polygonal curve are at different heights.
 Then $\alpha$ is a trivial knot.
 \end{thm}
 
@@ -15,13 +15,13 @@ The proof is a straightforward construction of a triangular isotopy.
 \parit{Proof.}
 Let $\alpha=p_1\dots p_n$ be the closed simple polygonal curve
 such that the height function $(x,y,z)\to z$ has one local maximum and all vertices have different heights.
-Note that the height function also have unique local minimum,
+Note that the height function also has a unique local minimum,
 and $\alpha$ can be divided into two arcs from the min-vertex to the max-vertex with monotonic height function.
 
 Consider the three vertexes with the largest height;
 they have to include the max-vertex and two more.
 Note that these three vertexes are consequent in the polygonal curve; 
-without loss of generality we can assume that they are $p_{n-1}$, $p_n$, and $p_1$.
+without loss of generality, we can assume that they are $p_{n-1}$, $p_n$, and $p_1$.
 
 \begin{wrapfigure}{r}{30 mm}
 \vskip-0mm
@@ -37,12 +37,12 @@ since $p_2$ lies below $\solidtriangle p_{n-1}p_np_1$,
 the edge $[p_1,p_2]$ must intersect $[p_{n-1},p_n]$;
 the latter is impossible since $\alpha$ is simple.
 
-The same way one can show that $\solidtriangle p_{n-1}p_np_1$ can not intersect $[p_{n-2},p_{n-1}]$.
+The same way, one can show that $\solidtriangle p_{n-1}p_np_1$ can not intersect $[p_{n-2},p_{n-1}]$.
 The remaining edges lie below $\solidtriangle p_{n-1}p_np_1$, hence they can not intersect this triangle.
 
 Applying a triangular isotopy, to $\solidtriangle p_{n-1}p_np_1$ we get a closed simple polygonal curve $\alpha'\z=p_1\dots p_{n-1}$ which is isotopic to~$\alpha$.
 
-Since all the vertexes $p_i$ have different height,
+Since all the vertexes $p_i$ have different heights,
 the assumption of the proposition holds for $\alpha'$.
 
 Repeating this procedure $n-3$ times we get a triangle.
@@ -62,7 +62,7 @@ It follows that the sets $U_1,\dots,U_n$ cover each point on the unit sphere twi
 
 Recall that $\area \mathbb{S}^2=4\cdot\pi$.
 Observe that $\phi_i=\measuredangle(v_{i-1},v_i)$ is the external angle of $\alpha$ at $p_i$.
-Note that $U_i$ is a slice of sphere between two meridians meeting at angle $\phi_i$, therefore $U_i$ occupies $\tfrac{\phi_i}{2\cdot\pi}$ portion of the whole sphere; so, $\area U_i=2\cdot \phi_i$.
+Note that $U_i$ is a slice of the sphere between two meridians meeting at angle $\phi_i$, therefore $U_i$ occupies $\tfrac{\phi_i}{2\cdot\pi}$ portion of the whole sphere; so, $\area U_i=2\cdot \phi_i$.
 Since the sets $U_1, \dots, U_n$ cover $\mathbb{S}^2$ twice, we get
 \[\tc\alpha=\phi_1+\dots+\phi_n=\tfrac12\cdot (\area U_1+\dots+\area U_n)\ge \tfrac22\cdot \area\mathbb{S}^2=4\cdot\pi.\]
 \qedsf
