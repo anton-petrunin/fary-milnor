@@ -1,12 +1,15 @@
- \section{Minimal-surface proof}
+ \section{Ekholm, White, and Wienholtz}
 
-In this section we sketch a proof of the theorem via minimal surfaces.
-We start with a polygonal line $\alpha$ with total curvature less than $4\cdot\pi$;
-further, show that area-minimizing disc spanned by $\alpha$ has no self-intersections, and therefore $\alpha$ has to be a trivial knot.
-So in a way the equation for area-minimizing surface solves our problem, we only need to understand this equation.
+In this section we discuss a solution of the problem based a theorem of Tobias Ekholm, Brian White, and Daniel Wienholtz \cite{EWW_embed}.
+This theorem was a breakthrough in minimal surface theory at the time.
+At the same time it was based on an elementary idea that we are going to explain.
 
-The main hiero in this proof is the so-called \emph{monotonicity theorem}.
-We will also apply the Doublas--Rado theorem on the existence of area-minimizing disc and reuse the inequality between total curvature and angular length from the F\'ary's proof.
+We start with a polygonal curve $\alpha$ with total curvature less than $4\cdot\pi$;
+show that area-minimizing disc spanned by $\alpha$ has no self-intersections, and therefore $\alpha$ has to be a trivial knot.
+So in a way the equation for area-minimizing surface solves our problem, we only need to understand it.
+
+The main hiero in this proof is the so-called \emph{extended monotonicity theorem}.
+We will also apply the \emph{Doublas--Rado theorem} on the existence of area-minimizing disc and reuse the inequality between total curvature and angular length from the F\'ary's proof.
 
 A map from domain of $\mathbb{R}^2$ to $\mathbb{R}^3$ will be called a \emph{surface};
 it might have self-intersections and singularities, but we assume it is reasonable, say locally Lipschitz; so we could talk about its area.
@@ -18,84 +21,88 @@ A surface defined by a map $f\:\mathbb{D}\to\mathbb{R}^3$ will be called a \emph
 The restriction $f|_{\partial \mathbb{D}}$ will be called boundary line of the disc.
 
 A disc $\Sigma$ is called area-minimizing if it has smallest area among the maps with the given boundary line.
-The following statement about area-minimizing discs easy to believe, but not easy to prove. %???REFS
+The following statement about area-minimizing discs is easy to believe, but not easy to prove. %???REFS
 
 \begin{thm}{Doublas--Rado theorem}\label{thm:min-exists}
-Given a simple closed polygonal line $\alpha$ in $\mathbb{R}^3$, there is a area-minimizing disc $\Sigma$ with boundary line $\alpha$; it is a smooth surface, possibly with self-intersections and isolated singularities.
+Given a simple closed polygonal curve $\alpha$ in $\mathbb{R}^3$, there is a area-minimizing disc $\Sigma$ with boundary line $\alpha$; it is a smooth surface, possibly with self-intersections and isolated singularities.
 
 Moreover, if $\Sigma$ has no self-intersections, then it is an embedded smooth surface with no singularities (in this case $\alpha$ is a trivial knot).
 \end{thm}
 
+\begin{wrapfigure}{r}{35 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-51}
+\vskip0mm
+\end{wrapfigure}
+
 Choose a disc $\Sigma$ in $\mathbb{R}^3$ with boundary line $\alpha$.
-Given a point $p\notin \alpha$, let us consider \emph{collared} $\Sigma$ with respect to $p$;
-it is a new surface that will be denoted by $\hat\Sigma_p$ that includes $\Sigma$ and the \emph{collar} formed by all rays that start points of $\alpha$ and go in the direction opposite to $p$.
-Note that $\hat\Sigma_p$ admits a natural parametrization by the whole plane.
+Given a point $o\notin \alpha$, let us consider \emph{collared} $\Sigma$ with respect to $o$;
+it is a new surface that will be denoted by $\hat\Sigma_o$;
+it includes $\Sigma$ and the \emph{collar} formed by all rays that start at points of $\alpha$ and go in the direction opposite to $o$.
+Note that $\hat\Sigma_o$ admits a natural parametrization by the whole plane.
 
-\begin{thm}{Monotonicity theorem}\label{thm:monotonicity}
-Let $\Sigma$ be an area-minimizing disc with boundary line $\alpha$.
-Given a point $p\notin \alpha$, consider the function 
-\[W_p(r)=\area (\hat\Sigma_p\cap \bar B_r(p)),\]
-where $\bar B_r(p)$ denotes the ball of radius $r$ centered at $p$.
-Then the function $r\mapsto \frac{W_p(r)}{r^2}$
-is nondecreasing.
-
-Moreover, 
+\begin{thm}{Extended monotonicity theorem}\label{thm:monotonicity}
+Let $\Sigma$ be an area-minimizing disc with boundary line~$\alpha$.
+Given a point $o\notin \alpha$, consider the function 
+\[W_o(r)=\area (\hat\Sigma_o\cap \bar B_r(o)),\]
+where $\bar B_r(o)$ denotes the ball of radius $r$ centered at $o$.
+Then the function $r\mapsto \frac{W_o(r)}{r^2}$
+is nondecreasing. Moreover, 
 
 \begin{subthm}{thm:monotonicity:a}
-$\lim_{r\to\infty}\frac{W_p(r)}{r^2}=\tfrac12\cdot \Psi_p(\alpha)$, where $\Psi_p(\alpha)$ denotes angular length of $\alpha$ with  respect to $p$.
+$\lim_{r\to\infty}\frac{W_o(r)}{r^2}=\tfrac12\cdot \Psi_o(\alpha)$, where $\Psi_o(\alpha)$ denotes angular length of $\alpha$ with respect to $o$; see Section~\ref{sec:fary}.
 \end{subthm}
 
 \begin{subthm}{thm:monotonicity:b}
-If $p\in \Sigma$, then $\lim_{r\to0}\frac{W_p(r)}{r^2}\ge \pi$.
+If $o\in \Sigma$, then $\lim_{r\to0}\frac{W_o(r)}{r^2}\ge \pi$.
 \end{subthm}
-
 
 \end{thm}
 
-The argument presented below was found by the second author \cite{St_structure};
-it produces slightly weaker result than the classical monotonicity formula, but works for a wider class of ambent spaces.
+The classical monotonicity theorem states that the same holds for balls that do not touch the boundary of surface.
+The stated version is due to Brian White \cite{white}.
+The same statement holds for minimal surfaces \cite{EWW_embed}; its proof requires dipper diving into differential geometry.
+At the same time, the original formulation admits generalization to wider class of ambient spaces \cite{St_structure}.
+
 
 \parit{Proof.}
-Denote by $\lambda_p(r)$ the curve of intersection of the sphere $\partial B_r(p)$ with $\hat\Sigma_p$;
-set $\ell(r)\z=\length[\lambda_p(r)]$.
+Denote by $\lambda_o(r)$ the curve of intersection of the sphere $\partial B_r(o)$ with $\hat\Sigma_o$;
+set $\ell(r)\z=\length[\lambda_o(r)]$.
 Observe that 
-\[W_p'(r)\ge \ell(r)\]
+\[W_o'(r)\ge \ell(r)\]
 for almost all $r$.
 (Formally speaking, this inequality follows from the so-called \emph{coarea formula}.)
 
-Set $\Delta_r=\hat\Sigma_p\cap \bar B_r(p)$;
-it is a surface bounded by $\lambda_p(r)$.
-Let $\Delta_r'$ be a copy of $\Delta_r$ rescaled with center at $p$ and factor $1-\eps$.
-Let us reconnect every point $x\in \partial \Delta_r$ to the corresponding point $x'=(1-\eps)\cdot x\in \partial\Delta_r'$ by a line segment $[x,x']$.
-The line segments form an annulus $A_r$, together with $\Delta_r'$, it forms a surface that shares its boundary with $\Delta_r$.
-Note that $A_r\cup\Delta_r'$ include all points of $\Delta_r$ that lies on the collar of $\Sigma$.
-Therefore $\Delta_r'\cup A_r$ differ from $\Delta_r$ only inside $\Sigma$.
+Set $\Delta_r=\hat\Sigma_o\cap \bar B_r(o)$;
+it is a surface bounded by $\lambda_o(r)$.
+Let $\Delta_r'$ be a the cone over $\lambda_o(r)$ with center at $o$.
+Note that $\Delta_r'$ differ from $\Delta_r$ only inside $\Sigma$.
 Since $\Sigma$ is area-minimizing, we get that 
-\[\area \Delta_r'+\area A_r\ge \area \Delta_r\eqlbl{area=<area}\]
+\[\area \Delta_r'\ge \area \Delta_r\eqlbl{area=<area}\]
 for any $r>0$.
 Observe that 
-\[
-\area \Delta_r=W_p(r),
-\qquad
-\area \Delta_r'=(1-\eps)^2\cdot W_p(r),
-\qquad
-\area A_r=\eps\cdot(1-\tfrac\eps2)\cdot r\cdot \ell(r).
-\]
-Applying \ref{area=<area} for $\eps\to0+$, we get
-\[r\cdot \ell(r)\ge 2\cdot W_p(r).\]
+\begin{align*}
+\area \Delta_r&=W_o(r),
+&
+\area \Delta_r'&=\tfrac12\cdot r\cdot \ell(r).
+\end{align*}
+Applying \ref{area=<area}, we get
+\[r\cdot \ell(r)\ge 2\cdot W_o(r).\]
 Therefore, we get
-\[r\cdot W_p'(r)\ge 2\cdot W_p(r)\]
+\[r\cdot W_o'(r)\ge 2\cdot W_o(r)\]
 for almost all $r$.
-If $W_p$ is smooth, then this inequality implies the main statement.
-Since $W_p$ is only nondecreasing, the same can be proved in general case by applying Lebesgue theorem.
+If $W_o$ is smooth, then this inequality implies the main statement.
+In general, the arguments shows that the absolute continuous part of $W_o(r)/r^2$ is nondecreasing which suffices.
 
-The last statement is evident for smooth points of $\Sigma$.
-Since smooth points are dense everywhere in $\Sigma$, and $p\mapsto W_p(r)$ is a continuous function,
-the main part of theorem implies that $W_p(r)\ge\pi\cdot r^2$ for \emph{any} point $p\in\Sigma$.
-Hence the second statement follows.
+\parit{\ref{SHORT.thm:monotonicity:a}.}
+Observe that up to a fixed error we have that $W_o(r)$ is the area of the ball of radius $r$ in the cone over $\alpha$ with the tip at $o$.
+It follows that $W_o(r)/r^2$ approaches the area of unit ball in this cone as $r\to\infty$ --- hence the result.
 
-To prove \ref{SHORT.thm:monotonicity:a}, observe that up to a fixed error $W_p(r)$ is the area of the ball of radius $r$ in the cone over $\alpha$ with the tip at $p$.
-It follows that $W_p(r)/r^2$ approaches the area of unit ball in this cone --- hence the result.
+\parit{\ref{SHORT.thm:monotonicity:b}.}
+The statement is evident for smooth points of $\Sigma$.
+Since smooth points are dense in $\Sigma$, and $o\mapsto W_o(r)$ is a continuous function,
+the main part of theorem implies that $W_o(r)\ge\pi\cdot r^2$ for \emph{any} point $o\in\Sigma$ --- hence the result.
 \qeds
 
 \parit{Minimal-surface proof.}
@@ -103,15 +110,16 @@ Suppose that $\tc\alpha<4\cdot\pi$.
 Consider the area-minimizing surface $\Sigma$ with the boundary line $\alpha$; it exists by \ref{thm:min-exists}.
 If $\Sigma$ has no self-intersections, then $\alpha$ is a trivial knot.
 
-Suppose $\Sigma$ has a self-intersection at a point $p$.
-In this case, the intersection $B_r(p)\cap \Sigma$ is covered by two or more small area-minimizing subdiscs of $\Sigma$.
+Suppose $\Sigma$ has a self-intersection at a point $o$.
+In this case, the intersection $B_r(o)\cap \Sigma$ is covered by two or more small area-minimizing subdiscs of $\Sigma$.
 By \ref{thm:monotonicity:b}, we get 
-\[\lim_{r\to0}\frac{W_p(r)}{r^2}\ge 2\cdot\pi.\]
+\[\lim_{r\to0}\frac{W_o(r)}{r^2}\ge 2\cdot\pi.\]
 
-Applying the main statement in the monotonicity theorem we get $\frac{W_p(r)}{r^2}\ge 4\cdot\pi$ for any $r>0$.
+Applying the main statement in the monotonicity theorem we get $\frac{W_o(r)}{r^2}\ge 2\cdot\pi$ for any $r>0$.
 By \ref{thm:monotonicity:b} and Proposition~\ref{prop:angular-length} in F\'ary's proof, we get
-\[\tc{\alpha}\ge \Psi_p(\alpha)\ge 2\cdot \frac{W_p(r)}{r^2}\ge 4\cdot\pi\]
+\[\tc{\alpha}\ge \Psi_o(\alpha)\ge 2\cdot \frac{W_o(r)}{r^2}\ge 4\cdot\pi\]
 --- a contradiction.
 \qeds
+
 
 

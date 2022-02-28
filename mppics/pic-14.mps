@@ -1,8 +1,8 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%BoundingBox: -43 -1 43 46 
-%%HiResBoundingBox: -42.7697 -0.25 42.7697 45.9236 
+%%BoundingBox: -60 -1 60 63 
+%%HiResBoundingBox: -59.77727 -0.25 59.77727 62.93117 
 %%Creator: MetaPost 2.00
-%%CreationDate: 2022.02.12:1740
+%%CreationDate: 2022.02.27:2212
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font KNJFED-CMMI10
@@ -273,30 +273,30 @@ cleartomark
 %%EndSetup
 %%Page: 1 1
  0 0 0 setrgbcolor
-newpath -28.34647 0 moveto
-28.34647 0 lineto
--14.17323 42.5197 lineto
--42.5197 14.17323 lineto
-42.5197 14.17323 lineto
-14.17323 42.5197 lineto
+newpath -39.68484 0 moveto
+39.68484 0 lineto
+-19.84242 59.52727 lineto
+-59.52727 19.84242 lineto
+59.52727 19.84242 lineto
+19.84242 59.52727 lineto
  closepath fill
  1 1 1 setrgbcolor
-newpath 14.17323 14.17323 moveto
--14.17323 14.17323 lineto
-0 28.34647 lineto
+newpath 19.84242 19.84242 moveto
+-19.84242 19.84242 lineto
+0 39.68484 lineto
  closepath fill
  0 0 0 setrgbcolor 0 0.5 dtransform truncate idtransform setlinewidth pop
  [] 0 setdash 1 setlinejoin 10 setmiterlimit
-newpath -28.34647 0 moveto
-28.34647 0 lineto
--14.17323 42.5197 lineto
--42.5197 14.17323 lineto
-42.5197 14.17323 lineto
-14.17323 42.5197 lineto
+newpath -39.68484 0 moveto
+39.68484 0 lineto
+-19.84242 59.52727 lineto
+-59.52727 19.84242 lineto
+59.52727 19.84242 lineto
+19.84242 59.52727 lineto
  closepath stroke
--4.2625 16.43854 moveto
+-4.2625 24.37537 moveto
 (D) cmmi10 9.96265 fshow
--3.9442 39.1158 moveto
+-3.9442 56.12337 moveto
 (U) cmmi10 9.96265 fshow
 showpage
 %%EOF

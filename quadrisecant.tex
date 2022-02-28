@@ -1,0 +1,115 @@
+\section{Pannwitz and Hopf}\label{sec:quadrisecant}
+
+The F\'ary's paper \cite{fary} is ended by the following note:
+\textit{I just received a letter from Mr Borsuk, which says that Theorem 3 has been proved independently by Mr H. Hopf.
+It uses the theorem of Miss Pannwitz, which ensures that for any knot there is a line that crosses it at least in four
+points.}
+%Je viens de recevoir une lettre de M. Borsuk, qui m'apprend que le théorème 3 a été démontré indépendamment par M. H. Hopf. Il utilise le théorème de Mlle Pannwitz, qui assure que pour tout nœud on peut trouver une droite le coupant au moins en quatre points.
+This proof is the subject of this section.
+
+\begin{wrapfigure}{r}{22 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-41}
+\vskip0mm
+\end{wrapfigure}
+
+The main step in the proof is the existence of the so-called \emph{alternated quadrisecant} of a knot; that is, there is a line $\ell$ that shares with $\alpha$ four points $a$, $b$, $c$ and $d$
+that appear on $\ell$ in the same order and have cyclic order $a$, $c$, $b$, $d$ on $\alpha$.
+
+The question about existence of quadrisecant was asked by Otto Toep\-litz and answered by Erika Pannwitz for tame knots in \emph{general position} \cite{pannwitz}.
+Elizabeth Denne had generalized her result \cite{denne, denne-survey} to all knots.
+But for us tame knots in general position will be sufficient;
+namely, we need the following:
+
+\begin{thm}{Proposition}\label{prop:quadrisecant}
+Any nontrivial knot $\alpha$ in general position admits an \emph{alternated quadrisecant}.
+\end{thm}
+
+The precise meaning of general position will be clear from the proof;
+what is imprtant is that any knot is arbitrary close to a knot in general position.
+
+\parit{Proof of \ref{thm:fary-milnor} modulo \ref{prop:quadrisecant}.}
+Let $\alpha=p_1\dots p_n$ be a knot in general position.
+Suppose $a$, $b$, $c$ and $d$ be the points as in the definition of alternated quadrisecant.
+Then $acbd$ is an inscribed quadrileteral with all external angles equal to $\pi$.
+Therefore $\tc{abcd}=4\cdot\pi$.
+
+Since the total curvature of an inscribed polygonal curve cannot be larger than the total curvature of the original curve, we get that $\tc{\alpha}\z\ge 4\cdot\pi$.
+
+Finally, for any knot $\beta=q_1\dots q_n$ there is an arbitrarily close knot $\alpha=p_1\dots p_n$ in general position;
+in particular, for any $\eps>0$ we can assume that $\tc{\beta}>\tc\alpha-\eps$.
+It follows that $\tc{\beta}>4\cdot\pi-\eps$ for any positive $\eps$ --- hence the result.
+\qeds
+
+In the proof of proposition, we will use the following characterization of trivial knot.
+
+\begin{thm}{Lemma}
+A knot $\alpha$ is trivial if there exists a piecewise linear map $F$ from the disc $\DD$ to $\RR^3$ such that the  restriction of $F$ to the boundary $\partial\DD=\mathbb{S}^1$ is a degree-one map to $\alpha$ and $F$ does not map interior points of $\DD$ to $\alpha$.
+\end{thm}
+
+This statement can be deduced from the so-called \textit{Dehn's lemma} --- a heavy weapon of 3-dimensional topology proved by Christos Papakyriakopoulos.
+For those who familiar with Dehn's lemma, it would be an exercise; otherwise, we suggest to take it as granted.
+In the following proof we follow closely presentation of Carsten Schmitz \cite{schmitz} and the original argument of Erika Pannwitz.
+
+\parit{Proof of the proposition.}
+We may assume that $\alpha$ comes with 1-periodic piecewise linear parametrization by $\RR$;
+so the space of oriented chords of $\alpha$ can be identified with the open cylinder $\mathbb{S}^1\times (0,1)$, where $\mathbb{S}^1=\RR/\ZZ$.
+Namely, we assume that a pair $(x,y)\in \mathbb{S}^1\times (0,1)$ corresponds to the oriented chord with the ends at $\alpha(x)$ and $\alpha(x+y)$.
+
+\begin{wrapfigure}{r}{42 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-43}
+\vskip0mm
+\end{wrapfigure}
+
+Choose a pair $(x,y)\in \mathbb{S}^1\times (0,1)$.
+Let us denote by $r(x,y)$ the ray that starts at $\alpha(x)$ and goes in the direction opposite to $\alpha(x+y)$.
+We write $(x,y)\in C_3$ if $r(x,y)$ crosses $\alpha$ at another point.
+
+The points $\alpha(x)$ and $\alpha(x+y)$ divide $\alpha$ into two open arcs $\alpha|_{(x,x+y)}$ and $\alpha|_{(x+y,x+1)}$.
+If $(x,y)\in C_3$ and $r(x,y)$ crossed the first arc, then we write $(x,y)\in C_3^+$;
+if it crosses the second arc, then $(x,y)\in C_3^-$.
+Note that $C_3^+\cup C_3^-=C_3$.
+
+Observe that if $C_3^+$ and $C_3^-$ intersect, then the proposition follows.
+
+The set $C_3^\pm$ might be not closed;
+denote by $\bar C_3^\pm$ its closure.
+Suppose $(x,y)\in (\bar C_3^+\cup\bar C_3^-)\backslash( C_3^+\cup C_3^-)$.
+Observe that $\alpha(x)$ is a vertex, say $p_i$, of $\alpha$.
+Further, the line containing $p_i$ and $\alpha(x+y)$ lies in the plane thru $p_{i-1}$, $p_i$, and $p_{i+1}$ and it passes thru yet another point of $\alpha$.
+The latter is not possible since $\alpha$ is in general position.
+That is, since $\alpha$ is in general position, $C_3^+\cap C_3^-=\emptyset$ implies that $\bar C_3^+\cap \bar C_3^-=\emptyset$.
+
+Note that there is $\eps>0$ such that for any $x\in\mathbb{S}^1$ we have the following:
+if $y<\eps$, then $(x,y)\notin \bar C_3^+$,
+and if $y>1-\eps$, then $(x,y)\notin \bar C_3^-$.
+
+\begin{wrapfigure}{r}{22 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-46}
+\vskip0mm
+\end{wrapfigure}
+
+Arguing by contradiction, assume $\bar C_3^+\cap \bar C_3^-=\emptyset$.
+Note that in this case there is large $n$ such that any $\tfrac1n\times\tfrac1n$-square in $\mathbb{S}^1\times (0,1)$ does not intersect both $\bar C_3^+$ and $\bar C_3^-$.
+Let us cut $\mathbb{S}^1\times (0,1)$ into $n^2$ such squares; each square defines a closed subset of $\mathbb{S}^1\times (0,1)$.
+Color the set formed by union of the squares that intersect $\bar C_3^+$ or lie in the lowest row of squares for $y\le \tfrac1n$.
+Note that we did not color squares in the upper row and the boundary of colored set contains a simple curve $t\mapsto(x(t),y(t))$ that cuts  the cylinder $\mathbb{S}^1\times (0,1)$ into two cylinders.
+
+Note that $(x(t),y(t))\notin \bar C_3$ for any $t\in \mathbb{S}^1$ and the curve $t\mapsto(x(t),y(t))$ runs along coordinate lines.
+Consider the one-parameter family of line segments in $r(x(t),y(t))$ that start at $\alpha(x(t))$ and end on the surface of a large cube that contains $\alpha$ in its interior.
+This way we obtain a piecewise linear annulus that connects the curve $t\mapsto \alpha(x(t))$ to a curve on the surface of cube.
+The latter curve can be contracted by a piecewise linear disc in the surface of cube.
+
+Observe that $t\mapsto \alpha(x(t))$ defines a degree-one map $\mathbb{S}^1\to\alpha$.
+Applying the lemma, we get the result.
+\qeds
+
+
+
+
+

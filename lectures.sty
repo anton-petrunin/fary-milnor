@@ -119,7 +119,7 @@ isbn=false]{biblatex}
 %THEOREM
 \newcounter{thm}[section]
 \renewcommand{\thethm}{\thesection.\arabic{thm}}
-\newcommand\claim[2][{}]{\par\medskip\noindent\refstepcounter{thm}\hbox{\bf \arabic{thm}. #2.#1}
+\newcommand\claim[2][{}]{\par\medskip\noindent\refstepcounter{thm}\hbox{\bf \thesection.\arabic{thm}. #2.#1}
 \it\ %\ignorespaces
 }
 \def\endclaim{
@@ -136,12 +136,16 @@ isbn=false]{biblatex}
 \def\bus{\mathop{\rm bus}\nolimits}
 \def\div{\mathop{\rm div}\nolimits}
 \def\inj{\mathop{\rm inj}\nolimits}
+\def\cross{\mathop{\rm cross}\nolimits}
 \def\curl{\mathop{\rm curl}\nolimits}
 \def\perim{\mathop{\rm perim}\nolimits}
 \def\rot{\mathop{\rm rot}\nolimits}
 \def\diam{\mathop{\rm diam}\nolimits}
 \def\trace{\mathop{\rm trace}\nolimits}
 \def\proj{\mathop{\rm proj}\nolimits}
+\def\DD{\mathbb{D}}
+\def\RR{\mathbb{R}}
+\def\ZZ{\mathbb{Z}}
 \def\solidtriangle{\text{\ding{115}}}
 
 \newcommand*{\tc}[1]{\ifthenelse{\equal{#1}{}}{\Phi}{\Phi({#1})}}%toatal curvature \tc\gamma produces \Phi(\gamma)

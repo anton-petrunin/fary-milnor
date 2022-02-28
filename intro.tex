@@ -1,54 +1,46 @@
 \section{Introduction}
 
-Here is our main hiero:
+The following problem was posted by Karol Borsuk \cite{borsuk}.
 
-\begin{thm}{Theorem}\label{thm:fary-milnor}
-The total curvature of any nontrival knot is at least $4\cdot\pi$. 
-\end{thm}
+\textit{Show that the total curvature of any nontrival knot is at least $4\cdot\pi$.}
 
-This theorem is known for many many proofs based on different (and beautiful) ideas which is the subject of this note.
+It is known for many many proofs based on different ideas.
+We sketch its solutions, one solution per section;
+each can be reed independently.
 
-The question was raised by Karol Borsuk \cite{borsuk} and answered independently by Istv\'an F\'ary and John Milnor \cite{fary, milnor}.
-In fact, a strict inequality was proved, but for the sake of simplify we stick to the original question of Borsuk.
+This problem also have a number of refinements and generalization;
+in particular a strict inequality holds --- this is the famous \emph{F\'ary--Milnor theorem}.
+However, for the sake of simplify we stick to the original problem.
 
-In addition to the proofs of F\'ary and Milnor,
-we will discuss a proof based on the existence \emph{alternated quadrisecant}, a construction of Erika Pannwitz \cite{pannwitz}.
-This proof might be the earliest; according to a note at the end of Fáry’s article, it was found (but not published) by Heinz Hopf.
-We will also discuss the proof Stephanie Alexander and Richard Bishop --- this is the most elementary (but not the simplest) proof, as a result it is most suitable for generalizations.
-Finally we discuss the \emph{minimal-surface} proof;
-it is based on a theorem Tobias Ekholm, Brian White, and Daniel Wienholtz \cite{EWW_embed} which was a breakthrough in minimal surface theory at the time.
-
-\parbf{Definitions.}
-In order to continue we need to stick to a definition knot and say what \emph{nontrival knot} is.
-Despite that intuitively knot as a \emph{cyclic rope},
-the simplest formal definition use polygonal lines.
+In order to continue, we need to stick to a definition of knot and say what \emph{nontrival knot} is.
+Despite that intuitively knot is a \emph{cyclic rope},
+the simplest formal definition use polygonal curves.
 It turns out that this definition is also suits best for our purposes.
 
-A \emph{knot} (more precicely \emph{tame knot}) is a simple closed polygonal line in the Euclidean space~$\mathbb{R}^3$ (simple means no self-intersections).
+A \emph{knot} (more precicely \emph{tame knot}) is a simple closed polygonal curve in the Euclidean space~$\mathbb{R}^3$ (\emph{simple} means no self-intersections).
 
-The notation $\triangle abc$ is used for the \emph{triangle} $abc$; that is, a polygonal line with three edges and vertexes $a$, $b$ and $c$.
-Let us denote by $\solidtriangle abc$ the convex hull of the points $a$, $b$ and $c$; $\solidtriangle abc$ is the \emph{solid triangle} with the vertexes $a$, $b$ and $c$.
-The points $a$, $b$ and $c$ are assumed to be distinct, but they might lie on one line;
-that is, for us a degenerate triangle counts as a legitimate triangle.
+The solid triangle with vertices $a$, $b$, and $c$ will be denoted by $\solidtriangle abc$.
+It is defined as the convex hull of the points $a$, $b$ and $c$;
+the points $a$, $b$ and $c$ are assumed to be distinct, but they might lie on one line.
 
 We define a \emph{triangular isotopy} of a knot to be the generation of a new knot from the original one by means of the
 following two operations:
 
-Assume $[pq]$ is an edge of the knot and $x$
-is a point such that the solid triangle $\solidtriangle pqx$  has no common points with the knot except for the edge $[pq]$.
-Then we can replace the edge $[pq]$ in the knot by the two adjacent edges $[px]$ and $[xq]$.
+Assume $[p,q]$ is an edge of the knot and $x$
+is a point such that the solid triangle $\solidtriangle pqx$  has no common points with the knot except for the edge $[p,q]$.
+Then we can replace the edge $[p,q]$ by the two adjacent edges $[p,x]$ and $[x,q]$.
 
 We can also perform the inverse operation.
-That is, if for two adjacent edges $[px]$ and $[xq]$ of a knot the triangle
-$\solidtriangle pqx$ has no common points with the knot except for the points on the edges $[px]$ and $[xq]$,
-then we can replace the two adjacent edges $[px]$ and $[xq]$ by the edge $[pq]$.
+That is, if for two adjacent edges $[p,x]$ and $[x,q]$ of a knot the triangle
+$\solidtriangle pqx$ has no common points with the knot except for the points on the edges $[p,x]$ and $[x,q]$,
+then we can replace $[p,x]$ and $[x,q]$ by one edge $[p,q]$.
 
 Polygons that arise from one another by a finite sequence of
 triangular isotopies are called \emph{isotopic}.
-A knot that is not isotopic to a triangle is called \emph{nontrivial}.
+A knot that is not isotopic to a triangle (that is, a simple polygonal curve with three vertices) is called \emph{nontrivial}.
 
 \begin{wrapfigure}{r}{22 mm}
-\vskip-4mm
+\vskip-3mm
 \centering
 \includegraphics{mppics/pic-18}
 \vskip0mm
@@ -56,25 +48,19 @@ A knot that is not isotopic to a triangle is called \emph{nontrivial}.
 
 The trefoil knot shown on the diagram gives a simple example of nontrivial knot.
 A proof that it is nontrivial can be found in any textbook on knot theory.
-The most elementary and visual proof is based on the so called \emph{tricolorability} of knot diagrams.
+The most elementary and visual proof is based on the so called \emph{tricolorability} of knot diagrams \cite[Section 1.5]{adams}.
 
-The following exercise should help to feel more comfortable with to the definition.
-\textit{Let $x$ and $y$ be two points on the adjacent edges $[p_1p_2]$ and $[p_2p_3]$ of a knot $p_1p_2p_3\dots p_n$.
-Assume that the solid triangle $\solidtriangle xp_2y$ intersects $\alpha$ only along $[xp_2]\cup [p_2y]$.
-Show that the knot $p_1xyp_3\dots p_n$ is isotopic to $\alpha$.}
-
-\parbf{Reformulation.}
 The total curvature of a smooth curve usually defined as the integral of its curvature.
 For a polygons, it is defined as the sum of its external angles.
-It is well known that total curvature of a curve cannot be smaller than total curvature of an insribed polygonal line.
-In fact the total curvature of a curve can be defined as the least upper bound on the total curvature of inscrived polygonal lines.
-This definition agrees for the smooth curves and it makes sense for any simple curve.
+It is well known that total curvature of a curve cannot be smaller than total curvature of an insribed polygonal curve (see, for example, \cite{petrunin-zamora}).
+In fact the total curvature of a curve can be defined as the least upper bound on the total curvature of inscrived polygonal curves \cite{aleksandrov-reshetnyak, sullivan-curves}.
+This definition agrees with the definition given for smooth curves, and it makes sense for any simple curve.
 The total curvature of a curve $\alpha$ will be denoted by $\Phi(\alpha)$.
 
-Therefore the F\'ary--Milnor theorem follows from the next reformulation which we are going to prove.
+Therefore the problem allows the following reformulation which we are going to prove.
 
 \begin{thm}{Reformulation}\label{thm:fary-milnor}
-For any nontrival knot $\alpha$, we have $\Phi(\alpha)\ge 4\cdot\pi$. 
+Show that $\Phi(\alpha)\ge 4\cdot\pi$ for any nontrival knot $\alpha$. 
 \end{thm} 
 
 

@@ -1,3 +1,89 @@
+In addition to the proofs of F\'ary and Milnor,
+we will discuss a proof based on the existence \emph{alternated quadrisecant}, a construction of Erika Pannwitz \cite{pannwitz}.
+This proof might be the earliest; according to a note at the end of Fáry’s article, it was found (but not published) by Heinz Hopf.
+We will also discuss the proof Stephanie Alexander and Richard Bishop --- this is the most elementary (but not the simplest) proof, as a result it is most suitable for generalizations.
+Finally we discuss the \emph{minimal-surface} proof;
+it is based on a theorem Tobias Ekholm, Brian White, and Daniel Wienholtz \cite{EWW_embed} which was a breakthrough in minimal surface theory at the time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection*{Milnor's proof}
+
+\parit{Milnor's proof.}
+Let $\alpha$ be a simple closed polygonal curve.
+Assume $\tc{\alpha}<4\cdot\pi$.
+Then by the Crofton-type formula (\ref{prop:tc-crofton}), we get that
+\[\tc{\alpha_u}<4\cdot\pi
+\eqlbl{eq:<4pi}\]
+for some unit vector $u$.
+Moreover, we can assume that $u$ points in a generic direction;
+that is, $u$ is not perpendicular to any edge or diagonal of $\alpha$.
+
+Since the curve $\alpha_u$ runs back and forth along one line, 
+every turn contributes $\pi$ to  $\tc{\alpha_u}$.
+Therefore $\tc{\alpha_u}=n\cdot\pi$, where $n$ is the number of changes of direction.
+Since $\alpha_u$ is closed, $n$ has to be even, so $\tc{\alpha_u}$ may take values $2\cdot\pi$, $4\cdot\pi$, $6\cdot\pi$ and so on.
+
+By \ref{eq:<4pi}, we have $\tc{\alpha_u}= 2\cdot\pi$;
+that is, $\alpha_u$ has exactly $2$ turns.
+If we rotate the space so that $u$ points upward,
+then the height function has exactly one minimum and one maximum;
+by Proposition~\ref{prop:one-max-one-min}, $\alpha$ is a trivial knot --- hence the result.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{wrapfigure}{r}{30 mm}
 \vskip-0mm
 \centering

@@ -1,0 +1,109 @@
+\section{F\'ary}\label{sec:fary}
+
+In this section we sketch the solution of Istv\'an F\'ary \cite{fary} which was published before Milnor's proof.
+
+We start with Crofton-type formulas for total curvature.
+Given a curve $\alpha$ in $\mathbb{R}^3$ and a unit vector $u$, denote by $\alpha_{u^\perp}$ 
+and $\alpha_u$ the projections of $\alpha$ to the plane perpendicular to $u$ and the line parallel to $u$ respectively.
+Given a function $f\:\mathbb{S}^2\to\mathbb{R}$, let us denote its average value by $\overline{f(u)}$.
+
+\begin{thm}{Crofton-type formula}\label{prop:tc-crofton}
+Let $\alpha$ be a polygonal curve in $\mathbb{R}^3$.
+Then
+\begin{align*}
+\tc\alpha
+&=\overline{\tc{\alpha_{u^\perp}}}
+=\overline{\tc{\alpha_u}}.
+\end{align*}
+\end{thm}
+
+
+\parit{Proof.}
+Observe that it is sufficient to check the identities for polygonal curve made of two edges
+and in this case it boils to very straightforward calculations.
+\qeds
+
+The original version of Milnor's proof 
+used the identity $\tc\alpha=\overline{\tc{\alpha_u}}$;
+in the Fenner's version of his proof it was hidden under carpet.
+
+F\'ary's proof is based the identity $\tc\alpha=\overline{\tc{\alpha_{u^\perp}}}$ and the following inequality for total curvature.
+Suppose $\alpha=p_1\dots p_n$ is a simple closed polygonal curve in $\mathbb{R}^3$ and $o\notin\alpha$.
+Let us define the \emph{angular length} of $\alpha$ with respect to $o$ as the sum
+\[\Psi_o(\alpha)=\measuredangle p_{1} o p_{2}+\dots+\measuredangle p_{n-1} o p_{n}+\measuredangle p_{n} o p_{1}.\]
+
+\begin{thm}{Proposition}\label{prop:angular-length}
+For any close simple polygonal curve and any $o\notin\alpha$, we have 
+\[\Psi_o(\alpha)\le \tc{\alpha}.\]
+\end{thm}
+
+\parit{Proof.}
+Let $\alpha=p_1\dots p_n$; for each $i$, set 
+\begin{align*}
+\phi_i&=\pi-\measuredangle p_{i-1}p_ip_{i+1},
+&
+\psi_i&=\measuredangle p_{i-1} o p_{i},
+&
+\theta_i&=\measuredangle o p_i p_{i+1}.
+\end{align*}
+Here we assume that indexes are taken modulo $n$; in particular, $p_{n}=p_0$.
+
+\begin{wrapfigure}{r}{45 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-15}
+\vskip0mm
+\end{wrapfigure}
+
+Note that $\phi_i$ is the external angle at $p_i$;
+therefore 
+\[\tc\alpha= \phi_1+\dots+\phi_n\]
+
+The directions of $p_i-p_{i-1}$, $o-p_i$, and $p_{i+1}-p_i$ make angles 
+$\psi_i+\theta_{i-1}$, $\theta_i$, and $\phi_i$ to each other.
+Applying the triangle inequality for these angles, we get
+\[\phi_i\ge \psi_i+\theta_{i-1}-\theta_i.\]
+Summing it up, we get
+\[\phi_1+\dots+\phi_n\ge \psi_1+\dots+\psi_n,\]
+and the result follows.
+\qeds
+
+
+\begin{wrapfigure}{r}{44 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-13}
+\vskip0mm
+\end{wrapfigure}
+
+\parit{F\'ary's proof.}
+Consider a projection of the knot to a plane \emph{in general position}
+(this time it means that the self-intersections of the projection are at most double and the projection of each edge is not degenerate).
+The obtained closed polygonal curve $\alpha_{u^\perp}=p_1p_2\dots p_n$ divides the plane into domains, one of which is unbounded, denote it by $U$, and the others are bounded.
+
+First note that all domains can be colored in a chessboard order;
+that is, they can be colored in black and white in such a way that domains with common borderline get different colors.
+If the unbounded domain is colored in white and every other domain is colored in black then one can untie the knot by flipping these domains one by one.%
+\footnote{It is instructive to give a formal proof of the last statement; that is, \textit{show that if there is only one white region, then $\alpha$ is trivial}.}
+
+
+\begin{wrapfigure}{r}{44 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-14}
+\vskip0mm
+\end{wrapfigure}
+
+Therefore among the bounded domains there is a white domain, denote it by $D$.
+The domain $D$ cannot adjoin %the word adjoin is used for countries, and I guess it can be used in the plane.
+$U$, since they have the same color.
+Fix a point $o$ in this domain.
+
+Since any ray from $o$ crosses $\alpha_{u^\perp}$ twice, we get $\Psi_o(\alpha_{u^\perp})\ge 4\cdot\pi$;
+that is, the angular length of $\alpha_{u^\perp}$ with respect to $o$ is at least $4\cdot\pi$. 
+By \ref{prop:angular-length}, we have 
+\[\tc{\alpha_{u^\perp}}\ge4\cdot\pi.\]
+This is true for any $u$ in general position.
+The remaining directions contribute nothing to the average value.
+It remains to apply the Crofton-type formula $\tc{\alpha}=\overline{\tc{\alpha_{u^\perp}}}$.
+\qeds

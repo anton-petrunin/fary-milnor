@@ -19,7 +19,7 @@ outputformat := "eps";
 
 beginfig(13) 
 save u;
-u:=1cm;
+u:=1.4cm;
 
 z.a1=(0,0)*u;
 z.a2=(1,0)*u;
@@ -44,7 +44,7 @@ endfig;
 
 beginfig(14) 
 save u;
-u:=.5cm;
+u:=.7cm;
 
 z.a1=(-2,0)*u;
 z.a2=(2,0)*u;
@@ -73,36 +73,29 @@ endfig;
 
 beginfig(15) 
 save u;
-u:=1cm;
+u:=1.4cm;
 
 z.o=origin;
-z.p1=(-1,1)*u;
+z.p1=(-1,1.2)*u;
 z.p2=(0,2)*u;
-z.p3=(1,2.1)*u;
-
-z.sh=(4,0)*u;
-
-z.oo=z.o+z.sh;
-z.q1=z.p1+z.sh;
-z.q2=z.p2+z.sh;
-z.q3=(z.p3+z.sh) reflectedabout (z.oo,z.q2);
+z.p3=(1,1.4)*u;
 
 draw z.o--z.p1--z.p2--z.p3--z.o--z.p2;
-%draw z.oo--z.q1--z.q2--z.q3--z.oo--z.q2;
+
+labelarcsprof(z.p1, z.o, z.p2, 10, 12, btex $\psi_i$ etex);
+labelarcsprof(z.o, z.p1, z.p2, 10, 13, btex $\theta_{i-1}$ etex);
+labelarcsprof(z.o, z.p2, z.p3, 10, 11, btex $\theta_i$ etex);
+labelarcsprof(z.p3, z.p2, (2[z.p1,z.p2]), 10, 12, btex $\phi_i$ etex);
 
 fill_angle(z.p3, z.p2, (2[z.p1,z.p2]), 10);
-%fill_angle(z.q3, z.q2, (2[z.q1,z.q2]), 10);
 
 dOt z.o,z.p1,z.p2,z.p3;
 
 label.bot(btex $o$ etex, z.o);
 
-
-label.rt(btex $p_{i-1}$ etex, z.p1+(2,0));
+label.lft(btex $p_{i-1}$ etex, z.p1+(2,0));
 label.top(btex $p_i$ etex, (z.p2+(-2,0)));
-label.top(btex $p_{i+1}$ etex, z.p3);
-
-
+label.rt(btex $p_{i+1}$ etex, z.p3);
 
 endfig;
 
@@ -226,6 +219,149 @@ label.ulft(btex $d$ etex, z.d);
 label.top(btex $\gamma$ etex, point 3.5 of p0);
 endfig;
 
+beginfig(41) 
+save u,a,k;
+u:=1cm;
+a:=45;
+k:=.3;
 
+path p[];
+
+z.i=(0,-1)*u;
+z.a1= z.i rotated -a;
+z.a2= z.i rotated a;
+z.a3=z.a1 rotated -120;
+z.a4=z.a2 rotated -120;
+z.a5= z.a1 rotated 120;
+z.a6=z.a2 rotated 120;
+
+z.a23=.5[z.a2,z.a3];
+z.a45=.5[z.a4,z.a5];
+z.a61=.5[z.a6,z.a1];
+
+z.a223=whatever[z.a2,z.a3]=whatever[z.a4,z.a5];
+z.a661=whatever[z.a6,z.a1]=whatever[z.a2,z.a3];
+z.a445=whatever[z.a4,z.a5]=whatever[z.a6,z.a1];
+
+draw z.a2--z.a23 penbold;
+fill circle(z.a223,2.5) withcolor white;
+
+draw z.a45--z.a5--z.a6--z.a61 penbold;
+fill circle(z.a661,2.5) withcolor white;
+
+
+draw z.a23--z.a3--z.a4--z.a45 penbold;
+fill circle(z.a445,2.5) withcolor white;
+draw z.a61--z.a1--z.a2 penbold;
+
+p0=ddline(k[z.a5,z.a6],k[z.a4,z.a3])(.2,.2);
+draw p0;
+
+z.d=whatever[z.a5,z.a6]=whatever[k[z.a5,z.a6],k[z.a4,z.a3]];
+z.c=whatever[z.a2,z.a3]=whatever[k[z.a5,z.a6],k[z.a4,z.a3]];
+z.b=whatever[z.a1,z.a6]=whatever[k[z.a5,z.a6],k[z.a4,z.a3]];
+z.a=whatever[z.a3,z.a4]=whatever[k[z.a5,z.a6],k[z.a4,z.a3]];
+
+dOt z.a,z.b,z.c,z.d;
+
+label.ulft(btex $a$ etex, z.a);
+label.ulft(btex $b$ etex, z.b);
+label.urt(btex $c$ etex, z.c);
+label.urt(btex $d$ etex, z.d);
+endfig;
+
+beginfig(43) 
+save u;
+u:=1cm;
+path p[];
+
+z.a0=(-1,1)*u;
+z.a1=(.8,1)*u;
+z.a2=(-1.2,.2)*u;
+z.a3=(-.5,-1)*u;
+z.a4=(1,-.1)*u;
+
+z.v=.3[z.a2,z.a3];
+z.w=.3[z.a4,z.a0];
+
+z.x=whatever[z.a1,z.a2]=whatever[z.a4,z.a0];
+p0=z.a0--z.a1--z.a2--z.a3--z.a4--cycle;
+
+draw subpath (0,4) of p0 penbold;
+fill circle(z.x,2.5) withcolor white;
+draw subpath (4,5) of p0 penbold;
+
+draw z.v--z.w dashed evenly;
+draw ddline(z.v,z.w)(1,-1) ;
+
+dOt z.v,z.w;
+
+whitelabel. rt(btex $\alpha(x)$ etex, z.v+(1,0));
+label.urt(btex $\alpha(x+y)$ etex, z.w);
+label(btex $r(x,y)$ etex rotated angle (z.w-z.v), 1.6[z.w,z.v]+(-1,6));
+endfig;
+
+beginfig(46) 
+save u,n;
+u:=.2cm;
+n:=10;
+path p[];
+
+p0=(0,0)*u--(0,1)*u--(3,1)*u--(3,2)*u--(2,2)*u--(2,5)*u--(4,5)*u--(4,4)*u--(3,4)*u--(3,3)*u--(6,3)*u--(6,4)*u--(7,4)*u--(7,3)*u--(6,3)*u--(6,1)*u--(5,1)*u--(5,2)*u--(4,2)*u--(4,1)*u--(6,1)*u--(n,1)*u--(n,0)*u--cycle;
+
+p1=(6,5)*u--(8,5)*u--(8,6)*u--(7,6)*u--(7,7)*u--(6,7)*u--cycle;
+
+p2=(6,5)*u--(7,5)*u--(7,6)*u--(6,6)*u--cycle;
+
+p3=(0,1)*u--(3,1)*u--(3,2)*u--(2,2)*u--(2,5)*u--(4,5)*u--(4,4)*u--(3,4)*u--(3,3)*u--(6,3)*u--(6,1)*u--(n,1)*u;
+
+fill p0 withcolor .5;
+fill p2 shifted ((1,1)*u) withcolor .5;
+draw p3 penbold;
+
+for i=0 step 1 until n:
+draw (i,0)*u--(i,n)*u penhair;
+draw (0,i)*u--(n,i)*u penhair;
+endfor
+
+endfig;
+
+beginfig(51) 
+save u,N;
+u:=1cm;
+path p[];
+N:=90;
+
+p0=origin--(5,0)*u;
+
+z.a0=(1,0)*u;
+z.a1=(1,0)*u rotated (25*360/N) scaled 1.4;
+z.a2=(1,0)*u rotated (40*360/N) scaled .4;
+z.a3=(1,0)*u rotated (55*360/N) scaled 1.2;
+z.a4=(1,0)*u rotated (75*360/N) scaled 1;
+z.a5=.5[z.a0,z.a4];
+
+p1=z.a5--z.a4--z.a3--z.a2--z.a1--z.a0--cycle;
+
+z.b5=whatever*z.a5=(1.4,whatever)*u;
+
+p2=z.b5--(1.4,2)*u--(-1.4,2)*u--(-1.4,-1.4)*u--(1.4,-1.4)*u--cycle;
+
+for i=0 step 360/N until 359.9:
+draw p0 rotated i;
+endfor
+
+clip currentpicture to p1--p2--cycle;
+
+fill p1 withcolor .8;
+draw p1 penbold;
+
+dOt origin;
+
+label.lft(btex $o$ etex, origin);
+label.top(btex $\alpha$ etex, .5[z.a3,z.a4]);
+label(btex $\Sigma$ etex, (.4,-.1)*u);
+whitelabel.bot(btex collar etex, (0,2)*u+(0,-4));
+endfig;
 
 end
