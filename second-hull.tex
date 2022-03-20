@@ -4,16 +4,17 @@ The following proof is due to Jason Cantarella, Greg Kuperberg, Robert Kusner, a
 this is the only proof in our collection that use the knot theory a bit beyond the definitions.
 
 Choose a polygonal curve $\alpha=p_1\dots p_n$.
-Suppose a plane $\Pi$ does not contain vertices of $\alpha$.
+Suppose a plane $\Pi$ is in general position; that is, it does not contain vertices of $\alpha$.
 Let us denote by $\cross_\alpha\Pi$ the number of intersections of $\Pi$ and $\alpha$.
-Let us extend the function $\Pi\mapsto \cross_\alpha(\Pi)$ to the minimal upper semicontinuous function defined for all planes.
+Let us extend the function $\Pi\mapsto \cross_\alpha(\Pi)$ to the minimal upper semicontinuous function defined for all planes;
+in other words, $\cross_\alpha(\Pi)$ is the maximal integer $k$ such that there is a plane $\Pi'$ arbitrary close to $\Pi$ that intersects $\alpha$ at $k$ points.
 The number $\cross_\alpha(\Pi)$ will be called the \emph{crossing number} of $\Pi$.
 Note that for any plane $\Pi$, the number $\cross_\alpha(\Pi)$ is even, and it cannot exceed $n$.
 
-It is easy to see that the \emph{convex hull} of $\alpha$ can be defined as the maximal set $h_1(\alpha)$ such that $\cross_\alpha(\Pi)\ge2$ for any plane $\Pi$ that intersects $h_1(\alpha)$.
-This observation suggests the following definition.
-
-The \emph{second hull} of a closed polygonal curve $\alpha$ is defined as the maximal set $h_2(\alpha)$ such that $\cross_\alpha(\Pi)\ge4$ for any plane $\Pi$ that intersects $h_2(\alpha)$.
+It is easy to see that the \emph{convex hull} $h_1(\alpha)$ of $\alpha$ can be defined the following way:
+\textit{$x\in h_1(\alpha)$ if $\cross_\alpha(\Pi)\ge2$ for any plane $\Pi\ni x$}.
+This observation suggests the following definition of the \emph{second hull} $h_2(\alpha)$:
+\textit{$x\in h_2(\alpha)$ if $\cross_\alpha(\Pi)\ge4$ for any plane $\Pi\ni x$}.
 
 \begin{thm}{Theorem}\label{thm:2nd-hull}
 The second hull оf any nontrivial knot $\alpha$ has a nonempty interior.
@@ -39,8 +40,8 @@ It follows that the average number of crossings is at least~4.
 Applying $({*})$, we get $({*}{*})$.
 \qeds
 
-Suppose that a plane divides a knot $\alpha$ into two arcs, one on each side.
-Then we can create two knots $\alpha_1$ and $\alpha_2$ by connecting the ends of the arcs by a line segment.
+Suppose that a plane $\Pi$ divides a knot $\alpha$ into two arcs, one on each side; in particular, $\Pi$ intersects $\alpha$ at two points, say $p$ and $q$.
+Then we can create two knots $\alpha_1$ and $\alpha_2$ by joining ends of the two arcs by the line segment $[pq]$.
 In this case, we say that $\alpha$ is a \emph{connected sum} of $\alpha_1$ and $\alpha_2$.
 Evidently, if both $\alpha_1$ and $\alpha_2$ are trivial, then so is $\alpha$, but we also have the following:
 
@@ -51,29 +52,32 @@ If at least one of the knots $\alpha_1$ or $\alpha_2$ is nontrivial, then so is 
 
 The claim has an amazing proof via the so-called \emph{infinite swindle} \cite{mazur}.
 
-Note that if a plane cuts a chord of $\alpha$, then it also cuts the corresponding arc of $\alpha$.
+Suppose $\beta$ is a polygonal curve \emph{inscribed} in $\alpha$;
+that is, the vertices of $\beta$ lie on $\alpha$ and they appear in the same cyclic order on $\alpha$ and $\beta$.
+If a plane in general position intersects an edge of $\beta$, then it intersects corresponding arc of $\alpha$.
 Therefore we get the following:
 
 \begin{thm}{Observation}
-Suppose $\beta$ is a polygonal curve inscribed in $\alpha$.
+If a polygonal line $\beta$ is inscribed in $\alpha$.
 Then $h_2(\beta)\subset h_2(\alpha)$.
 \end{thm}
-
 
 \parit{Proof of \ref{thm:2nd-hull}.}
 Assume the contrary; let $\alpha$ be a nontrivial polygonal knot with the least number of vertices, say $n$, such that $h_2(\alpha)$ has empty interior.
 
 Suppose $\Pi$ is a plane in general position that divides $\alpha$ in two arcs, so it defines a decomposition of $\alpha$ into a connected sum of two knots $\alpha_1$ and $\alpha_2$.
 Note that one of these knots, say $\alpha_1$, is trivial and therefore the other, respectively $\alpha_2$, is isotopic to $\alpha$.
-Indeed, by the observation, $h_2\alpha_1$ and $h_2\alpha_2$ have empty interior.
+Indeed, by the observation, $h_2(\alpha_1)$ and $h_2(\alpha_2)$ have empty interior.
 To arrive at a contradiction, we need to show that one of the knots $\alpha_1$ or $\alpha_2$ has fewer vertices than $\alpha$.
-The latter statement easily follows from the total number of vertices in $\alpha_1$ or $\alpha_2$ is $n+4$ and $n\ge 6$;
+The latter statement easily follows since the total number of vertices in $\alpha_1$ and $\alpha_2$ is $n+4$ and $n\ge 6$;
 we leave these statements as an exercise.
 
-If $\alpha_1$, $\alpha_2$, and $\Pi$ as above, then the open half-space $H$ bounded by $\Pi$ and containing $\alpha_2$ will be called essential.
+If $\alpha_1$, $\alpha_2$, and $\Pi$ as above, then the open half-space $H$ bounded by $\Pi$ and containing $\alpha_2$ will be called essential;
+plus any open half-space containing $\alpha$ will be called essential as well.
 A rather straightforward application of \ref{clm:connected-sum} implies that if $H'$ is another essential half-space for $\alpha$, then it is also essential for $\alpha_2$.
 It follows that intersection, say $W$, of all essential half-spaces has a nonempty interior --- roughly speaking, it has to contain the region where knotting of $\alpha$ takes place.
 
-Finally, observe that any plane intersecting $W$ has the crossing number at least 4,
+Finally, observe that if a plane in general position intersects $W$ 
+has the crossing number at least 4,
 so $h_2(\alpha)\supset W$ --- hence the result.
 \qeds
