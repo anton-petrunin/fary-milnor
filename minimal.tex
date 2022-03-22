@@ -2,17 +2,17 @@
 
 In this section, we discuss a solution of the problem based on a theorem of Tobias Ekholm, Brian White, and Daniel Wienholtz \cite{EWW_embed}.
 This theorem was a breakthrough in minimal surface theory at the time.
-At the same time, it was based on an elementary idea that we are going to explain.
+Yet, it was based on an elementary idea that we are going to explain now.
 
 We start with a polygonal curve $\alpha$ with total curvature less than $4\cdot\pi$;
-show that area-minimizing disc spanned by $\alpha$ has no self-intersections, and therefore $\alpha$ has to be a trivial knot.
-So in a way the equation for area-minimizing surface solves our problem, we only need to understand it.
+show that an area-minimizing disc spanned by $\alpha$ has no self-intersections, and therefore $\alpha$ has to be a trivial knot.
+So in a way the equation for area-minimizing surfaces solves our problem, we only need to understand it.
 
 The main hero in this proof is the so-called \emph{extended monotonicity theorem}.
-We will also apply the \emph{Doublas--Rado theorem} on the existence of area-minimizing disc and reuse the inequality between total curvature and angular length from F\'ary's proof.
+We will also apply the \emph{Douglas--Rado theorem} on the existence of area-minimizing discs and reuse the inequality between total curvature and angular length from F\'ary's proof.
 
-A map from a domain of $\mathbb{R}^2$ to $\mathbb{R}^3$ will be called a \emph{surface};
-it might have self-intersections and singularities, but we assume it is reasonable, say locally Lipschitz; so we could talk about its area.
+The image of a map from a domain of $\mathbb{R}^2$ to $\mathbb{R}^3$ will be called a \emph{surface};
+it might have self-intersections and singularities, but we assume it is reasonable, say locally Lipschitz; so we can talk about its area.
 A point on the surface might refer to a point in $\mathbb{R}^3$, or the corresponding point in the domain of parameters in $\mathbb{R}^2$;
 it should be easy to guess from the context.
 
@@ -23,7 +23,7 @@ The restriction $f|_{\partial \mathbb{D}}$ will be called the \emph{boundary lin
 A disc $\Sigma$ is called area-minimizing if it has the smallest area among the maps with the given boundary line.
 The following statement about area-minimizing discs is easy to believe, but not easy to prove. %???REFS
 
-\begin{thm}{Doublas--Rado theorem}\label{thm:min-exists}
+\begin{thm}{Douglas--Rado theorem}\label{thm:min-exists}
 Given a simple closed polygonal curve $\alpha$ in $\mathbb{R}^3$, there is an area-minimizing disc $\Sigma$ with boundary line $\alpha$; it is a smooth surface, possibly with self-intersections and isolated singularities.
 
 Moreover, if $\Sigma$ has no self-intersections, then it is an embedded smooth surface with no singularities (in this case $\alpha$ is a trivial knot).
@@ -62,8 +62,8 @@ If $o\in \Sigma$, then $\lim_{r\to0}\frac{W_o(r)}{r^2}\ge \pi$.
 
 The classical monotonicity theorem states that the same holds for balls that do not touch the boundary of the surface.
 The stated version is due to Brian White \cite{white}.
-The same statement holds for minimal surfaces \cite{EWW_embed}; its proof requires dipper diving into differential geometry.
-At the same time, the original formulation admits generalization to a wider class of ambient spaces \cite{St_structure}.
+The same statement holds for minimal surfaces \cite{EWW_embed}; its proof requires deeper diving into differential geometry.
+At the same time, the original formulation admits a generalization to a wider class of ambient spaces \cite{St_structure}.
 
 
 \parit{Proof.}
@@ -77,7 +77,7 @@ for almost all $r$.
 Set $\Delta_r=\hat\Sigma_o\cap \bar B_r(o)$;
 it is a surface bounded by $\lambda_o(r)$.
 Let $\Delta_r'$ be a the cone over $\lambda_o(r)$ with center at $o$.
-Note that $\Delta_r'$ differ from $\Delta_r$ only inside $\Sigma$.
+Note that $\Delta_r'$ differs from $\Delta_r$ only inside $\Sigma$.
 Since $\Sigma$ is area-minimizing, we get that 
 \[\area \Delta_r'\ge \area \Delta_r\eqlbl{area=<area}\]
 for any $r>0$.
@@ -102,12 +102,12 @@ It follows that $W_o(r)/r^2$ approaches the area of the unit ball in this cone a
 \parit{\ref{SHORT.thm:monotonicity:b}.}
 The statement is evident for smooth points of $\Sigma$.
 Since smooth points are dense in $\Sigma$, and $o\mapsto W_o(r)$ is a continuous function,
-the main part of theorem implies that $W_o(r)\ge\pi\cdot r^2$ for \emph{any} point $o\in\Sigma$ --- hence the result.
+the main part of the theorem implies that $W_o(r)\ge\pi\cdot r^2$ for \emph{any} point $o\in\Sigma$ --- hence the result.
 \qeds
 
 \parit{Minimal-surface proof.}
 Suppose that $\tc\alpha<4\cdot\pi$.
-Consider the area-minimizing surface $\Sigma$ with the boundary line $\alpha$; it exists by \ref{thm:min-exists}.
+Consider an area-minimizing surface $\Sigma$ with the boundary line $\alpha$; it exists by \ref{thm:min-exists}.
 If $\Sigma$ has no self-intersections, then $\alpha$ is a trivial knot.
 
 Suppose $\Sigma$ has a self-intersection at a point $o$.
@@ -115,7 +115,7 @@ In this case, the intersection $B_r(o)\cap \Sigma$ is covered by two or more sma
 By \ref{thm:monotonicity:b}, we get 
 \[\lim_{r\to0}\frac{W_o(r)}{r^2}\ge 2\cdot\pi.\]
 
-Applying the main statement in the monotonicity theorem we get $\frac{W_o(r)}{r^2}\ge 2\cdot\pi$ for any $r>0$.
+Applying the main statement in the monotonicity theorem, we get $\frac{W_o(r)}{r^2}\ge 2\cdot\pi$ for any $r>0$.
 By \ref{thm:monotonicity:b} and Proposition~\ref{prop:angular-length} in F\'ary's proof, we get
 \[\tc{\alpha}\ge \Psi_o(\alpha)\ge 2\cdot \frac{W_o(r)}{r^2}\ge 4\cdot\pi\]
 --- a contradiction.
