@@ -1,4 +1,4 @@
-\section{Pannwitz--Hopf}\label{sec:quadrisecant}
+\section{Pannwitz--Hopf--Schmitz--Denne}\label{sec:quadrisecant}
 
 The F\'ary's paper \cite{fary} is ended by the following note:
 \textit{I just received a letter from Mr Borsuk, which says that Theorem 3 has been proved independently by Mr H. Hopf.
@@ -28,6 +28,7 @@ Any nontrivial knot $\alpha$ in general position admits an \emph{alternated quad
 
 The precise meaning of general position will be clear from the proof;
 what is important is that any knot is arbitrary close to a knot in general position.
+Erika Pannwitz only proved the existence of quadrisecant, but the existence of alternated quadrisecant can be extracted from her proof.
 
 \parit{Proof of \ref{thm:fary-milnor} modulo \ref{prop:quadrisecant}.}
 Let $\alpha=p_1\dots p_n$ be a knot in general position.
@@ -77,10 +78,11 @@ Observe that if $C_3^+$ and $C_3^-$ intersect, then the proposition follows.
 
 The set $C_3^\pm$ might be not closed;
 denote by $\bar C_3^\pm$ its closure.
-Suppose $(x,y)\in (\bar C_3^+\cup\bar C_3^-)\backslash( C_3^+\cup C_3^-)$.
+Suppose 
+\[(x,y)\in (\bar C_3^+\cup\bar C_3^-)\backslash( C_3^+\z\cup C_3^-).\]
 Observe that $\alpha(x)$ is a vertex, say $p_i$, of $\alpha$.
 Further, the line containing $p_i$ and $\alpha(x+y)$ lies in the plane spanned by $p_{i-1}$, $p_i$, and $p_{i+1}$; and it intersects yet another point of $\alpha$.
-The latter is not possible since $\alpha$ is in general position.
+The latter is not possible if $\alpha$ in general position.
 That is, since $\alpha$ is in general position, $C_3^+\cap C_3^-=\emptyset$ implies that $\bar C_3^+\cap \bar C_3^-=\emptyset$.
 
 Note that there is $\eps>0$ such that for any $x\in\mathbb{S}^1$ we have the following:
@@ -95,7 +97,7 @@ and if $y>1-\eps$, then $(x,y)\notin \bar C_3^-$.
 \end{wrapfigure}
 
 Arguing by contradiction, assume $\bar C_3^+\cap \bar C_3^-=\emptyset$.
-Note that in this case there is large $n$ such that any $\tfrac1n\times\tfrac1n$-square in $\mathbb{S}^1\times (0,1)$ does not intersect both $\bar C_3^+$ and $\bar C_3^-$.
+Note that in this case there is a large $n$ such that any $\tfrac1n\times\tfrac1n$-square in $\mathbb{S}^1\times (0,1)$ does not intersect both $\bar C_3^+$ and $\bar C_3^-$.
 Let us cut $\mathbb{S}^1\times (0,1)$ into $n^2$ such squares; each square defines a closed subset of $\mathbb{S}^1\times (0,1)$.
 Color the union of squares that intersect $\bar C_3^+$ or lie in the lowest row of squares for $y\le \tfrac1n$.
 Note that we did not color squares in the upper row and the boundary of the colored set contains a simple curve $t\mapsto(x(t),y(t))$ that cuts  the cylinder $\mathbb{S}^1\times (0,1)$ into two cylinders.
@@ -104,6 +106,7 @@ Note that $(x(t),y(t))\notin \bar C_3$ for any $t\in \mathbb{S}^1$ and the curve
 Consider the one-parameter family of line segments in $r(x(t),y(t))$ that start at $\alpha(x(t))$ and end on the surface of a large cube that contains $\alpha$ in its interior.
 This way we obtain a piecewise linear annulus that connects the curve $t\mapsto \alpha(x(t))$ to a curve on the surface of the cube.
 The latter curve can be contracted by a piecewise linear disc in the surface of the cube.
+It might have self-intersection, but it cannot contains points of $\alpha$.
 
 Observe that $t\mapsto \alpha(x(t))$ defines a degree-one map $\mathbb{S}^1\to\alpha$.
 Applying the lemma, we get the result.

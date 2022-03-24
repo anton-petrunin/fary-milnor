@@ -6,10 +6,10 @@ Yet, it was based on an elementary idea that we are going to explain now.
 
 We start with a polygonal curve $\alpha$ with total curvature less than $4\cdot\pi$;
 show that an area-minimizing disc spanned by $\alpha$ has no self-intersections, and therefore $\alpha$ has to be a trivial knot.
-So in a way the equation for area-minimizing surfaces solves our problem, we only need to understand it.
+So in a way the equation for area-minimizing surfaces solves our problem, we only need to understand~it.
 
 The main hero in this proof is the so-called \emph{extended monotonicity theorem}.
-We will also apply the \emph{Douglas--Rado theorem} on the existence of area-minimizing discs and reuse the inequality between total curvature and angular length from F\'ary's proof.
+We will also apply the \emph{Douglas--Rado theorem} on the existence of area-minimizing discs and reuse the inequality between total curvature and angular length from F\'ary's proof; see \ref{prop:angular-length}.
 
 The image of a map from a domain of $\mathbb{R}^2$ to $\mathbb{R}^3$ will be called a \emph{surface};
 it might have self-intersections and singularities, but we assume it is reasonable, say locally Lipschitz; so we can talk about its area.
@@ -20,7 +20,7 @@ We denote by $\mathbb{D}$ the closed disc in the plane.
 A surface defined by a map $f\:\mathbb{D}\to\mathbb{R}^3$ will be called a \emph{disc}.
 The restriction $f|_{\partial \mathbb{D}}$ will be called the \emph{boundary line} of the disc.
 
-A disc $\Sigma$ is called area-minimizing if it has the smallest area among the maps with the given boundary line.
+A disc $\Sigma$ is called area-minimizing if it has the smallest area among the surfaces with the given boundary line.
 The following statement about area-minimizing discs is easy to believe, but not easy to prove. %???REFS
 
 \begin{thm}{Douglas--Rado theorem}\label{thm:min-exists}
@@ -105,7 +105,7 @@ Since smooth points are dense in $\Sigma$, and $o\mapsto W_o(r)$ is a continuous
 the main part of the theorem implies that $W_o(r)\ge\pi\cdot r^2$ for \emph{any} point $o\in\Sigma$ --- hence the result.
 \qeds
 
-\parit{Minimal-surface proof.}
+\parit{Proof of \ref{thm:fary-milnor}.}
 Suppose that $\tc\alpha<4\cdot\pi$.
 Consider an area-minimizing surface $\Sigma$ with the boundary line $\alpha$; it exists by \ref{thm:min-exists}.
 If $\Sigma$ has no self-intersections, then $\alpha$ is a trivial knot.

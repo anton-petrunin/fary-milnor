@@ -1,7 +1,7 @@
 \section{Cantarella--Kuperberg--Kusner--Sullivan}\label{sec:2nd-hull}
 
 The following proof is due to Jason Cantarella, Greg Kuperberg, Robert Kusner, and John Sullivan \cite{CKKS};
-this is the only proof in our collection that use the knot theory a bit beyond the definitions.
+this is the only proof in our collection that uses knot theory a bit beyond the basic definitions.
 
 Choose a polygonal curve $\alpha=p_1\dots p_n$.
 Suppose a plane $\Pi$ is in general position; that is, it does not contain vertices of $\alpha$.
@@ -9,7 +9,7 @@ Let us denote by $\cross_\alpha\Pi$ the number of intersections of $\Pi$ and $\a
 Extend the function $\Pi\mapsto \cross_\alpha(\Pi)$ to the minimal upper semicontinuous function defined for all planes;
 in other words, $\cross_\alpha(\Pi)$ is the maximal integer $k$ such that there is a plane $\Pi'$ arbitrary close to $\Pi$ that intersects $\alpha$ at $k$ points.
 The number $\cross_\alpha(\Pi)$ will be called the \emph{crossing number} of $\Pi$.
-Note that for any plane $\Pi$, the number $\cross_\alpha(\Pi)$ is even, and it cannot exceed $n$.
+Note that for any plane $\Pi$, the crossing number is even, and it cannot exceed $n$.
 
 It is easy to see that the \emph{convex hull} $h_1(\alpha)$ of $\alpha$ can be defined the following way:
 \textit{$x\in h_1(\alpha)$ if $\cross_\alpha(\Pi)\ge2$ for any plane $\Pi\ni x$}.
@@ -41,7 +41,7 @@ Applying $({*})$, we get $({*}{*})$.
 \qeds
 
 Suppose that a plane $\Pi$ divides a knot $\alpha$ into two arcs, one on each side; in particular, $\Pi$ intersects $\alpha$ at two points, say $p$ and $q$.
-Then we can create two knots $\alpha_1$ and $\alpha_2$ by joining ends of the two arcs by the line segment $[pq]$.
+Then we can create two knots $\alpha_1$ and $\alpha_2$ by joining ends of the two arcs by the line segment $[p,q]$.
 In this case, we say that $\alpha$ is a \emph{connected sum} of $\alpha_1$ and $\alpha_2$.
 
 \begin{thm}{Claim}\label{clm:connected-sum}
@@ -53,7 +53,9 @@ This claim has an amusing proof via the so-called \emph{infinite swindle} \cite{
 
 Suppose $\beta$ is a polygonal curve \emph{inscribed} in $\alpha$;
 that is, the vertices of $\beta$ lie on $\alpha$ and they appear in the same cyclic order on $\alpha$ and $\beta$.
-If a plane in general position intersects an edge of $\beta$, then it intersects corresponding arc of $\alpha$.
+If a plane in general position intersects an edge of $\beta$, then it intersects
+the corresponding arc of $\alpha$. %taking orientation into account we can say arc,
+%arcs would also make sense
 Therefore we get the following:
 
 \begin{thm}{Observation}
@@ -64,21 +66,22 @@ Then $h_2(\beta)\subset h_2(\alpha)$.
 \parit{Proof of \ref{thm:2nd-hull}.}
 Assume the contrary; let $\alpha$ be a nontrivial polygonal knot with the least number of vertices, say $n$, such that $h_2(\alpha)$ has empty interior.
 It is easy to see that $n\ge 6$;
-in other words, any space 5-gon is a trivial knot.
+in other words, any simple space 5-gon is a trivial knot.
 
 Suppose $\Pi$ is a plane in general position that divides $\alpha$ in two arcs, so it defines a decomposition of $\alpha$ into a connected sum of two knots $\alpha_1$ and $\alpha_2$.
-Note that one of these knots, say $\alpha_1$, is trivial and therefore the other, respectively $\alpha_2$, is isotopic to $\alpha$.
-Indeed, by the observation, $h_2(\alpha_1)$ and $h_2(\alpha_2)$ have empty interior.
-So it is sufficient to show that $\alpha_1$ or $\alpha_2$ has fewer vertices than $\alpha$.
-The latter statement easily follows since the total number of vertices in $\alpha_1$ and $\alpha_2$ is $n+4$ and $n\ge 6$.
+By the observation, $h_2(\alpha_1)$ and $h_2(\alpha_2)$ have empty interior.
+It follows that one of these knots, say $\alpha_1$, is trivial and therefore the other, respectively $\alpha_2$, is isotopic to $\alpha$.
+Indeed, if $n_1$ and $n_2$ denote the number of vertices in $\alpha_1$ and $\alpha_2$, then $n_1+n_2=n+4$. 
+If both knots are nontrivial, then $n_1\ge 6$ and $n_2\ge 6$.
+Therefore $n_1<n$ and $n_2<n$ which contradicts minimality of $n$.
 
-If $\alpha_1$, $\alpha_2$, and $\Pi$ as above, then the open half-space $H$ bounded by $\Pi$ and containing $\alpha_2$ will be called \emph{essential};
-plus any open half-space containing whole $\alpha$ will be called essential as well.
+The open half-space $H$ bounded by $\Pi$ and containing $\alpha_2\setminus\Pi$ will be called \emph{essential}. Intuitively, an essential half-space cuts off
+a trivial knot of $\alpha$. (A half-space containing all of $\alpha$ will be considered essential as well.)
 A rather straightforward application of \ref{clm:connected-sum} implies that if $H'$ is another essential half-space for $\alpha$, then it is also essential for $\alpha_2$.
-It follows that intersection, say $W$, of all essential half-spaces has a nonempty interior --- roughly speaking, it has to contain the region where knotting of $\alpha$ takes place.
+It follows that the intersection of all essential half-spaces, say $W$, has  nonempty interior --- roughly speaking, it has to contain the region where knotting of $\alpha$ takes place.
 
 Finally observe that if $\cross_\alpha\Pi=2$ for a plane $\Pi$ in general position, then $\Pi$ bounds an essential half-space. 
-It follows that if a plane in general position intersects $W$, then it has the crossing number at least 4,
+It follows that if a plane in general position intersects $W$, then it has  crossing number at least 4,
 so $h_2(\alpha)\supset W$ --- hence the result.
 \qeds
 
