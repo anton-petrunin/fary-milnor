@@ -1,6 +1,6 @@
 settings.render=32;
 import three;
-size(5cm);
+size(5.5cm);
 currentprojection=orthographic(1,1.8,4);
 currentlight=light(0,10,3);
 currentlight = White;
@@ -57,7 +57,11 @@ second.push(V--BC--ED--DE--cycle);
 second.push(V--DE--AF--FA--cycle);
 
 
-draw(first,.5bp+gray+opacity(1));
+draw(first,.5bp+gray+opacity(.5));
 draw(surface(first),gray+opacity(.2));
-draw(second,.5bp+gray+opacity(1));
-draw(surface(second),gray+opacity(.5));
+draw(second,.5bp+gray+opacity(.5));
+draw(surface(second),gray+opacity(.7));
+//draw(W--BC,.5bp+white+opacity(1));
+//draw(W--DE,.5bp+white+opacity(1));
+//draw(CB--ED,.5bp+white+opacity(1));
+//dot(W,white);
