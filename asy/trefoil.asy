@@ -1,9 +1,7 @@
 settings.render=32;
 import three;
 size(5.5cm);
-currentprojection=orthographic(1,1.8,4);
-currentlight=light(0,10,3);
-currentlight = White;
+
 
 real a,b,h,k;
 a=4;
@@ -23,6 +21,10 @@ triple C=rotate(-120,Z)*A;
 triple D=rotate(-120,Z)*B;
 triple E=rotate(120,Z)*A;
 triple F=rotate(120,Z)*B;
+
+currentprojection=perspective(camera=(1,2,4),up=(C-B));
+currentlight=light(0,10,3);
+currentlight = White;
 
 triple BC=(B+C)/2+k*(B-C)/2;
 triple CB=(B+C)/2-k*(B-C)/2;
@@ -64,4 +66,3 @@ draw(surface(second),gray+opacity(.7));
 //draw(W--BC,.5bp+white+opacity(1));
 //draw(W--DE,.5bp+white+opacity(1));
 //draw(CB--ED,.5bp+white+opacity(1));
-//dot(W,white);
