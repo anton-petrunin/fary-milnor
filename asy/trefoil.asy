@@ -33,7 +33,7 @@ triple AF=rotate(120,Z)*CB;
 
 draw(A--B--C--D--E--F--cycle,2bp+2gray, light=currentlight);
 
-triple W=(0,0,(h/3)/(1+a));
+triple W=(0,0,((h*a/(1+a)+2*h)/(2+a))/3);
 triple V=-W;
 
 path3[] first;
