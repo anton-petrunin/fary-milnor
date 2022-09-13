@@ -1,48 +1,26 @@
 \usepackage{amssymb, amsfonts, amsthm}
-\usepackage[intlimits]{amsmath}
-%\usepackage{tabu}
-\usepackage{enumerate}
-\usepackage{bm}%bold math\bm
-\usepackage{gensymb}% provides \degree
-\usepackage{color}
+\usepackage{amsmath}
 \usepackage{pifont}
-\usepackage[makeroom]{cancel}%crossing formulas with \cancel
 
 \usepackage[T1,T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 
-
-\usepackage[colorlinks=true,
-citecolor=black,
-linkcolor=black,
-anchorcolor=black,
-filecolor=black,
-menucolor=black,
-urlcolor=black%
-]{hyperref}
+\usepackage[hyphens]{url}
+\usepackage[colorlinks=true,citecolor=black,linkcolor=black,anchorcolor=black,filecolor=black,menucolor=black,urlcolor=black]{hyperref}
 \usepackage{caption}%provides \caption*
 \usepackage[russian,german,english]{babel}
 \usepackage{epigraph}
-\usepackage{framed}
-\usepackage{geometry}%page/text size and 
+ 
 
-\usepackage{tikz}
-\usetikzlibrary{arrows}
+
 
 \usepackage{epsfig,lpic,wrapfig}
-\usepackage{multicol}
+%\usepackage{multicol}
 
-\usepackage{titling}
-\newcommand{\subtitle}[1]{%
-\posttitle{%
-\par\end{center}
-\begin{center}\large#1\end{center}
-\vskip0.5em}%
-}
 
-\usepackage[nottoc]{tocbibind}%adds index to ToC
+%\usepackage[nottoc]{tocbibind}%adds index to ToC
 
-\csname @openrightfalse\endcsname %chapters can start from left page
+%\csname @openrightfalse\endcsname %chapters can start from left page
 
 \usepackage[
 sorting=debug,
@@ -74,13 +52,7 @@ isbn=false]{biblatex}
 \DeclareFieldFormat{pages}{#1}
 %removes p. in the cites
 
-\usepackage{titletoc}% http://ctan.org/pkg/titletoc
-\titlecontents*{section}[.5em]
-  {\small}
-  {\thecontentslabel.~{}}
-  {}
-  { \textbf{\thecontentspage}}
-  [; ][.]
+
 
 % Fix latex
 \def\smallskip{\vskip\smallskipamount}
@@ -89,11 +61,6 @@ isbn=false]{biblatex}
 
 %RUSSIAN STYLE
 \def\emptyset{\varnothing}
-\def\cosh{\operatorname{ch}}
-\def\sinh{\operatorname{sh}}
-\def\tanh{\operatorname{th}}
-\def\limsup{\varlimsup}
-\def\liminf{\varliminf}
 
 %MY STYLE
 \def\parit#1{\medskip\noindent{\it #1}}
@@ -126,22 +93,8 @@ isbn=false]{biblatex}
 \newenvironment{thm}{\claim}{\endclaim}
 
 %NOTATIONS
-
-\def\Dom{\mathop{\rm Dom}\nolimits}
-\def\length{\mathop{\rm length}\nolimits}
 \def\area{\mathop{\rm area}\nolimits}
-\def\flux{\mathop{\rm flux}\nolimits}
-\def\vol{\mathop{\rm vol}\nolimits}
-\def\bus{\mathop{\rm bus}\nolimits}
-\def\div{\mathop{\rm div}\nolimits}
-\def\inj{\mathop{\rm inj}\nolimits}
 \def\cross{\mathop{\rm cross}\nolimits}
-\def\curl{\mathop{\rm curl}\nolimits}
-\def\perim{\mathop{\rm perim}\nolimits}
-\def\rot{\mathop{\rm rot}\nolimits}
-\def\diam{\mathop{\rm diam}\nolimits}
-\def\trace{\mathop{\rm trace}\nolimits}
-\def\proj{\mathop{\rm proj}\nolimits}
 \def\DD{\mathbb{D}}
 \def\RR{\mathbb{R}}
 \def\ZZ{\mathbb{Z}}
@@ -150,35 +103,6 @@ isbn=false]{biblatex}
 \newcommand*{\tc}[1]{\ifthenelse{\equal{#1}{}}{\Phi}{\Phi({#1})}}%toatal curvature \tc\gamma produces \Phi(\gamma)
 \newcommand*{\tgc}[1]{\ifthenelse{\equal{#1}{}}{\Psi}{\Psi({#1})}}%toatal signed/geodesic curvature \tgc\gamma produces \Psi(\gamma)
 
-\newcommand*{\hinge}[3]{[#1\,{}^{#2}_{#3}]}%\hinge x y z is the hinge with vertex x
-\newcommand*{\modangle}[3]{\tilde\measuredangle(#1\,{}^{#2}_{#3}\hspace{-0.2ex})}%\modangle x y z --- model angle with vertex at x
-\def\side{\tilde\curlyvee}%model side of hinge
-\def\modtrig{\tilde\triangle}%model triangle
-\def\spc{\mathcal}%used for spaces
-\def\tor{\tau}%torsion
-\def\kur{\kappa}%absolute curvature
-\def\skur{k}%signed curvature
-
-\def\Dist{\mathop{\rm dist}\nolimits} 
-\newcommand*\dist[3]{|{#1}\z-{#2}|_{#3}} % notation fo distance from x to y in the space Z --- "\dist xyZ" produces |x-y|_Z 
-%\newcommand*\dist[3]{}
-
-\def\Conv{\mathop{\rm Conv}\nolimits}
-
-\def\GG{\mathbb{G}}%circle or line segment
-\def\T{\mathrm{T}}%tangent plane
-
-\def\Jac{\mathop{\rm Jac}\nolimits}%Jacobian matrix
-\def\jac{\mathop{\rm jac}\nolimits}%Jacobian determinant
-\def\GB{\mathop{\rm GB}\nolimits}%gauss-bonnet expression
-\def\Shape{\mathop{\rm Shape}\nolimits}%shape operator
-\def\rank{\mathop{\rm rank}\nolimits}
-
-\def\tan{\text{\sc{t}}}%tangent
-\def\norm{\text{\sc{n}}}%normal to curve
-\def\bi{\text{\sc{b}}}%binormal
-\renewcommand*\vec[1]{\text{\sc{#1}}}
-\def\Norm{\nu}%normal to surface
 
 \newcommand*{\z}[1]{#1\nobreak\discretionary{}%
             {\hbox{$\mathsurround=0pt #1$}}{}}

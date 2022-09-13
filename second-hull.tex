@@ -3,18 +3,17 @@
 The following proof is due to Jason Cantarella, Greg Kuperberg, Robert Kusner, and John Sullivan \cite{CKKS};
 this is the only proof in our collection that uses knot theory a bit beyond the basic definitions.
 
-Choose a polygonal curve $\alpha=p_1\dots p_n$.
+
+Choose a polygonal curve $\alpha\z=p_1\dots p_n$.
 Suppose a plane $\Pi$ is in general position; that is, it does not contain vertices of $\alpha$.
-Let us denote by $\cross_\alpha\Pi$ the number of intersections of $\Pi$ and $\alpha$.
-Extend the function $\Pi\mapsto \cross_\alpha(\Pi)$ to the minimal upper semicontinuous function defined for all planes;
+Let us denote by $\cross_\alpha(\Pi)$ the number of intersections of $\Pi$ and $\alpha$.
+Extend the function $\Pi\z\mapsto \cross_\alpha(\Pi)$ to the minimal upper semicontinuous function defined for all planes;
 in other words, $\cross_\alpha(\Pi)$ is the maximal integer $k$ such that there is a plane $\Pi'$ arbitrary close to $\Pi$ that intersects $\alpha$ at $k$ points.
 The number $\cross_\alpha(\Pi)$ will be called the \emph{crossing number} of $\Pi$.
 Note that for any plane $\Pi$, the crossing number is even, and it cannot exceed $n$.
 
-{
-
 \begin{wrapfigure}{r}{60 mm}
-\vskip-3mm
+\vskip-0mm
 \centering
 \includegraphics{asy/trefoil}
 \caption*{First and second hull of a trefoil.}
@@ -26,21 +25,23 @@ It is easy to see that the \emph{convex hull} $h_1(\alpha)$ of $\alpha$ can be d
 This observation suggests the following definition of the \emph{second hull}:
 \textit{$x\in h_2(\alpha)$ if $\cross_\alpha(\Pi)\ge4$ for any plane $\Pi\ni x$}.
 
+
 \begin{thm}{Theorem}\label{thm:2nd-hull}
 The second hull оf any nontrivial knot $\alpha$ has a nonempty interior.
 \end{thm}
 
-To show that this theorem implies our main theorem, we will apply the spherical Crofton formula:
+Recall that \emph{spherical polygonal curve} is defined as a concatination of finite number of great-circle arcs in the unit sphere.
+To show that Theorem \ref{thm:2nd-hull} implies our main theorem, we will apply the spherical Crofton formula:
 \textit{for any spherical polygonal curve $\gamma$ we have 
 \[\length \gamma=\pi\cdot \overline n,\leqno({*})\]
 where $\overline n$ denotes the average number of intersections of $\gamma$ with equators.}
-To prove this formula, check it for an arc on an equator and sum it up for all edges of $\gamma$.
+To prove this formula, check it for an arc and sum it up for all edges of $\gamma$.
 
-}
+
 
 \parit{Proof of the main theorem modulo \ref{thm:2nd-hull}.}
 Choose a point $o\in h_2(\alpha)$; we can assume that $o\notin\alpha$.
-Consider the radial projection $\alpha^*$ of $\alpha$ to the sphere centered at $o$;
+Consider the radial projection $\alpha^*$ of $\alpha$ to the unit sphere centered at $o$;
 observe that 
 \[\length\alpha^*=\Psi_o(\alpha),\]
 where $\Psi_o(\alpha)$ denotes the angular length of $\alpha$ with respect to $o$; see Section~\ref{sec:fary}.
@@ -61,7 +62,8 @@ Suppose that a knot $\alpha$ is a connected sum of knots $\alpha_1$ and $\alpha_
 If at least one of the knots $\alpha_1$ or $\alpha_2$ is nontrivial, then so is $\alpha$.
 \end{thm}
 
-This claim has an amusing proof via the so-called \emph{infinite swindle} \cite{mazur}.
+This claim has an amusing proof via the so-called \emph{infinite swindle} \cite{mazur}; see also \cite{poenaru}.
+It also follows by additivity of knot genus \cite[Section 4.3]{adams}.
 
 Suppose $\beta$ is a polygonal curve \emph{inscribed} in $\alpha$;
 that is, the vertices of $\beta$ lie on $\alpha$ and they appear in the same cyclic order on $\alpha$ and $\beta$.
@@ -71,8 +73,7 @@ the corresponding arc of $\alpha$. %taking orientation into account we can say a
 Therefore we get the following:
 
 \begin{thm}{Observation}
-If a polygonal line $\beta$ is inscribed in $\alpha$.
-Then $h_2(\beta)\subset h_2(\alpha)$.
+If a polygonal line $\beta$ is inscribed in $\alpha$, then $h_2(\beta)\subset h_2(\alpha)$.
 \end{thm}
 
 \parit{Proof of \ref{thm:2nd-hull}.}
@@ -92,7 +93,7 @@ a trivial knot of $\alpha$. (A half-space containing all of $\alpha$ will be con
 A rather straightforward application of \ref{clm:connected-sum} implies that if $H'$ is another essential half-space for $\alpha$, then it is also essential for $\alpha_2$.
 It follows that the intersection of all essential half-spaces, say $W$, has nonempty interior --- roughly speaking, it has to contain the region where knotting of $\alpha$ takes place.
 
-Finally observe that if $\cross_\alpha\Pi=2$ for a plane $\Pi$ in general position, then $\Pi$ bounds an essential half-space. 
+Finally observe that if $\cross_\alpha(\Pi)=2$ for a plane $\Pi$ in general position, then $\Pi$ bounds an essential half-space. 
 It follows that if a plane in general position intersects $W$, then it has  crossing number at least 4,
 so $h_2(\alpha)\supset W$ --- hence the result.
 \qeds

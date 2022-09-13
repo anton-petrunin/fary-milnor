@@ -1,4 +1,4 @@
-\section{Milnor--Fenner}
+\section{Milnor--Fenner.}
 
 One of the first solutions to the problem was found by John Milnor \cite{milnor}.
 In this section, we present an amusing interpretation of his proof found by Stephen Fenner \cite{ferner}.
@@ -13,15 +13,10 @@ Then $\alpha$ is a trivial knot.
 The proof is a straightforward construction of a triangular isotopy. 
 
 \parit{Proof.}
-Let $\alpha=p_1\dots p_n$ be the closed simple polygonal curve
-such that the height function $(x,y,z)\to z$ has one local maximum and all vertices have different heights.
-Note that the height function also has a unique local minimum,
-and $\alpha$ can be divided into two arcs from the min-vertex to the max-vertex with a monotonic height function.
+Let $\alpha=p_1\dots p_n$ be the closed simple polygonal curve such that the height function $(x,y,z)\to z$ has one local maximum and all vertices have different heights.
+Note that the height function also has a unique local minimum, and $\alpha$ can be divided into two arcs from the min-vertex to the max-vertex with a monotonic height function.
 
-Consider the three vertexes with the largest height;
-they have to include the max-vertex and two more.
-Note that these three vertices are consequent in the polygonal curve; 
-without loss of generality, we can assume that they are $p_{n-1}$, $p_n$, and $p_1$.
+{
 
 \begin{wrapfigure}{r}{30 mm}
 \vskip-0mm
@@ -30,12 +25,20 @@ without loss of generality, we can assume that they are $p_{n-1}$, $p_n$, and $p
 \vskip0mm
 \end{wrapfigure}
 
+We can assume that $n\ge 4$; otherwise the statement is trivial.
+Consider the three vertexes with the largest height;
+they have to include the max-vertex and two more.
+Note that these three vertices are consequent in the polygonal curve; 
+without loss of generality, we can assume that they are $p_{n-1}$, $p_n$, and $p_1$.
+
 Note that the solid triangle $\solidtriangle p_{n-1}p_np_1$ does not intersect any edge $\alpha$ except the two adjacent edges $[p_{n-1},p_n]\cup[p_n,p_1]$.
 Indeed, if $\solidtriangle p_{n-1}p_np_1$ intersects $[p_1,p_2]$,
 then, 
 since $p_2$ lies below $\solidtriangle p_{n-1}p_np_1$,
 the edge $[p_1,p_2]$ must intersect $[p_{n-1},p_n]$;
 the latter is impossible since $\alpha$ is simple.
+
+}
 
 The same way, one can show that $\solidtriangle p_{n-1}p_np_1$ can not intersect $[p_{n-2},p_{n-1}]$.
 The remaining edges lie below $\solidtriangle p_{n-1}p_np_1$, hence they cannot intersect this triangle.
@@ -49,12 +52,24 @@ Repeating this procedure $n-3$ times we get a triangle.
 Hence $\alpha$ is a trivial knot.
 \qeds
 
-\parit{Proof of the main theorem.}
+\begin{wrapfigure}{r}{35 mm}
+\vskip-0mm
+\centering
+\begin{lpic}[t(-0mm),b(0mm),r(4mm),l(0mm)]{asy/Ui(1)}
+\lbl[t]{17.5,1;$v_i$}
+\lbl[l]{24.5,5.5;$v_{i-1}$}
+\lbl[tl]{16,9;$\phi_i$}
+\lbl[br]{5,21;$U_i$}
+\end{lpic}
+\vskip0mm
+\end{wrapfigure}
+
+\parit{Proof of the main theorem}
 Let $\alpha=p_1\dots p_n$ be a nontrivial polygonal knot.
 Denote by $v_i$ the unit vector in the direction of $p_{i+1}-p_i$;
 we assume that $p_n=p_0$.
 Consider the set $U_i$ formed by all unit vectors $u$ such that $\measuredangle(u,v_i)\ge \tfrac \pi 2$ and $\measuredangle(u,v_{i-1})\le \tfrac \pi 2$.
-Note that $u\in U_i$ if and only if the function $x\mapsto \langle u,x\rangle$ has a local maximum at $p_i$ on $\alpha$.
+Note that $u\in U_i$ if and only if the function $x\mapsto \langle u,x\rangle$ has a local maximum at $p_i$ on~$\alpha$.
 
 Let us choose $(x,y,z)$-coordinates in the space so that $z$-axis points in the direction of $u$.
 Then according to \ref{prop:one-max-one-min}, the function $p\mapsto \langle u,p\rangle$ has at least two local maxima on $\alpha$.

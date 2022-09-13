@@ -2,12 +2,12 @@
 %%BoundingBox: -35 -87 33 10 
 %%HiResBoundingBox: -34.97171 -86.78935 32.32422 9.2267 
 %%Creator: MetaPost 2.00
-%%CreationDate: 2022.02.27:2212
+%%CreationDate: 2022.09.13:1527
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
-%%+ font DRQPSE-CMMI10 VYUYNC-CMMI7 RWSKGV-CMSY7 QSUNSV-CMR7
+%%+ font DRQPSE-CMMI10 AZUYNC-CMMI7 RWSKGV-CMSY7 QSUNSV-CMR7
 %%DocumentSuppliedResources: procset mpost-minimal
-%%+ font DRQPSE-CMMI10 VYUYNC-CMMI7 RWSKGV-CMSY7 QSUNSV-CMR7
+%%+ font DRQPSE-CMMI10 AZUYNC-CMMI7 RWSKGV-CMSY7 QSUNSV-CMR7
 %%EndComments
 %%BeginProlog
 %%BeginResource: procset mpost-minimal
@@ -260,7 +260,7 @@ AA536FB128ADB86C5D278CCC986E275022BFBA8FCEE87A3C42DECB5150ABF613
 cleartomark
 {restore}if
 %%EndResource
-%%BeginResource: font VYUYNC-CMMI7
+%%BeginResource: font AZUYNC-CMMI7
 %!PS-AdobeFont-1.0: CMMI7 003.002
 %%Title: CMMI7
 %Version: 003.002
@@ -272,7 +272,7 @@ cleartomark
 % This license is in the accompanying file OFL.txt, and is also
 % available with a FAQ at: http://scripts.sil.org/OFL.
 %%EndComments
-FontDirectory/VYUYNC-CMMI7 known{/VYUYNC-CMMI7 findfont dup/UniqueID known{dup
+FontDirectory/AZUYNC-CMMI7 known{/AZUYNC-CMMI7 findfont dup/UniqueID known{dup
 /UniqueID get 5087382 eq exch/FontType get 1 eq and}{pop false}ifelse
 {save true}{false}ifelse}{false}ifelse
 11 dict begin

@@ -118,7 +118,7 @@ draw z.p0--z.ww dashed evenly;
 dOt z.p0,z.p1,z.p2,z.x,z.y,z.w,z.ww;
 
 
-label.bot(btex $p_0$ etex, z.p0);
+label.llft(btex $p_n=p_0$ etex, z.p0+(4,0));
 label.top(btex $p_1$ etex, z.p1);
 label.bot(btex $p_2$ etex, z.p2);
 label.urt(btex $w_1$ etex, z.w);

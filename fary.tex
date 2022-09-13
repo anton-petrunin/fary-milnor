@@ -37,23 +37,23 @@ For any closed simple polygonal curve and any $o\notin\alpha$, we have
 \[\Psi_o(\alpha)\le \tc{\alpha}.\]
 \end{thm}
 
-\parit{Proof.}
-Let $\alpha=p_1\dots p_n$; for each $i$, set 
-\begin{align*}
-\phi_i&=\pi-\measuredangle p_{i-1}p_ip_{i+1},
-&
-\psi_i&=\measuredangle p_{i-1} o p_{i},
-&
-\theta_i&=\measuredangle o p_i p_{i+1}.
-\end{align*}
-Here we assume that indexes are taken modulo $n$; in particular, $p_{n}=p_0$.
-
 \begin{wrapfigure}{r}{45 mm}
-\vskip-0mm
+\vskip-10mm
 \centering
 \includegraphics{mppics/pic-15}
 \vskip0mm
 \end{wrapfigure}
+
+\parit{Proof.}
+Let $\alpha=p_1\dots p_n$; for each $i$, set 
+\begin{align*}
+\phi_i&=\pi-\measuredangle p_{i-1}p_ip_{i+1},
+\\
+\psi_i&=\measuredangle p_{i-1} o p_{i},
+\\
+\theta_i&=\measuredangle o p_i p_{i+1}.
+\end{align*}
+Here we assume that indexes are taken modulo $n$; in particular, $p_{n}=p_0$.
 
 Note that $\phi_i$ is the external angle at $p_i$;
 therefore 
@@ -70,7 +70,7 @@ and the result follows.
 
 
 \begin{wrapfigure}{r}{44 mm}
-\vskip-0mm
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-13}
 \vskip0mm
@@ -82,7 +82,7 @@ Consider a projection of the knot to a plane in \emph{general position}
 The obtained closed polygonal curve $\alpha_{u^\perp}=p_1p_2\dots p_n$ divides the plane into domains, one of which is unbounded, denote it by $U$, and the others are bounded.
 
 First, note that all domains can be colored in a chessboard order;
-that is, they can be colored in black and white in such a way that domains with common borderline get different colors.
+that is, they can be colored in black and white in such a way that domains with common borderline get different colors \cite[Exercise 2.27]{adams}.
 If the unbounded domain is colored in white and every other domain is colored in black, then one can untie the knot by flipping these domains one by one.%
 \footnote{It is instructive to give a formal proof of the last statement; that is, \textit{show that if there is only one white region, then $\alpha$ is trivial}.}
 

@@ -12,19 +12,19 @@ The main hero in this proof is the so-called \emph{extended monotonicity theorem
 We will also apply the \emph{Douglas--Rado theorem} on the existence of area-minimizing discs and reuse the inequality between total curvature and angular length from Fáry's proof; see \ref{prop:angular-length}.
 
 The image of a map from a domain of $\mathbb{R}^2$ to $\mathbb{R}^3$ will be called a \emph{surface};
-it might have self-intersections and singularities, but we assume it is reasonable, say locally Lipschitz; so we can talk about its area.
+it might have self-intersections and singularities, but we assume it is reasonable, say locally Lipschitz \cite{wiki:lipschitz}; so we can talk about its area.
 A point on the surface might refer to a point in $\mathbb{R}^3$, or the corresponding point in the domain of parameters in $\mathbb{R}^2$;
-it should be easy to guess from the context.
+it should be easy to infer from the context.
 
 We denote by $\mathbb{D}$ the closed disc in the plane.
 A surface defined by a map $f\:\mathbb{D}\to\mathbb{R}^3$ will be called a \emph{disc}.
-The restriction $f|_{\partial \mathbb{D}}$ will be called the \emph{boundary line} of the disc.
+The restriction $f|_{\partial \mathbb{D}}$ as well as its image can be referred as the \emph{boundary} of the disc.
 
-A disc $\Sigma$ is called area-minimizing if it has the smallest area among the surfaces with the given boundary line.
+A disc $\Sigma$ is called area-minimizing if it has the smallest area among the surfaces with the given boundary.
 The following statement about area-minimizing discs is easy to believe, but not easy to prove; see \cite{white-lectures}.
 
 \begin{thm}{Douglas--Rado theorem}\label{thm:min-exists}
-Given a simple closed polygonal curve $\alpha$ in $\mathbb{R}^3$, there is an area-minimizing disc $\Sigma$ with boundary line $\alpha$; it is a smooth surface, possibly with self-intersections and isolated singularities.
+Given a simple closed polygonal curve $\alpha$ in $\mathbb{R}^3$, there is an area-minimizing disc $\Sigma$ with boundary $\alpha$; it is a smooth surface, possibly with self-intersections and isolated singularities.
 
 Moreover, if $\Sigma$ has no self-intersections, then it is an embedded smooth surface with no singularities (in this case $\alpha$ is a trivial knot).
 \end{thm}
@@ -36,14 +36,14 @@ Moreover, if $\Sigma$ has no self-intersections, then it is an embedded smooth s
 \vskip0mm
 \end{wrapfigure}
 
-Choose a disc $\Sigma$ in $\mathbb{R}^3$ with boundary line $\alpha$.
+Choose a disc $\Sigma$ in $\mathbb{R}^3$ with boundary $\alpha$.
 Given a point $o\notin \alpha$, let us consider \emph{collared} $\Sigma$ with respect to $o$;
 it is a new surface that will be denoted by $\hat\Sigma_o$;
 it includes $\Sigma$ and the \emph{collar} formed by all rays that start at points of $\alpha$ and go in the direction opposite to $o$.
 Note that $\hat\Sigma_o$ admits a natural parametrization by the whole plane.
 
 \begin{thm}{Extended monotonicity theorem}\label{thm:monotonicity}
-Let $\Sigma$ be an area-minimizing disc with boundary line~$\alpha$.
+Let $\Sigma$ be an area-minimizing disc with boundary~$\alpha$.
 Given a point $o\notin \alpha$, consider the function 
 \[W_o(r)=\area (\hat\Sigma_o\cap \bar B_r(o)),\]
 where $\bar B_r(o)$ denotes the ball of radius $r$ centered at $o$.
@@ -60,7 +60,8 @@ If $o\in \Sigma$, then $\lim_{r\to0}\frac{W_o(r)}{r^2}\ge \pi$.
 
 \end{thm}
 
-The classical monotonicity theorem states that the same holds for balls that do not touch the boundary of the surface.
+The classical monotonicity theorem states that the function $r\mapsto \frac{W_o(r)}{r^2}$ is monotonic 
+while $r$ is smaller than the distance from $o$ to $\alpha$.
 The stated version is due to Brian White \cite{white}.
 The same statement holds for minimal surfaces \cite{EWW_embed}; its proof requires deeper diving into differential geometry.
 At the same time, the original formulation admits a generalization to a wider class of ambient spaces\amm{ \cite{St_structure}}.
@@ -107,7 +108,7 @@ the main part of the theorem implies that $W_o(r)\ge\pi\cdot r^2$ for \emph{any}
 
 \parit{Proof of the main theorem.}
 Suppose that $\tc\alpha<4\cdot\pi$.
-Consider an area-minimizing surface $\Sigma$ with the boundary line $\alpha$; it exists by \ref{thm:min-exists}.
+Consider an area-minimizing surface $\Sigma$ with the boundary $\alpha$; it exists by \ref{thm:min-exists}.
 If $\Sigma$ has no self-intersections, then $\alpha$ is a trivial knot.
 
 Suppose $\Sigma$ has a self-intersection at a point $o$.
