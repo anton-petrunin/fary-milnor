@@ -13,25 +13,26 @@ Then $\alpha$ is a trivial knot.
 The proof is a straightforward construction of a triangular isotopy. 
 
 \parit{Proof.}
-Let $\alpha=p_1\dots p_n$ be the closed simple polygonal curve such that the height function $(x,y,z)\to z$ has one local maximum and all vertices have different heights.
+Let $\alpha=p_1\dots p_n$.
+We can assume that $n\ge 4$; otherwise the statement is trivial.
 Note that the height function also has a unique local minimum, and $\alpha$ can be divided into two arcs from the min-vertex to the max-vertex with a monotonic height function.
 
 {
 
 \begin{wrapfigure}{r}{30 mm}
-\vskip-0mm
+\vskip-6mm
 \centering
 \includegraphics{mppics/pic-19}
+\caption*{Triangular isotopy.}
 \vskip0mm
 \end{wrapfigure}
 
-We can assume that $n\ge 4$; otherwise the statement is trivial.
 Consider the three vertexes with the largest height;
 they have to include the max-vertex and two more.
 Note that these three vertices are consequent in the polygonal curve; 
 without loss of generality, we can assume that they are $p_{n-1}$, $p_n$, and $p_1$.
 
-Note that the solid triangle $\solidtriangle p_{n-1}p_np_1$ does not intersect any edge $\alpha$ except the two adjacent edges $[p_{n-1},p_n]\cup[p_n,p_1]$.
+Note that the solid triangle $\solidtriangle p_{n-1}p_np_1$ does not intersect any edge $\alpha$ except the two adjacent edges $[p_{n-1},p_n]$ and $[p_n,p_1]$.
 Indeed, if $\solidtriangle p_{n-1}p_np_1$ intersects $[p_1,p_2]$,
 then, 
 since $p_2$ lies below $\solidtriangle p_{n-1}p_np_1$,
@@ -40,7 +41,7 @@ the latter is impossible since $\alpha$ is simple.
 
 }
 
-The same way, one can show that $\solidtriangle p_{n-1}p_np_1$ can not intersect $[p_{n-2},p_{n-1}]$.
+The same way, one can show that $\solidtriangle p_{n-1}p_np_1$ cannot intersect $[p_{n-2},p_{n-1}]$.
 The remaining edges lie below $\solidtriangle p_{n-1}p_np_1$, hence they cannot intersect this triangle.
 
 Applying a triangular isotopy, to $\solidtriangle p_{n-1}p_np_1$ we get a closed simple polygonal curve $\alpha'\z=p_1\dots p_{n-1}$ which is isotopic to~$\alpha$.
@@ -52,24 +53,27 @@ Repeating this procedure $n-3$ times we get a triangle.
 Hence $\alpha$ is a trivial knot.
 \qeds
 
-\begin{wrapfigure}{r}{35 mm}
+\begin{wrapfigure}{r}{33 mm}
 \vskip-0mm
 \centering
 \begin{lpic}[t(-0mm),b(0mm),r(4mm),l(0mm)]{asy/Ui(1)}
-\lbl[t]{17.5,1;$v_i$}
-\lbl[l]{24.5,5.5;$v_{i-1}$}
-\lbl[tl]{16,9;$\phi_i$}
+\lbl[l]{24.5,10;$v_i$}
+\lbl[lt]{22,5;$v_{i-1}$}
+\lbl[tl]{18,10.5;$\phi_i$}
 \lbl[br]{5,21;$U_i$}
 \end{lpic}
+\\
+\caption*{Spherical slice.}
 \vskip0mm
 \end{wrapfigure}
 
-\parit{Proof of the main theorem}
+\parit{Proof of the main theorem.}
 Let $\alpha=p_1\dots p_n$ be a nontrivial polygonal knot.
 Denote by $v_i$ the unit vector in the direction of $p_{i+1}-p_i$;
 we assume that $p_n=p_0$.
+
 Consider the set $U_i$ formed by all unit vectors $u$ such that $\measuredangle(u,v_i)\ge \tfrac \pi 2$ and $\measuredangle(u,v_{i-1})\le \tfrac \pi 2$.
-Note that $u\in U_i$ if and only if the function $x\mapsto \langle u,x\rangle$ has a local maximum at $p_i$ on~$\alpha$.
+Note that $u\z\in U_i$ if and only if the function $x\mapsto \langle u,x\rangle$ has a local minimum at $p_i$ on~$\alpha$.
 
 Let us choose $(x,y,z)$-coordinates in the space so that $z$-axis points in the direction of $u$.
 Then according to \ref{prop:one-max-one-min}, the function $p\mapsto \langle u,p\rangle$ has at least two local maxima on $\alpha$.
@@ -77,7 +81,7 @@ It follows that the sets $U_1,\dots,U_n$ cover each point on the unit sphere $\m
 
 Recall that $\area \mathbb{S}^2=4\cdot\pi$.
 Observe that $\phi_i=\measuredangle(v_{i-1},v_i)$ is the external angle of $\alpha$ at $p_i$.
-Note that $U_i$ is a slice of the sphere between two meridians meeting at angle $\phi_i$, therefore $U_i$ occupies a $\tfrac{\phi_i}{2\cdot\pi}$ portion of the whole sphere; so, $\area U_i=2\cdot \phi_i$.
+Note that $U_i$ is a slice of the sphere between two meridians meeting at angle $\phi_i$, therefore $U_i$ occupies a $\tfrac{\phi_i}{2\cdot\pi}$ portion of the whole sphere; so, $2\cdot \phi_i=\area U_i$.
 Since the sets $U_1, \dots, U_n$ cover $\mathbb{S}^2$ twice, we get
 \[\tc\alpha=\phi_1+\dots+\phi_n=\tfrac12\cdot (\area U_1+\dots+\area U_n)\ge \tfrac22\cdot \area\mathbb{S}^2=4\cdot\pi.\]
 \qedsf

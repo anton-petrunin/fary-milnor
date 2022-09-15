@@ -33,11 +33,12 @@ Moreover, if $\Sigma$ has no self-intersections, then it is an embedded smooth s
 \vskip-5mm
 \centering
 \includegraphics{mppics/pic-51}
+\caption*{Surface and its collar.}
 \vskip0mm
 \end{wrapfigure}
 
 Choose a disc $\Sigma$ in $\mathbb{R}^3$ with boundary $\alpha$.
-Given a point $o\notin \alpha$, let us consider \emph{collared} $\Sigma$ with respect to $o$;
+Given a point $o\notin \alpha$, let us consider \emph{collared} $\Sigma$ with respect to~$o$;
 it is a new surface that will be denoted by $\hat\Sigma_o$;
 it includes $\Sigma$ and the \emph{collar} formed by all rays that start at points of $\alpha$ and go in the direction opposite to $o$.
 Note that $\hat\Sigma_o$ admits a natural parametrization by the whole plane.
@@ -47,15 +48,15 @@ Let $\Sigma$ be an area-minimizing disc with boundary~$\alpha$.
 Given a point $o\notin \alpha$, consider the function 
 \[W_o(r)=\area (\hat\Sigma_o\cap \bar B_r(o)),\]
 where $\bar B_r(o)$ denotes the ball of radius $r$ centered at $o$.
-Then the function $r\mapsto \frac{W_o(r)}{r^2}$
-is nondecreasing. Moreover, 
+Then $r\z\mapsto \frac{W_o(r)}{r^2}$ is a nondecreasing function.
+Moreover, 
 
 \begin{subthm}{thm:monotonicity:a}
-$\lim_{r\to\infty}\frac{W_o(r)}{r^2}=\tfrac12\cdot \Psi_o(\alpha)$, where $\Psi_o(\alpha)$ denotes the angular length of $\alpha$ with respect to $o$; see Section~\ref{sec:fary}.
+$\lim_{r\to\infty}\frac{W_o(r)}{r^2}=\tfrac12\cdot \Psi_o(\alpha)$, where $\Psi_o(\alpha)$ denotes the angular length of $\alpha$ with respect to $o$; see Section~\ref{sec:fary};
 \end{subthm}
 
 \begin{subthm}{thm:monotonicity:b}
-If $o\in \Sigma$, then $\lim_{r\to0}\frac{W_o(r)}{r^2}\ge \pi$.
+if $o\in \Sigma$, then $\lim_{r\to0}\frac{W_o(r)}{r^2}\ge \pi$.
 \end{subthm}
 
 \end{thm}
@@ -64,7 +65,7 @@ The classical monotonicity theorem states that the function $r\mapsto \frac{W_o(
 while $r$ is smaller than the distance from $o$ to $\alpha$.
 The stated version is due to Brian White \cite{white}.
 The same statement holds for minimal surfaces \cite{EWW_embed}; its proof requires deeper diving into differential geometry.
-At the same time, the original formulation admits a generalization to a wider class of ambient spaces\amm{ \cite{St_structure}}.
+At the same time, the original formulation admits a generalization to a wider class of ambient spaces \cite{St_structure}.
 
 
 \parit{Proof.}
@@ -80,7 +81,8 @@ it is a surface bounded by $\lambda_o(r)$.
 Let $\Delta_r'$ be the cone over $\lambda_o(r)$ with the center at $o$.
 Note that $\Delta_r'$ differs from $\Delta_r$ only inside $\Sigma$.
 Since $\Sigma$ is area-minimizing, we get that 
-\[\area \Delta_r'\ge \area \Delta_r\eqlbl{area=<area}\]
+\[\area \Delta_r'\ge \area \Delta_r
+\leqno({*}{*})\]
 for any $r>0$.
 Observe that 
 \begin{align*}
@@ -88,7 +90,7 @@ Observe that
 &
 \area \Delta_r'&=\tfrac12\cdot r\cdot \ell(r).
 \end{align*}
-Applying \ref{area=<area}, we get
+Applying $({*}{*})$, we get
 \[r\cdot \ell(r)\ge 2\cdot W_o(r).\]
 Therefore, we get
 \[r\cdot W_o'(r)\ge 2\cdot W_o(r)\]
@@ -116,7 +118,7 @@ In this case, the intersection $B_r(o)\cap \Sigma$ is covered by two or more sma
 By \ref{thm:monotonicity:b}, we get 
 \[\lim_{r\to0}\frac{W_o(r)}{r^2}\ge 2\cdot\pi.\]
 
-Applying the main statement in the monotonicity theorem, we get $\frac{W_o(r)}{r^2}\ge 2\cdot\pi$ for any $r>0$.
+Applying the main statement in the monotonicity theorem, we get $\frac{W_o(r)}{r^2}\z\ge 2\cdot\pi$ for any $r>0$.
 By \ref{thm:monotonicity:b} and Proposition~\ref{prop:angular-length} in Fáry's proof, we get
 \[\tc{\alpha}\ge \Psi_o(\alpha)\ge 2\cdot \frac{W_o(r)}{r^2}\ge 4\cdot\pi\]
 --- a contradiction.

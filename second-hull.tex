@@ -3,15 +3,6 @@
 The following proof is due to Jason Cantarella, Greg Kuperberg, Robert Kusner, and John Sullivan \cite{CKKS};
 this is the only proof in our collection that uses knot theory a bit beyond the basic definitions.
 
-
-Choose a polygonal curve $\alpha\z=p_1\dots p_n$.
-Suppose a plane $\Pi$ is in general position; that is, it does not contain vertices of $\alpha$.
-Let us denote by $\cross_\alpha(\Pi)$ the number of intersections of $\Pi$ and $\alpha$.
-Extend the function $\Pi\z\mapsto \cross_\alpha(\Pi)$ to the minimal upper semicontinuous function defined for all planes;
-in other words, $\cross_\alpha(\Pi)$ is the maximal integer $k$ such that there is a plane $\Pi'$ arbitrary close to $\Pi$ that intersects $\alpha$ at $k$ points.
-The number $\cross_\alpha(\Pi)$ will be called the \emph{crossing number} of $\Pi$.
-Note that for any plane $\Pi$, the crossing number is even, and it cannot exceed $n$.
-
 \begin{wrapfigure}{r}{60 mm}
 \vskip-0mm
 \centering
@@ -20,8 +11,16 @@ Note that for any plane $\Pi$, the crossing number is even, and it cannot exceed
 \vskip0mm
 \end{wrapfigure}
 
+Choose a polygonal curve $\alpha\z=p_1\dots p_n$.
+Suppose a plane $\Pi$ is in general position; that is, it does not contain vertices of $\alpha$.
+Let us denote by $\cross_\alpha(\Pi)$ the number of intersections of $\Pi$ and $\alpha$.
+Extend the function $\Pi\z\mapsto \cross_\alpha(\Pi)$ to the minimal upper semicontinuous function defined for all planes;
+in other words, $\cross_\alpha(\Pi)$ is the maximal integer $k$ such that there is a plane $\Pi'$ arbitrary close to $\Pi$ that intersects $\alpha$ at $k$ points.
+The number $\cross_\alpha(\Pi)$ will be called the \emph{crossing number} of $\Pi$.
+Note that the crossing number is always even, and it cannot exceed $n$.
+
 It is easy to see that the \emph{convex hull} $h_1(\alpha)$ of $\alpha$ can be defined the following way:
-\textit{$x\in h_1(\alpha)$ if $\cross_\alpha(\Pi)\ge2$ for any plane $\Pi\ni x$}.
+\textit{$x\in h_1(\alpha)$ if $\cross_\alpha(\Pi)\z\ge2$ for any plane $\Pi\ni x$}.
 This observation suggests the following definition of the \emph{second hull}:
 \textit{$x\in h_2(\alpha)$ if $\cross_\alpha(\Pi)\ge4$ for any plane $\Pi\ni x$}.
 
@@ -31,10 +30,10 @@ The second hull оf any nontrivial knot $\alpha$ has a nonempty interior.
 \end{thm}
 
 Recall that \emph{spherical polygonal curve} is defined as a concatination of finite number of great-circle arcs in the unit sphere.
-To show that Theorem \ref{thm:2nd-hull} implies our main theorem, we will apply the spherical Crofton formula:
-\textit{for any spherical polygonal curve $\gamma$ we have 
-\[\length \gamma=\pi\cdot \overline n,\leqno({*})\]
-where $\overline n$ denotes the average number of intersections of $\gamma$ with equators.}
+To show that Theorem \ref{thm:2nd-hull} implies the main theorem, we will apply the spherical Crofton formula:
+\textit{for any spherical polygonal curve $\gamma$ we have}
+\[\length \gamma=\pi\cdot \overline n,\leqno(\threestars)\]
+\textit{where $\overline n$ denotes the average number of intersections of $\gamma$ with equators.}
 To prove this formula, check it for an arc and sum it up for all edges of $\gamma$.
 
 
@@ -47,10 +46,10 @@ observe that
 where $\Psi_o(\alpha)$ denotes the angular length of $\alpha$ with respect to $o$; see Section~\ref{sec:fary}.
 
 By \ref{prop:angular-length}, it is sufficient to show that 
-\[\length\alpha^*\ge 4\cdot\pi.\leqno({*}{*})\]
+\[\length\alpha^*\ge 4\cdot\pi.\leqno(\fourstars)\]
 Since $o$ is in the second hull, $\alpha^*$ crosses every equator in general position at least 4 times.
 It follows that the average number of crossings is at least~4.
-Applying $({*})$, we get $({*}{*})$.
+Applying $(\threestars)$, we get $(\fourstars)$.
 \qeds
 
 Suppose that a plane $\Pi$ divides a knot $\alpha$ into two arcs, one on each side; in particular, $\Pi$ intersects $\alpha$ at two points, say $p$ and $q$.
@@ -73,13 +72,14 @@ the corresponding arc of $\alpha$. %taking orientation into account we can say a
 Therefore we get the following:
 
 \begin{thm}{Observation}
-If a polygonal line $\beta$ is inscribed in $\alpha$, then $h_2(\beta)\subset h_2(\alpha)$.
+If a polygonal line $\beta$ is inscribed in $\alpha$, then 
+\[h_2(\beta)\z\subset h_2(\alpha).\]
 \end{thm}
 
 \parit{Proof of \ref{thm:2nd-hull}.}
 Assume the contrary; let $\alpha$ be a nontrivial polygonal knot with the least number of vertices, say $n$, such that $h_2(\alpha)$ has an empty interior.
 It is easy to see that $n\ge 6$;
-in other words, any simple space 5-gon is a trivial knot.
+in fact, any simple space 5-gon is a trivial knot.
 
 Suppose $\Pi$ is a plane in general position that divides $\alpha$ in two arcs, so it defines a decomposition of $\alpha$ into a connected sum of two knots $\alpha_1$ and $\alpha_2$.
 By the observation, $h_2(\alpha_1)$ and $h_2(\alpha_2)$ have empty interior.

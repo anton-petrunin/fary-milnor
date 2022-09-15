@@ -2,7 +2,7 @@
 %%BoundingBox: -31 -21 31 28 
 %%HiResBoundingBox: -30.16425 -20.644 30.16425 27.98067 
 %%Creator: MetaPost 2.00
-%%CreationDate: 2022.09.13:1527
+%%CreationDate: 2022.09.14:1510
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font OTVKBQ-CMMI10

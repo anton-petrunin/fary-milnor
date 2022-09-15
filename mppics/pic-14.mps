@@ -1,8 +1,8 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%BoundingBox: -60 -1 60 63 
-%%HiResBoundingBox: -59.77727 -0.25 59.77727 62.93117 
+%%BoundingBox: -60 -1 60 60 
+%%HiResBoundingBox: -59.77727 -0.25 59.77727 59.77727 
 %%Creator: MetaPost 2.00
-%%CreationDate: 2022.09.13:1527
+%%CreationDate: 2022.09.14:1510
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font KNJFED-CMMI10
@@ -296,7 +296,7 @@ newpath -39.68484 0 moveto
  closepath stroke
 -4.2625 24.37537 moveto
 (D) cmmi10 9.96265 fshow
--3.9442 56.12337 moveto
+-3.9442 49.71947 moveto
 (U) cmmi10 9.96265 fshow
 showpage
 %%EOF

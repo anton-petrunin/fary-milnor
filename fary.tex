@@ -2,10 +2,10 @@
 
 In this section, we sketch the solution of István Fáry \cite{fary} which was published before Milnor's proof.
 
-We start with Crofton-type formulas for total curvature.
+We start with Crofton-type formulas for total curvature \cite[Proposition 4.1]{sullivan-curves}.
 Given a curve $\alpha$ in $\mathbb{R}^3$ and a unit vector $u$, denote by $\alpha_{u^\perp}$ 
 and $\alpha_u$ the projections of $\alpha$ to the plane perpendicular to $u$ and the line parallel to $u$ respectively.
-Given a function $f\:\mathbb{S}^2\to\mathbb{R}$, let us denote its average value by $\overline{f(u)}$.
+Let us denote by $\overline{f(u)}$ average value of $f(u)$ for a function $f\:\mathbb{S}^2\to\mathbb{R}$.
 
 \begin{thm}{Crofton-type formula}\label{prop:tc-crofton}
 Let $\alpha$ be a polygonal curve in $\mathbb{R}^3$.
@@ -19,8 +19,16 @@ Then
 
 
 \parit{Proof.}
-Observe that it is sufficient to check the identities for polygonal curves made of two edges
-and in this case, it boils down to very straightforward calculations.
+Observe that it is sufficient to check the identities for $\alpha$ made of two edges.
+Denote its external angle by $\phi$, so $\tc\alpha=\phi$.
+Observe that each term in the formula is proportional to $\phi$.
+Therefore it is sufficient to consider the case $\phi=\pi$.
+
+In other words, we can assume that $\alpha$ made of two edges that turn in the opposite direction.
+Note that the same holds for $\alpha_{u^\perp}$ if $u$ is not parallel to an edge of $\alpha$.
+Similarly, the same holds for $\alpha_u$ if $u$ is not perpendicular to an edge of $\alpha$.
+Therefore, $\tc{\alpha_{u^\perp}}=\tc{\alpha_u}=\pi$ for almost all $u\in\mathbb{S}^2$.
+In particular, $\overline{\tc{\alpha_{u^\perp}}}=\overline{\tc{\alpha_u}}=\pi$ which proves the statement.
 \qeds
 
 The original version of Milnor's proof 
@@ -38,9 +46,10 @@ For any closed simple polygonal curve and any $o\notin\alpha$, we have
 \end{thm}
 
 \begin{wrapfigure}{r}{45 mm}
-\vskip-10mm
+\vskip-7mm
 \centering
 \includegraphics{mppics/pic-15}
+\caption*{Definitions of angles.}
 \vskip0mm
 \end{wrapfigure}
 
@@ -68,31 +77,38 @@ Summing up, we get
 and the result follows.
 \qeds
 
-
-\begin{wrapfigure}{r}{44 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-13}
-\vskip0mm
-\end{wrapfigure}
-
 \parit{Proof of the main theorem.}
 Consider a projection of the knot to a plane in \emph{general position}
 (this time it means that the self-intersections of the projection are at most double and the projection of each edge is not degenerate).
 The obtained closed polygonal curve $\alpha_{u^\perp}=p_1p_2\dots p_n$ divides the plane into domains, one of which is unbounded, denote it by $U$, and the others are bounded.
 
+\begin{figure}[!ht]
+\begin{minipage}{.48\textwidth}
+\centering
+\includegraphics{mppics/pic-13}
+\end{minipage}\hfill
+\begin{minipage}{.48\textwidth}
+\centering
+\includegraphics{mppics/pic-14}
+\end{minipage}
+
+\medskip
+
+\begin{minipage}{.48\textwidth}
+\centering
+\caption*{Projection of an unknot.}
+\end{minipage}\hfill
+\begin{minipage}{.48\textwidth}
+\centering
+\caption*{Projection of a knot.}
+\end{minipage}
+\vskip-4mm
+\end{figure}
+
 First, note that all domains can be colored in a chessboard order;
 that is, they can be colored in black and white in such a way that domains with common borderline get different colors \cite[Exercise 2.27]{adams}.
 If the unbounded domain is colored in white and every other domain is colored in black, then one can untie the knot by flipping these domains one by one.%
 \footnote{It is instructive to give a formal proof of the last statement; that is, \textit{show that if there is only one white region, then $\alpha$ is trivial}.}
-
-
-\begin{wrapfigure}{r}{44 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-14}
-\vskip0mm
-\end{wrapfigure}
 
 Therefore, among the bounded domains there is a white domain, denote it by $D$.
 The domain $D$ cannot adjoin %the word adjoin is used for countries, and I guess it can be used in the plane. I agree.

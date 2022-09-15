@@ -19,26 +19,26 @@ outputformat := "eps";
 
 beginfig(13) 
 save u;
-u:=1.4cm;
+u:=.5cm;
+v:=.7cm;
 
-z.a1=(0,0)*u;
-z.a2=(1,0)*u;
-z.a3=(0,1)*u;
-z.a4=(2,1)*u;
-z.a5=(1,2)*u;
-z.a6=(.5,3)*u;
-z.a7=(.2,2)*u;
-z.a8=(3,2)*u;
-z.a9=(3,3)*u;
+z.a1=(0*u,0*v);
+z.a2=(1*u,-1*v);
+z.a3=(3*u,1*v);
+z.a4=(5*u,-1*v);
+z.a5=(8*u,2*v);
+z.a6=(6*u,2*v);
+z.a7=(9*u,-1*v);
+z.a8=(10*u,0*v);
 
 
 save p; path p[];
-p0=z.a1--z.a2--z.a3--z.a4--z.a6--z.a7--z.a8--z.a9--cycle;
+p0=z.a1--z.a2--z.a3--z.a4--z.a5--z.a6--z.a7--z.a8---cycle;
 
 draw p0;
 fill p0 withcolor black;
 
-label(btex $U$ etex, ((2.5,.5)*u));
+label(btex $U$ etex, ((5*u,1*v)));
 
 endfig;
 
@@ -68,7 +68,7 @@ fill z.x--z.y--z.z--cycle withcolor white;
 draw p0;
 
 label(btex $D$ etex, .6[z.z,.5[z.x,z.y]]);
-label(btex $U$ etex, .5[z.a3,z.a6]);
+label.bot(btex $U$ etex, .5[z.a3,z.a6]);
 endfig;
 
 beginfig(15) 
@@ -343,9 +343,9 @@ z.a5=.5[z.a0,z.a4];
 
 p1=z.a5--z.a4--z.a3--z.a2--z.a1--z.a0--cycle;
 
-z.b5=whatever*z.a5=(1.4,whatever)*u;
+z.b5=whatever*z.a5=(1.8,whatever)*u;
 
-p2=z.b5--(1.4,2)*u--(-1.4,2)*u--(-1.4,-1.4)*u--(1.4,-1.4)*u--cycle;
+p2=z.b5--(1.8,2)*u--(-1.8,2)*u--(-1.8,-1.4)*u--(1.8,-1.4)*u--cycle;
 
 for i=0 step 360/N until 359.9:
 draw p0 rotated i;

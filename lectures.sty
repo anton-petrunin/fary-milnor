@@ -352,4 +352,16 @@ semi-pe-ri-me-ter
 \newcommand{\eprop}{\end{prop}}
 \newcommand{\ethm}{\end{thm}}
 
-\def\mini{\scriptsize}
+\newcommand{\threestars}{\smash{%
+\raisebox{-.6ex}{%
+\setlength{\tabcolsep}{.5pt}%
+\begin{tabular}{@{}cc@{}}%
+\multicolumn2c*\\[-1.7ex]*&*%
+\end{tabular}}}}
+
+\newcommand{\fourstars}{\smash{%
+\raisebox{-.6ex}{%
+\setlength{\tabcolsep}{.5pt}%
+\begin{tabular}{@{}cc@{}}%
+*&*\\[-1.7ex]*&*%
+\end{tabular}}}}
