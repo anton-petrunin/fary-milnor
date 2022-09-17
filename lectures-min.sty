@@ -1,0 +1,75 @@
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,citecolor=black,linkcolor=black,anchorcolor=black,filecolor=black,menucolor=black,urlcolor=black,
+pdftitle={},
+pdfauthor={}
+}
+
+\usepackage{enumerate}
+\usepackage{epsfig,lpic,wrapfig}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{wrapfig}
+\usepackage[some,center]{background}
+\backgroundsetup{
+scale=.6,
+%color=black,
+opacity=1,
+angle=0,
+vshift=-40mm,
+contents={%
+  \includegraphics[width=\paperwidth%,height=\paperheight
+  ]{Curves-new}
+  }%
+}
+
+
+\newcommand*{\z}[1]{#1\nobreak\discretionary{}%
+            {\hbox{$\mathsurround=0pt #1$}}{}}
+            
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{maintheorem}{Main theorem}
+\newtheorem{Proposition}[theorem]{Proposition}
+\newtheorem{Crofton-type formula}[theorem]{Crofton-type formula}
+\newtheorem{Lemma}[theorem]{Lemma}
+\newtheorem{Douglas--Rado theorem}[theorem]{Douglas--Rado theorem}
+\newtheorem{Extended monotonicity theorem}[theorem]{Extended monotonicity theorem}
+\newtheorem{Theorem}[theorem]{Theorem}
+\newtheorem{Claim}[theorem]{Claim}
+\newtheorem{Observation}[theorem]{Observation}
+
+\newtheorem*{keylemma}{Key lemma}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{advancedexercise}{Advanced exercise}
+ 
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{remark}{Remark}
+
+\def\area{\mathop{\rm area}\nolimits}
+\def\length{\mathop{\rm length}\nolimits}
+\def\cross{\mathop{\rm cross}\nolimits}
+\def\DD{\mathbb{D}}
+\def\RR{\mathbb{R}}
+\def\ZZ{\mathbb{Z}}
+
+\def\solidtriangle{\text{\ding{115}}}
+\newcommand*{\tc}[1]{\ifthenelse{\equal{#1}{}}{\Phi}{\Phi({#1})}}%toatal curvature \tc\gamma produces \Phi(\gamma)
+
+\def\epsilon{\varepsilon}
+\def\eps{\varepsilon}
+
+\newcommand{\threestars}{\smash{%
+\raisebox{-.6ex}{%
+\setlength{\tabcolsep}{.5pt}%
+\begin{tabular}{@{}cc@{}}%
+\multicolumn2c*\\[-1.7ex]*&*%
+\end{tabular}}}}
+
+\newcommand{\fourstars}{\smash{%
+\raisebox{-.6ex}{%
+\setlength{\tabcolsep}{.5pt}%
+\begin{tabular}{@{}cc@{}}%
+*&*\\[-1.7ex]*&*%
+\end{tabular}}}}

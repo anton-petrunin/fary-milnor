@@ -1,8 +1,8 @@
- \section{Ekholm--White--Wienholtz}
+\section{Ekholm--White--Wienholtz}
 
 In this section, we discuss a solution of the problem based on the theorem of Tobias Ekholm, Brian White, and Daniel Wienholtz \cite{EWW_embed}.
 This theorem was a breakthrough in minimal surface theory at the time.
-Yet, it was based on an elementary idea that we are going to explain now.
+Yet, it was based on an elementary idea that we are going to explain.
 
 We start with a polygonal curve $\alpha$ with total curvature less than $4\cdot\pi$;
 show that an area-minimizing disc spanned by $\alpha$ has no self-intersections, and therefore $\alpha$ has to be a trivial knot.
@@ -20,7 +20,7 @@ We denote by $\mathbb{D}$ the closed disc in the plane.
 A surface defined by a map $f\:\mathbb{D}\to\mathbb{R}^3$ will be called a \emph{disc}.
 The restriction $f|_{\partial \mathbb{D}}$ as well as its image can be referred to as the \emph{boundary} of the disc.
 
-A disc $\Sigma$ is called area-minimizing if it has the smallest area among the surfaces with the given boundary.
+A disc $\Sigma$ is called area-minimizing if it has the smallest area among the discs with the given boundary.
 The following statement about area-minimizing discs is easy to believe, but not easy to prove; see \cite{white-lectures}.
 
 \begin{thm}{Douglas--Rado theorem}\label{thm:min-exists}
@@ -51,13 +51,13 @@ where $\bar B_r(o)$ denotes the ball of radius $r$ centered at $o$.
 Then $r\z\mapsto \frac{W_o(r)}{r^2}$ is a nondecreasing function.
 Moreover, 
 
-\begin{subthm}{thm:monotonicity:a}
+\begin{enumerate}[(a)]
+\item\label{thm:monotonicity:a}
 $\lim_{r\to\infty}\frac{W_o(r)}{r^2}=\tfrac12\cdot \Psi_o(\alpha)$, where $\Psi_o(\alpha)$ denotes the angular length of $\alpha$ with respect to $o$; see Section~\ref{sec:fary};
-\end{subthm}
 
-\begin{subthm}{thm:monotonicity:b}
+\item\label{thm:monotonicity:b}
 if $o\in \Sigma$, then $\lim_{r\to0}\frac{W_o(r)}{r^2}\ge \pi$.
-\end{subthm}
+\end{enumerate}
 
 \end{thm}
 
@@ -92,17 +92,17 @@ Observe that
 \end{align*}
 Applying $({*}{*})$, we get
 \[r\cdot \ell(r)\ge 2\cdot W_o(r).\]
-Therefore, we get
+Therefore,
 \[r\cdot W_o'(r)\ge 2\cdot W_o(r)\]
 for almost all $r$.
 If $W_o$ is smooth, then this inequality implies the main statement.
 In general, the argument shows that the absolutely continuous part of $W_o(r)/r^2$ is nondecreasing which suffices.
 
-\parit{\ref{SHORT.thm:monotonicity:a}.}
+\parit{(\ref{thm:monotonicity:a}).}
 Observe that up to a fixed error we have that $W_o(r)$ is the area of the ball of radius $r$ in the cone over $\alpha$ with the tip at $o$.
 It follows that $W_o(r)/r^2$ approaches the area of the unit ball in this cone as $r\to\infty$ --- hence the result.
 
-\parit{\ref{SHORT.thm:monotonicity:b}.}
+\parit{(\ref{thm:monotonicity:b}).}
 The statement is evident for smooth points of $\Sigma$.
 Since smooth points are dense in $\Sigma$, and $o\mapsto W_o(r)$ is a continuous function,
 the main part of the theorem implies that $W_o(r)\ge\pi\cdot r^2$ for \emph{any} point $o\in\Sigma$ --- hence the result.
@@ -115,7 +115,7 @@ If $\Sigma$ has no self-intersections, then $\alpha$ is a trivial knot.
 
 Suppose $\Sigma$ has a self-intersection at a point $o$.
 In this case, the intersection $B_r(o)\cap \Sigma$ is covered by two or more small area-minimizing subdiscs of $\Sigma$.
-By \ref{thm:monotonicity:b}, we get 
+By \ref{thm:monotonicity}(\ref{thm:monotonicity:b}), we get 
 \[\lim_{r\to0}\frac{W_o(r)}{r^2}\ge 2\cdot\pi.\]
 
 Applying the main statement in the monotonicity theorem, we get $\frac{W_o(r)}{r^2}\z\ge 2\cdot\pi$ for any $r>0$.

@@ -1,6 +1,7 @@
 \usepackage{amssymb, amsfonts, amsthm}
 \usepackage{amsmath}
 \usepackage{pifont}
+\usepackage{enumerate}
 
 \usepackage[T1,T2A]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -94,6 +95,7 @@ isbn=false]{biblatex}
 
 %NOTATIONS
 \def\area{\mathop{\rm area}\nolimits}
+\def\length{\mathop{\rm length}\nolimits}
 \def\cross{\mathop{\rm cross}\nolimits}
 \def\DD{\mathbb{D}}
 \def\RR{\mathbb{R}}
@@ -142,18 +144,6 @@ semi-pe-ri-me-ter
 %chaptername
 %\renewcommand{\chaptername}{}
 
-%NUMBERONCIRC
-\newcommand*{\numform}[1]{\@numform{\@nameuse{c@#1}}}
-\newcommand*{\@numform}[1]%
-{\ifcase #1\or \ding{202}\or \ding{203}\or \ding{204}\or \ding{205}\or \ding{206}\or \ding{207}\or \ding{208}\or \ding{209}\or \ding{210}\or \ding{211}\or \ding{74}\or \ding{168} \or \ding{170}\or \ding{171}\or\ding{169}\else\@ctrerr \fi}
-
-%EQNUMBER
-\newcounter{eqtn}[section]
-\renewcommand{\@eqnnum}{\theeqtn}
-\renewcommand{\theeqtn}{\numform{eqtn}}
-\newcommand{\eqlbl}[1]{\refstepcounter{eqtn}\leqno\text{\numform{eqtn}\label{#1}}}
-\newcommand{\eqtag}[1]{\refstepcounter{eqtn}\tag*{\numform{eqtn}\label{#1}}}
-
 %CLAIM
 \def\clmclaim#1{\par\medskip\noindent\refstepcounter{eqtn}\hbox{\rm\numform{eqtn} #1}
 \it%\ignorespaces
@@ -162,195 +152,21 @@ semi-pe-ri-me-ter
 \medskip}
 \newenvironment{clm}{\clmclaim}{\endclmclaim}
 
-%SUBTHEOREM 
-\newcounter{subthm}[thm]
-\renewcommand{\thesubthm}{\thethm\textit{\hskip-0.03em \alph{subthm}}}
-\newcounter{clone}[thm]
-\renewcommand{\theclone}{\textit{(\alph{subthm})}}
-\newenvironment{subthm}[1]{\ifthenelse{\equal{#1}{}}
-{\par\refstepcounter{subthm}\begin{itemize}\item[(\alph{subthm})]}{\par\refstepcounter{subthm}\label{#1}\setcounter{clone}{\value{subthm}} \addtocounter{clone}{-1}\refstepcounter{clone}\label{SHORT.#1}\begin{itemize}
-\item [(\alph{subthm})]}}{\end{itemize}}
-
-%SUBTHEOREM A
-\newcounter{subthmA}[thm]
-\renewcommand{\thesubthmA}{\thethm\textit{\hskip-0.05em \Alph{subthmA}}}
-\newcounter{cloneA}[thm]
-\renewcommand{\thecloneA}{\textit{(\Alph{subthmA})}}
-\newenvironment{subthmA}[1]{\ifthenelse{\equal{#1}{}}
-{\par\refstepcounter{subthmA}\begin{itemize}\item[(\Alph{subthmA})]}{\par\refstepcounter{subthmA}\label{#1}\setcounter{cloneA}{\value{subthmA}} \addtocounter{cloneA}{-1}\refstepcounter{cloneA}\label{SHORT.#1}\begin{itemize}
-\item [(\Alph{subthmA})]}}{\end{itemize}}
-%SUBTHEOREM 1
-\newcounter{subthmN}[thm]
-\renewcommand{\thesubthmN}{\thethm-\arabic{subthmN}}
-\newcounter{cloneN}[thm]
-\renewcommand{\thecloneN}{\arabic{subthmN}}
-\newenvironment{subthmN}[1]{\ifthenelse{\equal{#1}{}}
-{\par\refstepcounter{subthmN}\begin{itemize}\item[\arabic{subthmN})]}{\par\refstepcounter{subthmN}\label{#1}\setcounter{cloneN}{\value{subthmN}} \addtocounter{cloneN}{-1}\refstepcounter{cloneN}\label{SHORT.#1}\begin{itemize}
-\item [\arabic{subthmN})]}}{\end{itemize}}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\def\a{\operatorname{area}}
-\def\cone{\operatorname{cone}}
-\def\Hess{\operatorname{Hess}}
-\def\div{\operatorname{div}}
-\def\dvol{\operatorname{dvol}}
-\def\Jac{\operatorname{Jac}}
-\def\length{\operatorname{length}}
-\def\aplim{\operatorname{aplim}}
-\def\tr{\operatorname{tr}}
-\def\Fill{\operatorname{Fill}}
-\def\dev{\operatorname{dev}}
-\def\ext{\operatorname{ext}}
-\def\diam{\operatorname{diam}}
-\def\rank{\operatorname{rank}}
-\def\pol{\operatorname{pol}}
-\def\rad{\operatorname{rad}}
-\def\id{\operatorname{id}}
-
-
-
-\def\acts{\curvearrowright}
-\def\D{\partial}
-\def\restr{\mbox{\large \(|\)\normalsize}}
-\def\R{\mathbb R}
-\def\Z{\mathbb Z}
-\def\S{\mathbb S}
-\def\E{\mathbb E}
-\def\N{\mathbb N}
-\def\Ha{\mathcal H}
-
-\newcommand{\F}{F}
-\newcommand{\G}{\Theta}
-\newcommand{\Fi}{\F_\infty}
-\newcommand{\Gi}{\G_\infty}
-
-\def\al{\alpha}
-\def\de{\delta}
-\def\del{\delta}
-\def\ka{\kappa}
-\def\De{\Delta}
-\def\Del{\Delta}
 \def\eps{\epsilon}
-\def\ga{\gamma}
-\def\Ga{\Gamma}
-\def\half{{1 \over 2}}
-\def\la{\lambda}
-\def\La{\Lambda}
-\def\lra{\longrightarrow}
-\def\Lra{\Longrightarrow}
-\def\Tau{{\cal T}}
-\newcommand{\oa}[1]{\stackrel{\ra}{#1}}
-\def\overarrow{\oa}
-\def\embed{\hookrightarrow}
-\def\ol{\overline}
-\def\om{\omega}
-\def\Om{\Omega}
-\def\ra{\rightarrow}
-\def\Ra{\Rightarrow}
-\def\si{\sigma}
-\def\Si{\Sigma}
-\def\tangle{\angle_{Tits}}
-\def\tits{\partial_{T}}
-\def\geo{\partial_{\infty}}
-\def\etits{\partial^{ess}_{T}}
-
-
-
-
-\newcommand{\bH}{{\mathbf H}}
-\newcommand{\bI}{{\mathbf I}}
-\newcommand{\bZ}{{\mathbf Z}}
-\newcommand{\M}{{\mathbf M}}
-
-\newcommand{\cC}{{\mathscr C}}
-\newcommand{\cD}{{\mathscr D}}
-\newcommand{\cF}{{\mathscr F}}
-\newcommand{\cI}{{\mathscr I}}
-\newcommand{\cL}{{\mathscr L}}
-\newcommand{\cN}{{\mathscr N}}
-\newcommand{\cP}{{\mathscr P}}
-\newcommand{\cS}{{\mathscr S}}
-\newcommand{\cZ}{{\mathscr Z}}
-\newcommand{\on}{\:\mbox{\rule{0.1ex}{1.2ex}\rule{1.1ex}{0.1ex}}\:}
-
-\def\wlim{\mathop{\hbox{$\om$-lim}}}
-
-\def\acts{\curvearrowright}
-\def\interior{\operatorname{int}}
-\def\Isom{\mathop{\hbox{Isom}}}
-\def\Stab{\mathop{\hbox{Stab}}}
-\def\spt{\operatorname{spt}}
-
-\def\<{\langle}
-\def\>{\rangle}
-
-\newcommand{\bb}[1]{\llbracket #1\rrbracket} 
-% double brackets, requires package stmaryrd
-  
-
-\newcommand{\cs}{\text{\rm c}} %roman subscript for compact support
-%\newcommand{\C}{\text{\rm C}} %for cones
-\newcommand{\loc}{\text{\rm loc}}
-
-
-\theoremstyle{plain}
-%\newtheorem{thm}{Theorem}[section]
-\newtheorem{lem}[thm]{Lemma}
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{slem}[thm]{Sublemma}
-\newtheorem{question}[thm]{Question}
-\newtheorem{introthm}{Theorem}
-\renewcommand{\theintrothm}{\Alph{introthm}}
-\newtheorem{introcor}{Corollary}
-\renewcommand{\theintrocor}{\Alph{introcor}}
-
-\newtheorem*{conj}{Conjecture}
-\newtheorem*{quest}{Question}
-
-\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3} #1}
-\theoremstyle{named}
-\newtheorem*{namedlemma}{Lemma}
-
-\newtheorem{repropinner}{Proposition}
-\newenvironment{reprop}[1]{%
-  \renewcommand\therepropinner{#1}%
-  \repropinner
-}{\endrepropinner}
-
-
-\theoremstyle{definition}
-\newtheorem{dfn}[thm]{Definition}
-
-\theoremstyle{remark}
-\newtheorem{rem}[thm]{Remark}
-\newtheorem{exmp}[thm]{Example}
 
 
 
 
 
-\newcommand{\bcl}{\begin{claim}}
-\newcommand{\ecl}{\end{claim}}
-\newcommand{\bcor}{\begin{cor}}
-\newcommand{\ecor}{\end{cor}}
-\newcommand{\bdfn}{\begin{dfn}}
-\newcommand{\edfn}{\end{dfn}}
-%\newcommand{\bdfn}{\begin{definition}}
-\newcommand{\ben}{\begin{enumerate}}
-\newcommand{\bit}{\begin{itemize}}
-\newcommand{\blem}{\begin{lem}}
-\newcommand{\bslem}{\begin{slem}}
-\newcommand{\bprop}{\begin{prop}}
-\newcommand{\bthm}{\begin{thm}}
-%\newcommand{\edfn}{\end{definition}}
-\newcommand{\een}{\end{enumerate}}
-\newcommand{\eit}{\end{itemize}}
-\newcommand{\elem}{\end{lem}}
-\newcommand{\eslem}{\end{slem}}
-\newcommand{\eprop}{\end{prop}}
-\newcommand{\ethm}{\end{thm}}
+
+
+
+
+
+
+
 
 \newcommand{\threestars}{\smash{%
 \raisebox{-.6ex}{%
