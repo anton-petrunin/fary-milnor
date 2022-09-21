@@ -81,31 +81,14 @@ if it crosses the first arc, then $(x,y)\z\in C_3^-$.
 Note that $C_3^+\cup C_3^-\z=C_3$.
 
 Observe that if $C_3^+$ and $C_3^-$ intersect, then the proposition follows.
-
-The set $C_3^\pm$ might be not closed;
+The set $C_3^\pm$ is not closed;
 denote by $\bar C_3^\pm$ its closure.
 Suppose 
-\[(x,y)\in (\bar C_3^+\cup\bar C_3^-)\setminus(C_3^+\cup C_3^-);\]
-so there is a sequence $(x_n,y_n)\in C_3$ that converges to $(x,y)\notin C_3$.
-Denote by $s_n$ a point of intersection of $r(x_n,y_n)$ with $\alpha$.
-Note that we can assume that the points $s_n$ and $\alpha(x_n)$ lie on different edges.
-Observe that $s_n\to \alpha(x)$ as $n\to\infty$.
-The latter is possible only if $\alpha(x)$ is a vertex, say $p_i$, of $\alpha$.
-Further, observe that the line containing $p_i$ and $\alpha(x+y)$ lies in the plane spanned by $p_{i-1}$, $p_i$, and $p_{i+1}$; and it intersects yet another point of $\alpha$.
-The latter is not possible if $\alpha$ is in general position.
-That is, since $\alpha$ is in general position, 
-\[C_3^+\cap C_3^-=\emptyset\quad\text{implies that}\quad
-\bar C_3^+\cap \bar C_3^-=\emptyset.\]
-
-Note that there is $\eps>0$ such that for any $x\in\mathbb{S}^1$ we have the following:
-if $y<\eps$, then $(x,y)\notin \bar C_3^-$,
-and if $y>1-\eps$, then $(x,y)\notin \bar C_3^+$.
-
-Arguing by contradiction, assume $\bar C_3^+\cap \bar C_3^-=\emptyset$.
+\[\bar C_3^+\cap \bar C_3^-=\emptyset.\]
 Note that in this case there is a large $n$ such that any $\tfrac1n\times\tfrac1n$-square in $\mathbb{S}^1\times (0,1)$ does not intersect both $\bar C_3^+$ and $\bar C_3^-$.
 Let us cut $\mathbb{S}^1\times (0,1)$ into $n^2$ such squares; each square is a closed subset of $\mathbb{S}^1\times (0,1)$.
-Color the union of squares that intersect $\bar C_3^+$ or lie in the lowest row of squares for $y\le \tfrac1n$.
-Note that we did not color squares in the upper row.
+Color the union of squares that intersect $\bar C_3^+$.
+Note that every square in the lowest row is colored and we did not color squares in the upper row.
 Further, the boundary of the colored set contains a simple curve $t\mapsto(x(t),y(t))$ that cuts  the cylinder $\mathbb{S}^1\times (0,1)$ into two cylinders.
 
 \begin{wrapfigure}{r}{24 mm}
@@ -119,11 +102,26 @@ Further, the boundary of the colored set contains a simple curve $t\mapsto(x(t),
 Note that $(x(t),y(t))\notin \bar C_3^\pm$ for any $t\in \mathbb{S}^1$ and the curve $t\mapsto(x(t),y(t))$ runs along coordinate lines.
 Consider the one-parameter family of line segments in $r(x(t),y(t))$ that start at $\alpha(x(t))$ and end on the surface of a large cube that contains $\alpha$ in its interior.
 This way we obtain a piecewise linear annulus that connects the curve $t\mapsto \alpha(x(t))$ to a curve on the surface of the cube.
-The latter curve can be contracted by a piecewise linear disc on the surface of the cube.
+The latter curve can be contracted by a piecewise linear disc in the surface of the cube.
 It might have self-intersection, but it cannot contains points of $\alpha$.
 
 Observe that $t\mapsto \alpha(x(t))$ defines a degree-one map $\mathbb{S}^1\z\to\alpha$.
 Applying the lemma, we get the result.
+
+It remains to show that if $\alpha=p_1\dots p_n$ is in general position, then
+\[C_3^+\cap C_3^-=\emptyset\quad\text{implies that}\quad
+\bar C_3^+\cap \bar C_3^-=\emptyset.\]
+Assume $C_3^+\cap C_3^-=\emptyset$ and $(x,y)\in \bar C_3^+\cap \bar C_3^-$.
+Denote by $\ell$ the line containing $\alpha(x)$ and $\alpha(x+y)$.
+Checking the following statements is straightforward, but requires patience:
+\begin{itemize}
+ \item $\alpha(x)$ is a vertex, so $\alpha(x)=p_i$ for some $i$ and $\ell$ contains $p_i$;
+ \item $\ell$ lies in the plane spanned by $p_{i-1}$, $p_i$, and $p_{i+1}$; 
+ \item $\ell$ does not contain edge $[p_{i-1}, p_i]$, nor $[p_{i}, p_{i+1}]$;
+ \item $\ell$ has at least 3 points of intersection with $\alpha$.
+\end{itemize}
+Finally, if $\alpha$ is in general position,
+the line $\ell$ with the described properties does not exist.
 \qeds
 
 
