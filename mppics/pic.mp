@@ -148,16 +148,18 @@ z.a223=whatever[z.a2,z.a3]=whatever[z.a4,z.a5];
 z.a661=whatever[z.a6,z.a1]=whatever[z.a2,z.a3];
 z.a445=whatever[z.a4,z.a5]=whatever[z.a6,z.a1];
 
-draw z.a2--z.a23 penbold;
+draw z.a2--z.a3--z.a4--z.a5--z.a6--z.a1--cycle penbold;
+
 fill circle(z.a223,2.5) withcolor white;
 
-draw z.a45--z.a5--z.a6--z.a61 penbold;
+draw z.a45--z.a5 penbold;
+
 fill circle(z.a661,2.5) withcolor white;
 
 
-draw z.a23--z.a3--z.a4--z.a45 penbold;
+draw z.a23--z.a3 penbold;
 fill circle(z.a445,2.5) withcolor white;
-draw z.a61--z.a1--z.a2 penbold;
+draw z.a61--z.a1 penbold;
 
 endfig;
 
@@ -189,34 +191,6 @@ dOt z.a0,z.a1,z.a2,z.a3,z.b1,z.b2;
 label.lft(btex $p_{n-1}$ etex, z.a1);
 label.top(btex $p_n$ etex, z.a0);
 label.rt(btex $p_1$ etex, z.b1);
-endfig;
-
-beginfig(20) 
-save u;
-u:=.7cm;
-
-z.a=origin;
-z.b=(1,0)*u;
-z.c=2*z.b;
-z.d=3*z.b;
-
-save p; path p[];
-p0=z.a..z.c..z.b..z.d..cycle;
-
-draw p0;
-draw -.2[z.a,z.d]--1.2[z.a,z.d];
-drawarrow subpath (3.2,3.7) of p0;
-drawarrow subpath (1.2,1.7) of p0;
-drawarrow subpath (.1,.3) of p0;
-drawarrow subpath (2.2,2.7) of p0;
-dOt z.a,z.b,z.c,z.d;
-
-
-label.urt(btex $a$ etex, z.a);
-label.ulft(btex $b$ etex, z.b);
-label.urt(btex $c$ etex, z.c);
-label.ulft(btex $d$ etex, z.d);
-label.top(btex $\gamma$ etex, point 3.5 of p0);
 endfig;
 
 beginfig(41) 
@@ -362,6 +336,61 @@ label.lft(btex $o$ etex, origin);
 label.top(btex $\alpha$ etex, .5[z.a3,z.a4]);
 label(btex $\Sigma$ etex, (.4,-.1)*u);
 whitelabel.bot(btex collar etex, (0,2)*u+(0,-4));
+endfig;
+
+beginfig(55) 
+save u,a,p;
+u:=1cm;
+a:=45;
+path p[];
+
+z.i=(0,1)*u;
+z.a1= z.i rotated -a;
+z.a2= z.i rotated a;
+z.a3=(.5,-.3)*u+z.a1 rotated -120;
+z.a4=(1,0)*u+z.a2 rotated -120;
+z.a5= z.a1 rotated 120;
+z.a6=z.a2 rotated 120;
+
+z.a23=.5[z.a2,z.a3];
+z.a45=.5[z.a4,z.a5];
+z.a61=.5[z.a6,z.a1];
+
+z.a223=whatever[z.a2,z.a3]=whatever[z.a4,z.a5];
+z.a661=whatever[z.a6,z.a1]=whatever[z.a2,z.a3];
+z.a445=whatever[z.a4,z.a5]=whatever[z.a6,z.a1];
+
+z.p1= (-.3,-1.2)*u;
+z.p2= (1.3,-0)*u;
+z.p3= (.6,1.2)*u;
+
+p1=(-2,-1.5)*u--(3,-1.5)*u--(3,1.5)*u--(-2,1.5)*u--cycle;
+p2= ddline(z.p1,z.p2)(5,5)--(-2,1.5)*u--(-2,-1.5)*u--cycle;
+p3= ddline(z.p2,z.p3)(5,5)--(-2,1.5)*u--(-2,-1.5)*u--cycle;
+
+hatchoptions (withcolor .5);
+hatchfill p2  withcolor (77, 1.4mm, -.5bp);
+hatchfill p3  withcolor (17, 1.4mm, -.5bp);
+
+draw ddline(z.p1,z.p2)(3,3);
+draw ddline(z.p3,z.p2)(3,3);
+
+draw z.a2--z.a3--z.a4--z.a5--z.a6--z.a1--cycle penbold;
+fill circle(z.a223,2.5) withcolor white;
+draw z.a45--z.a5 penbold;
+fill circle(z.a661,2.5) withcolor white;
+draw z.a23--z.a3 penbold;
+fill circle(z.a445,2.5) withcolor white;
+draw z.a61--z.a1 penbold;
+
+clip currentpicture to p1;
+
+z.pi=whatever[z.p1,z.p2]=(2.4*u,whatever);
+z.pii=whatever[z.p3,z.p2]=(whatever,-1.4*u);
+whitelabel(btex $H$ etex, (1.5,1)*u);
+whitelabel(btex $H'$ etex, (.2,-1.3)*u);
+label.lrt(btex $\Pi$ etex, z.pi);
+label.urt(btex $\Pi'$ etex, z.pii);
 endfig;
 
 end
